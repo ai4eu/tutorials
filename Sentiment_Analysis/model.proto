@@ -1,0 +1,17 @@
+//Define the used version of proto:
+syntax = 'proto3';
+
+//Define a message to hold the features input by the client :
+message Text{
+    string query = 1;
+  
+}
+//Define a message to hold the predicted price :
+message Prediction{
+    float review      = 1 ;
+}
+
+//Define the service :
+service Predict{
+    rpc classify_review(Text) returns (Prediction){}
+}
