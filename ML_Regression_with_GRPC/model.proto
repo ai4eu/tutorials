@@ -1,0 +1,20 @@
+//Define the used version of proto:
+syntax = 'proto3';
+
+//Define a message to hold the features input by the client :
+message Features{
+    float MSSubClass     = 1 ;
+    float LotArea        = 2 ;
+    float YearBuilt      = 3 ;
+    float BedroomAbvGr   = 4 ;
+    float TotRmsAbvGrd   = 5 ;
+}
+//Define a message to hold the predicted price :
+message Prediction{
+    float salePrice      = 1 ;
+}
+
+//Define the service :
+service Predict{
+    rpc predict_sale_price(Features) returns (Prediction){}
+}
