@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x0bmodel.proto\"\x15\n\x04Text\x12\r\n\x05query\x18\x01 \x01(\t\"\x1c\n\nPrediction\x12\x0e\n\x06review\x18\x01 \x01(\x02\x32\x32\n\x07Predict\x12\'\n\x0f\x63lassify_review\x12\x05.Text\x1a\x0b.Prediction\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x0bmodel.proto\"\x15\n\x04Text\x12\r\n\x05query\x18\x01 \x01(\t\"!\n\x0fReview_Classify\x12\x0e\n\x06review\x18\x01 \x01(\x02\x32H\n\x18sentiment_analysis_model\x12,\n\x0f\x63lassify_review\x12\x05.Text\x1a\x10.Review_Classify\"\x00\x62\x06proto3'
 )
 
 
@@ -55,15 +55,15 @@ _TEXT = _descriptor.Descriptor(
 )
 
 
-_PREDICTION = _descriptor.Descriptor(
-  name='Prediction',
-  full_name='Prediction',
+_REVIEW_CLASSIFY = _descriptor.Descriptor(
+  name='Review_Classify',
+  full_name='Review_Classify',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='review', full_name='Prediction.review', index=0,
+      name='review', full_name='Review_Classify.review', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -82,11 +82,11 @@ _PREDICTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=38,
-  serialized_end=66,
+  serialized_end=71,
 )
 
 DESCRIPTOR.message_types_by_name['Text'] = _TEXT
-DESCRIPTOR.message_types_by_name['Prediction'] = _PREDICTION
+DESCRIPTOR.message_types_by_name['Review_Classify'] = _REVIEW_CLASSIFY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Text = _reflection.GeneratedProtocolMessageType('Text', (_message.Message,), {
@@ -96,36 +96,36 @@ Text = _reflection.GeneratedProtocolMessageType('Text', (_message.Message,), {
   })
 _sym_db.RegisterMessage(Text)
 
-Prediction = _reflection.GeneratedProtocolMessageType('Prediction', (_message.Message,), {
-  'DESCRIPTOR' : _PREDICTION,
+Review_Classify = _reflection.GeneratedProtocolMessageType('Review_Classify', (_message.Message,), {
+  'DESCRIPTOR' : _REVIEW_CLASSIFY,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:Prediction)
+  # @@protoc_insertion_point(class_scope:Review_Classify)
   })
-_sym_db.RegisterMessage(Prediction)
+_sym_db.RegisterMessage(Review_Classify)
 
 
 
-_PREDICT = _descriptor.ServiceDescriptor(
-  name='Predict',
-  full_name='Predict',
+_SENTIMENT_ANALYSIS_MODEL = _descriptor.ServiceDescriptor(
+  name='sentiment_analysis_model',
+  full_name='sentiment_analysis_model',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=68,
-  serialized_end=118,
+  serialized_start=73,
+  serialized_end=145,
   methods=[
   _descriptor.MethodDescriptor(
     name='classify_review',
-    full_name='Predict.classify_review',
+    full_name='sentiment_analysis_model.classify_review',
     index=0,
     containing_service=None,
     input_type=_TEXT,
-    output_type=_PREDICTION,
+    output_type=_REVIEW_CLASSIFY,
     serialized_options=None,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_PREDICT)
+_sym_db.RegisterServiceDescriptor(_SENTIMENT_ANALYSIS_MODEL)
 
-DESCRIPTOR.services_by_name['Predict'] = _PREDICT
+DESCRIPTOR.services_by_name['sentiment_analysis_model'] = _SENTIMENT_ANALYSIS_MODEL
 
 # @@protoc_insertion_point(module_scope)

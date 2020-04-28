@@ -9,14 +9,14 @@ import model_pb2_grpc
 # import the function we made :
 import model as psp
 
-port = 50052
+port = 50053
 
 # create a class to define the server functions, derived from
 # usingSKlearn_pb2_grpc.PredictServicer :
-class PredictServicer(model_pb2_grpc.PredictServicer):
+class sentiment_analysis_modelServicer(model_pb2_grpc.sentiment_analysis_modelServicer):
     def classify_review(self, request, context):
         # define the buffer of the response :
-        response = model_pb2.Prediction()
+        response = model_pb2.Review_Classify()
         # get the value of the response by calling the desired function :
         response.review = psp.classify_review(request.query)
         return response
@@ -25,7 +25,7 @@ class PredictServicer(model_pb2_grpc.PredictServicer):
 # creat a grpc server :
 server = grpc.server(futures.ThreadPoolExecutor(max_workers = 10))
 
-model_pb2_grpc.add_PredictServicer_to_server(PredictServicer(), server)
+model_pb2_grpc.add_sentiment_analysis_modelServicer_to_server(sentiment_analysis_modelServicer(), server)
 
 print('Starting server. Listening on port :' + str(port))
 server.add_insecure_port("[::]:{}".format(port))

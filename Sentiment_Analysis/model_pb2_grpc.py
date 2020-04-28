@@ -4,7 +4,7 @@ import grpc
 import model_pb2 as model__pb2
 
 
-class PredictStub(object):
+class sentiment_analysis_modelStub(object):
   """Define the service :
   """
 
@@ -15,13 +15,13 @@ class PredictStub(object):
       channel: A grpc.Channel.
     """
     self.classify_review = channel.unary_unary(
-        '/Predict/classify_review',
+        '/sentiment_analysis_model/classify_review',
         request_serializer=model__pb2.Text.SerializeToString,
-        response_deserializer=model__pb2.Prediction.FromString,
+        response_deserializer=model__pb2.Review_Classify.FromString,
         )
 
 
-class PredictServicer(object):
+class sentiment_analysis_modelServicer(object):
   """Define the service :
   """
 
@@ -33,14 +33,14 @@ class PredictServicer(object):
     raise NotImplementedError('Method not implemented!')
 
 
-def add_PredictServicer_to_server(servicer, server):
+def add_sentiment_analysis_modelServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'classify_review': grpc.unary_unary_rpc_method_handler(
           servicer.classify_review,
           request_deserializer=model__pb2.Text.FromString,
-          response_serializer=model__pb2.Prediction.SerializeToString,
+          response_serializer=model__pb2.Review_Classify.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'Predict', rpc_method_handlers)
+      'sentiment_analysis_model', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))

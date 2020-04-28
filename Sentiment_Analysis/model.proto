@@ -6,12 +6,12 @@ message Text{
     string query = 1;
   
 }
-//Define a message to hold the sentiment value :
-message Prediction{
+//Define a message to hold the predicted price :
+message Review_Classify{
     float review      = 1 ;
 }
 
 //Define the service :
-service Predict{
-    rpc classify_review(Text) returns (Prediction){}
+service sentiment_analysis_model{
+    rpc classify_review(Text) returns (Review_Classify){}
 }
