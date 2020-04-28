@@ -6,7 +6,7 @@ message Text{
     string query = 1;
   
 }
-//Define a message to hold the predicted price :
+//Define a message to hold the sentiment value :
 message Prediction{
     float review      = 1 ;
 }
