@@ -1,6 +1,8 @@
 //Define the used version of proto:
 syntax = 'proto3';
 
+package fraunhofer.sentimentanalysis;
+
 //Define a message to hold the features input by the client :
 message Text{
     string query = 1;

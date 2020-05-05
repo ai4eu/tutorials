@@ -1,6 +1,8 @@
 //Define the used version of proto:
 syntax = 'proto3';
 
+package fraunhofer.houseprediction;
+
 //Define a message to hold the features input by the client :
 message Features{
     float MSSubClass     = 1 ;
