@@ -15,5 +15,5 @@ message Review_Classify{
 
 //Define the service :
 service sentiment_analysis_model{
-    rpc classify_review(Text) returns (Review_Classify){}
+    rpc classify_review(Text) returns (Review_Classify);
 }
