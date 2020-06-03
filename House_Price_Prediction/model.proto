@@ -18,5 +18,5 @@ message Prediction{
 
 //Define the service :
 service Predict{
-    rpc predict_sale_price(Features) returns (Prediction){}
+    rpc predict_sale_price(Features) returns (Prediction);
 }
