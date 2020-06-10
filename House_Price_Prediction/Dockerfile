@@ -10,7 +10,7 @@ RUN pip3 install pandas
 RUN pip3 install sklearn
     
 COPY ./requirements.txt /requirements.txt
-COPY license-1.0.0.json model.proto model_pb2.py model_pb2_grpc.py house_prediction_server.py predict_sale_price.py train.csv test.csv ./
+COPY license-1.0.0.json model.proto model_pb2.py model_pb2_grpc.py house_price_prediction_server.py predict_sale_price.py train.csv test.csv ./
 
 WORKDIR /
 
