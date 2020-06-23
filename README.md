@@ -1,6 +1,5 @@
 # Limitations of the AI4EU Experiments alpha version
 * No Single Sign On with AI4EU main website
-* The Machine Learning Workbench is not supported/available
 * Deployment is not possible yet
 * No email notifications yet
 
