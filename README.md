@@ -1,7 +1,6 @@
 # Limitations of the AI4EU Experiments alpha version
 * No Single Sign On with AI4EU main website
 * Deployment is not possible yet
-* No email notifications yet
 
 # Tutorials
 Tutorials and examples for the AI4EU Experiments docker/grpc format for models:
