@@ -1,0 +1,20 @@
+//Define the used version of proto:
+syntax = 'proto3';
+//import "google/protobuf/empty.proto";
+
+package fraunhofer.DataBrocker_SentimentAnalysis;
+
+//Define a message to hold the features input by the client :
+message Features{
+    float row_Number   = 1 ;
+    string text        = 2 ;
+    float polarity     = 3 ;
+}
+
+message Empty{
+}
+
+//Define the service :
+service get_next_row{
+    rpc get_next_row(Empty) returns(Features);
+}
