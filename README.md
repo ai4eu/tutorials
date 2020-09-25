@@ -1,4 +1,4 @@
-# Limitations of the AI4EU Experiments alpha version
+# Limitations of the AI4EU Experiments beta version
 * No Single Sign On with AI4EU main website
 * Deployment is not possible yet
 
