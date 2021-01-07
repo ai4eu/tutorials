@@ -8,7 +8,7 @@ import model_pb2_grpc
 
 # import the function we made :
 import predict_sale_price as psp
-port = 50055
+port = 8061
 
 # create a class to define the server functions, derived from
 
