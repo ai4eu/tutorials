@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Tejas  "tejas.morbagal.harish@iais.fraunhofer.de"
+MAINTAINER Sajid  "sajid.naeem@iais.fraunhofer.de"
 
 RUN apt-get update -y 
 RUN apt-get install -y python3-pip python3-dev 

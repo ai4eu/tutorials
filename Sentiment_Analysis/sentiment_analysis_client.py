@@ -6,7 +6,7 @@ import model_pb2
 import model_pb2_grpc
 
 start_ch = timer()
-port_address = 'localhost:50053'
+port_address = 'localhost:8061'
 # open a gRPC channel
 channel = grpc.insecure_channel(port_address)
 
