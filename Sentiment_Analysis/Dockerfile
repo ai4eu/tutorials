@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 MAINTAINER Sajid  "sajid.naeem@iais.fraunhofer.de"
 
@@ -20,9 +20,4 @@ WORKDIR /
 RUN pip3 install -r requirements.txt
 
 ENTRYPOINT [ "python3","sentiment_analysis_server.py" ]
-
-
-
-
-
 
