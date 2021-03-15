@@ -3,7 +3,7 @@
 * Deployment is not possible yet
 * protobuf import semantics not yet supported, some standard structures need to be copied
 
-# Tutorials
+# Container Specification and Tutorials
 Tutorials and examples for the AI4EU Experiments docker/grpc format for models:
 * The container Specification describes how the docker container for AI4EU Experiments should be configured
 * The first simple example is a predictor for house prices
