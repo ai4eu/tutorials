@@ -13,7 +13,7 @@ import openml as oml
 '''
 #####################################################################
 
-def write_proto(dataID, output_folder='', file_name=f'model.proto'):
+def write_proto(dataID, file_name=f'model.proto', output_folder=''):
     output_file = os.path.join(output_folder, file_name)
     try:
         df = oml.datasets.get_dataset(dataID).get_data()[0]
