@@ -29,7 +29,7 @@ message Feature {
 	float64  Petalwidth                     = 4;
 }
 ```
-## 1. How to get the data ID from OpenML?
+# 1. How to get the data ID from OpenML?
 Usually whenever opening a dataset in OpenML, the ID is the number at the end of the URL. For instance, the link below contains a dataset with ID 31. This number will be used to input into the tool.
 ```
 https://www.openml.org/d/31
