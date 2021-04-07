@@ -16,6 +16,8 @@ import pandas as pd
 import utils
 import myconstants
 
+from sklearn.ensemble import RandomForestClassifier
+
 port_address = myconstants.PORT_ADDRESS
 port_address_classifier = myconstants.PORT_ADDRESS_CLASSIFIER
 idx = myconstants.DATA_ID # fixed ID for data request
@@ -28,6 +30,11 @@ class ClassifierServicer(classifier_model_pb2_grpc.ClassifierServicer):
             stub = model_pb2_grpc.ExampleStub(channel)
             self.df, self.labels = utils.list_features(stub, idx=idx)
 
+    def _get_prediction(self, value):
+        clf = RandomForestClassifier()
+        clf.fit(self.df, self.labels.values)
+        label = clf.predict([value])
+        return label
 
     def GetFeatureNames(self, request, context):
         print(f'Request DataID: {request.idx}')
@@ -47,9 +54,8 @@ class ClassifierServicer(classifier_model_pb2_grpc.ClassifierServicer):
                             the given dataset {{{len(self.df.columns)}}}'''
             return classifier_model_pb2.ClassifierResult(label=return_text)
 
-        label = utils.prediction(self.df, self.labels, value)
+        label = self._get_prediction(value)
         return classifier_model_pb2.ClassifierResult(label=str(label))
-
 
 
 def serve():

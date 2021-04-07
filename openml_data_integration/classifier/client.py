@@ -40,9 +40,9 @@ def main(argv):
                 \n\t {feature_names}\n')
 
         # get prediction
-        # values = [6.2, 1.4, 5.4, 2.3]
-        # result = get_prediction(stub, [idx, values])
-        # print(f'The prediction for {values} is:\n {result}\n\n')
+        values = [6.2, 1.4, 5.4, 2.3]
+        result = get_prediction(stub, [idx, values])
+        print(f'The prediction for {values} is:\n {result}\n\n')
 
 
 if __name__ == '__main__':

@@ -6,8 +6,6 @@ import grpc
 import model_pb2
 import model_pb2_grpc
 import pandas as pd
-import numpy as np
-from sklearn.ensemble import RandomForestClassifier
 import myconstants
 
 def list_features(stub, idx):
@@ -33,11 +31,3 @@ def list_features(stub, idx):
         print(f'Sorry, No data with ID {idx} found.')
 
     return df, labels
-
-
-
-def prediction(df, labels, value):
-    clf = RandomForestClassifier()
-    clf.fit(df, labels.values)
-    label = clf.predict([value])
-    return label
