@@ -8,7 +8,7 @@ import model_pb2_grpc
 
 import get_next_row as gnr
 
-port = 50080
+port = 8061
 row_obj = gnr.FetchRowCSV()
 current_row = 0
 
