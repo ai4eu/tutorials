@@ -8,7 +8,7 @@ import model_pb2_grpc
 from google.protobuf import empty_pb2
 
 start_ch = timer()
-port_addr = 'localhost:50080'
+port_addr = 'localhost:8061'
 # open a gRPC channel
 channel = grpc.insecure_channel(port_addr)
 # create a stub (client)

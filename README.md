@@ -1,7 +1,6 @@
 # Limitations of the AI4EU Experiments beta version
 * No Single Sign On with AI4EU main website
-* Deployment is not possible yet
-* protobuf import semantics not yet supported, some standard structures need to be copied
+* protobuf import and enum semantics not yet supported, some standard structures need to be copied
 
 # Container Specification and Tutorials
 Tutorials and examples for the AI4EU Experiments docker/grpc format for models:
