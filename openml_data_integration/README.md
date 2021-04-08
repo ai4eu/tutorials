@@ -1,4 +1,4 @@
-# How to Get an arbitrary Dataset from OpenML and Build a Model
+# How to Get an arbitrary OpenML Dataset and Build a Model
 
 
 root
@@ -6,13 +6,13 @@ root
 <br/>|___data_node
 
 
-# 1. Get the data ID from OpenML
+# 1. Get the OpenML data ID
 Usually whenever opening a dataset in OpenML, the ID is the number at the end of the URL. For instance, the link below contains a dataset with ID 1119. This number will be used to input into the tool.
 ```
 https://www.openml.org/d/1119
 ```
 
-# 2. Access the Data from OpenML
+# 2. Access the OpenML Data
 The source code in folder `data_node` will do the task of retrieving data from openML.
 
 data_node
