@@ -2,8 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-import model_pb2 as model__pb2
+import databroker_pb2 as databroker__pb2
 
 
 class get_next_rowStub(object):
@@ -17,8 +16,8 @@ class get_next_rowStub(object):
         """
         self.get_next_row = channel.unary_unary(
                 '/get_next_row/get_next_row',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=model__pb2.Features.FromString,
+                request_serializer=databroker__pb2.Empty.SerializeToString,
+                response_deserializer=databroker__pb2.Features.FromString,
                 )
 
 
@@ -36,8 +35,8 @@ def add_get_next_rowServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'get_next_row': grpc.unary_unary_rpc_method_handler(
                     servicer.get_next_row,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=model__pb2.Features.SerializeToString,
+                    request_deserializer=databroker__pb2.Empty.FromString,
+                    response_serializer=databroker__pb2.Features.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -61,7 +60,7 @@ class get_next_row(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/get_next_row/get_next_row',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            model__pb2.Features.FromString,
+            databroker__pb2.Empty.SerializeToString,
+            databroker__pb2.Features.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

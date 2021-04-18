@@ -1,5 +1,4 @@
 syntax = 'proto3';
-import "google/protobuf/empty.proto";
 
 message Features {
     float MSSubClass     = 1 ;
@@ -9,6 +8,9 @@ message Features {
     float TotRmsAbvGrd   = 5 ;
 }
 
+message Empty {
+}
+
 service get_next_row {
-    rpc get_next_row(google.protobuf.Empty) returns(Features);
+    rpc get_next_row(Empty) returns(Features);
 }
