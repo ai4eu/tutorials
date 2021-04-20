@@ -1,4 +1,4 @@
-#AI4EU Experiments Onboarding Tutorial: House Sales Price Prediction using gRPC
+# AI4EU Experiments Onboarding Tutorial: House Sales Price Prediction using gRPC
 This tutorial provides a basic Python programmer’s introduction to working with gRPC.
 By walking through this example you’ll learn how to:
 * Define a service in a .proto file.
@@ -9,7 +9,7 @@ It assumes that you have read the Overview(https://grpc.io/docs/guides/#overview
 You can find out more in the proto3 language guide and Python generated code guide.
 (https://developers.google.com/protocol-buffers/docs/reference/python-generated)
 
-#What is gRPC?
+# What is gRPC?
 With gRPC you can define your service once in a .proto file and implement clients and
 servers in any of gRPC’s supported languages, which in turn can be run in
 environments ranging from servers inside Google to your own tablet - all the
@@ -19,7 +19,7 @@ buffers, including efficient serialization, a simple IDL, and easy interface upd
 This example is a Machine Learning Regression example that lets clients get the house
 sales prediction based on chosen attributes.
 
-#steps
+# steps
 1. Write the service to be served.
 2. Make a proto file to define the messages and services.
 3. Use the proto file to generate gRPC classes for Python.
@@ -28,7 +28,7 @@ sales prediction based on chosen attributes.
 6. Include a license
 7. Prepare the docker file, run the docker and the run the client in a new tab.
 
-##Step 1: Write the Service:
+## Step 1: Write the Service:
 In our case, the service is predicting house pricing. Below is code snippet.
 
 ```python
@@ -61,7 +61,7 @@ price).
 Since our motive here is to understand the gRPC, I have taken a simple DecisionTreeRegressor
 from sklearn.tree.
 
-##Step 2: Make the Proto File:
+## Step 2: Make the Proto File:
 ```proto
 //Define the used version of proto
 syntax = "proto3";
@@ -85,7 +85,7 @@ rpc predict_sale_price(Features) returns (Prediction);
 Here, we did not give values to the features, those numbers indicate the order of serializing
 the features.
 
-##Step 3: Generate gRPC classes for Python:
+## Step 3: Generate gRPC classes for Python:
 
 Open the terminal, change the directory to be in the same folder that the proto file is
 in.
@@ -120,7 +120,7 @@ model_pb2_grpc.py — contains server and client classes
 * model_pb2_grpc.PredictServicer will be used by the server
 * model_pb2_grpc.PredictStub the client will use it
 
-##Step 4: Creating the Server:
+## Step 4: Creating the Server:
 
 The server will import the generated files and the function that will handle the
 predictions. Then we will define a class that will take a request from the client and
@@ -168,7 +168,7 @@ except KeyboardInterrupt:
 server.stop(0)
 ```
 
-##Step 5: Creating the Client:
+## Step 5: Creating the Client:
 
 In the client file we will do the following:
 * Open a gRPC channel
@@ -221,10 +221,10 @@ second'.format(int(1/(all_time/len(MSSubClass)))))
 print('Time for connecting to server = {}'.format(ch_time))
 ```
 
-##Step 6: Include a license File
+## Step 6: Include a license File
 We need to include a license file before building a docker image. 
 
-##Step 7: Prepare the Docker file
+## Step 7: Prepare the Docker file
 ```dockerfile
 FROM ubuntu:18.04
 
