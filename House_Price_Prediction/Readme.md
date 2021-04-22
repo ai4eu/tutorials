@@ -52,9 +52,9 @@ tree_model = DecisionTreeRegressor()
 tree_model.fit(X, y)
 def predict_sale_price(MSSubClass, LotArea, YearBuilt, BedroomAbvGr,
 TotRmsAbvGrd):
-prediction = tree_model.predict([[MSSubClass, LotArea, YearBuilt,
-BedroomAbvGr, TotRmsAbvGrd]])
-return (prediction)
+  prediction = tree_model.predict([[MSSubClass, LotArea, YearBuilt,
+  BedroomAbvGr, TotRmsAbvGrd]])
+  return (prediction)
 ```
 This model has 5 input arguments (features of the house that we want to predict its sale
 price).
@@ -203,16 +203,17 @@ TotRmsAbvGrd = [randint(2,12) for i in range(0,1000)]
 ans_lst = []
 start = timer()
 for i in range(0,len(MSSubClass)-1):
-# create a valid request message
-requestPrediction = model_pb2.Features(MSSubClass = MSSubClass[i], LotArea =
-LotArea[i],
-YearBuilt = YearBuilt[i], BedroomAbvGr =
-BedroomAbvGr[i],
-TotRmsAbvGrd = TotRmsAbvGrd[i])
-# make the call
-responsePrediction = stub.predict_sale_price(requestPrediction)
-ans_lst.append(responsePrediction.salePrice)
-print('The prediction is :',responsePrediction.salePrice)
+  # create a valid request message
+  requestPrediction = model_pb2.Features(MSSubClass = MSSubClass[i], LotArea =
+                                        LotArea[i],
+                                        YearBuilt = YearBuilt[i], BedroomAbvGr =
+                                        BedroomAbvGr[i],
+                                        TotRmsAbvGrd = TotRmsAbvGrd[i])
+  
+  # make the call
+  responsePrediction = stub.predict_sale_price(requestPrediction)
+  ans_lst.append(responsePrediction.salePrice)
+  print('The prediction is :',responsePrediction.salePrice)
 print('Done!')
 end = timer()
 all_time = end - start
