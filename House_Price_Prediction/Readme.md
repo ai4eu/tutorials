@@ -50,8 +50,7 @@ from sklearn.tree import DecisionTreeRegressor
 tree_model = DecisionTreeRegressor()
 # Fit model
 tree_model.fit(X, y)
-def predict_sale_price(MSSubClass, LotArea, YearBuilt, BedroomAbvGr,
-TotRmsAbvGrd):
+def predict_sale_price(MSSubClass, LotArea, YearBuilt, BedroomAbvGr,TotRmsAbvGrd):
   prediction = tree_model.predict([[MSSubClass, LotArea, YearBuilt,
   BedroomAbvGr, TotRmsAbvGrd]])
   return (prediction)
