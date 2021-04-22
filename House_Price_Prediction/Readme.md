@@ -34,22 +34,29 @@ In our case, the service is predicting house pricing. Below is code snippet.
 ```python
 import pandas as pd
 import numpy as np
+
 # Read the data and store in a dataframe called training_set
 train_data_path ='train.csv'
 training_set = pd.read_csv(train_data_path)
+
 # Select the target variable and call it y
 y = training_set.SalePrice
+
 # Create a list of the predictor variables
-predictors = ["MSSubClass","LotArea", "YearBuilt","BedroomAbvGr",
-"TotRmsAbvGrd"]
+predictors = ["MSSubClass","LotArea", "YearBuilt","BedroomAbvGr","TotRmsAbvGrd"]
+
 # Create a new dataframe with the predictors list
 X = training_set[predictors]
+
 # Import DecisionTreeRegressor
 from sklearn.tree import DecisionTreeRegressor
+
 # Define the first model
 tree_model = DecisionTreeRegressor()
+
 # Fit model
 tree_model.fit(X, y)
+
 def predict_sale_price(MSSubClass, LotArea, YearBuilt, BedroomAbvGr,TotRmsAbvGrd):
   prediction = tree_model.predict([[MSSubClass, LotArea, YearBuilt,
   BedroomAbvGr, TotRmsAbvGrd]])
@@ -64,7 +71,9 @@ from sklearn.tree.
 ```proto
 //Define the used version of proto
 syntax = "proto3";
+
 //Define a message to hold the features input by the client
+
 message Features {
 float MSSubClass = 1 ;
 float LotArea = 2 ;
@@ -72,10 +81,12 @@ float YearBuilt = 3 ;
 float BedroomAbvGr = 4 ;
 float TotRmsAbvGrd = 5 ;
 }
+
 //Define a message to hold the predicted price
 message Prediction {
 float salePrice = 1 ;
 }
+
 //Define the service
 service Predict {
 rpc predict_sale_price(Features) returns (Prediction);
@@ -184,16 +195,20 @@ Below is the code snippet for client:
 import grpc
 from random import randint
 from timeit import default_timer as timer
+
 # import the generated classes
 import model_pb2
 import model_pb2_grpc
 start_ch = timer()
 port_addr = 'localhost:8061'
+
 # open a gRPC channel
 channel = grpc.insecure_channel(port_addr)
+
 # create a stub (client)
 stub = model_pb2_grpc.PredictStub(channel)
 end_ch = timer()
+
 MSSubClass = [randint(1,11) for i in range(0,1000)]
 LotArea = [randint(100,1500) for i in range(0,1000)]
 YearBuilt = [randint(1915,2000) for i in range(0,1000)]
@@ -201,6 +216,7 @@ BedroomAbvGr = [randint(2,10) for i in range(0,1000)]
 TotRmsAbvGrd = [randint(2,12) for i in range(0,1000)]
 ans_lst = []
 start = timer()
+
 for i in range(0,len(MSSubClass)-1):
   # create a valid request message
   requestPrediction = model_pb2.Features(MSSubClass = MSSubClass[i], LotArea =
@@ -213,6 +229,7 @@ for i in range(0,len(MSSubClass)-1):
   responsePrediction = stub.predict_sale_price(requestPrediction)
   ans_lst.append(responsePrediction.salePrice)
   print('The prediction is :',responsePrediction.salePrice)
+  
 print('Done!')
 end = timer()
 all_time = end - start
