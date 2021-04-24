@@ -15,28 +15,42 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='model.proto',
-  package='fraunhofer.sentimentanalysis',
+  package='',
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0bmodel.proto\x12\x1c\x66raunhofer.sentimentanalysis\"\x15\n\x04Text\x12\r\n\x05query\x18\x01 \x01(\t\"!\n\x0fReview_Classify\x12\x0e\n\x06review\x18\x01 \x01(\x02\x32\x80\x01\n\x18sentiment_analysis_model\x12\x64\n\x0f\x63lassify_review\x12\".fraunhofer.sentimentanalysis.Text\x1a-.fraunhofer.sentimentanalysis.Review_Classifyb\x06proto3'
+  serialized_pb=b'\n\x0bmodel.proto\"E\n\x08\x46\x65\x61tures\x12\x12\n\nrow_Number\x18\x01 \x01(\x02\x12\x13\n\x0buser_review\x18\x02 \x01(\t\x12\x10\n\x08polarity\x18\x03 \x01(\x02\"\x1c\n\nPrediction\x12\x0e\n\x06review\x18\x01 \x01(\x02\x32?\n\x07Predict\x12\x34\n\x1apredict_sentiment_analysis\x12\t.Features\x1a\x0b.Predictionb\x06proto3'
 )
 
 
 
 
-_TEXT = _descriptor.Descriptor(
-  name='Text',
-  full_name='fraunhofer.sentimentanalysis.Text',
+_FEATURES = _descriptor.Descriptor(
+  name='Features',
+  full_name='Features',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='query', full_name='fraunhofer.sentimentanalysis.Text.query', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      name='row_Number', full_name='Features.row_Number', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_review', full_name='Features.user_review', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='polarity', full_name='Features.polarity', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -52,21 +66,21 @@ _TEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=45,
-  serialized_end=66,
+  serialized_start=15,
+  serialized_end=84,
 )
 
 
-_REVIEW_CLASSIFY = _descriptor.Descriptor(
-  name='Review_Classify',
-  full_name='fraunhofer.sentimentanalysis.Review_Classify',
+_PREDICTION = _descriptor.Descriptor(
+  name='Prediction',
+  full_name='Prediction',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='review', full_name='fraunhofer.sentimentanalysis.Review_Classify.review', index=0,
+      name='review', full_name='Prediction.review', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -84,53 +98,53 @@ _REVIEW_CLASSIFY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=68,
-  serialized_end=101,
+  serialized_start=86,
+  serialized_end=114,
 )
 
-DESCRIPTOR.message_types_by_name['Text'] = _TEXT
-DESCRIPTOR.message_types_by_name['Review_Classify'] = _REVIEW_CLASSIFY
+DESCRIPTOR.message_types_by_name['Features'] = _FEATURES
+DESCRIPTOR.message_types_by_name['Prediction'] = _PREDICTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Text = _reflection.GeneratedProtocolMessageType('Text', (_message.Message,), {
-  'DESCRIPTOR' : _TEXT,
+Features = _reflection.GeneratedProtocolMessageType('Features', (_message.Message,), {
+  'DESCRIPTOR' : _FEATURES,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:fraunhofer.sentimentanalysis.Text)
+  # @@protoc_insertion_point(class_scope:Features)
   })
-_sym_db.RegisterMessage(Text)
+_sym_db.RegisterMessage(Features)
 
-Review_Classify = _reflection.GeneratedProtocolMessageType('Review_Classify', (_message.Message,), {
-  'DESCRIPTOR' : _REVIEW_CLASSIFY,
+Prediction = _reflection.GeneratedProtocolMessageType('Prediction', (_message.Message,), {
+  'DESCRIPTOR' : _PREDICTION,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:fraunhofer.sentimentanalysis.Review_Classify)
+  # @@protoc_insertion_point(class_scope:Prediction)
   })
-_sym_db.RegisterMessage(Review_Classify)
+_sym_db.RegisterMessage(Prediction)
 
 
 
-_SENTIMENT_ANALYSIS_MODEL = _descriptor.ServiceDescriptor(
-  name='sentiment_analysis_model',
-  full_name='fraunhofer.sentimentanalysis.sentiment_analysis_model',
+_PREDICT = _descriptor.ServiceDescriptor(
+  name='Predict',
+  full_name='Predict',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=104,
-  serialized_end=232,
+  serialized_start=116,
+  serialized_end=179,
   methods=[
   _descriptor.MethodDescriptor(
-    name='classify_review',
-    full_name='fraunhofer.sentimentanalysis.sentiment_analysis_model.classify_review',
+    name='predict_sentiment_analysis',
+    full_name='Predict.predict_sentiment_analysis',
     index=0,
     containing_service=None,
-    input_type=_TEXT,
-    output_type=_REVIEW_CLASSIFY,
+    input_type=_FEATURES,
+    output_type=_PREDICTION,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_SENTIMENT_ANALYSIS_MODEL)
+_sym_db.RegisterServiceDescriptor(_PREDICT)
 
-DESCRIPTOR.services_by_name['sentiment_analysis_model'] = _SENTIMENT_ANALYSIS_MODEL
+DESCRIPTOR.services_by_name['Predict'] = _PREDICT
 
 # @@protoc_insertion_point(module_scope)

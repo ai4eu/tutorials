@@ -5,7 +5,7 @@ import grpc
 import model_pb2 as model__pb2
 
 
-class sentiment_analysis_modelStub(object):
+class PredictStub(object):
     """Define the service
     """
 
@@ -15,44 +15,44 @@ class sentiment_analysis_modelStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.classify_review = channel.unary_unary(
-                '/fraunhofer.sentimentanalysis.sentiment_analysis_model/classify_review',
-                request_serializer=model__pb2.Text.SerializeToString,
-                response_deserializer=model__pb2.Review_Classify.FromString,
+        self.predict_sentiment_analysis = channel.unary_unary(
+                '/Predict/predict_sentiment_analysis',
+                request_serializer=model__pb2.Features.SerializeToString,
+                response_deserializer=model__pb2.Prediction.FromString,
                 )
 
 
-class sentiment_analysis_modelServicer(object):
+class PredictServicer(object):
     """Define the service
     """
 
-    def classify_review(self, request, context):
+    def predict_sentiment_analysis(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_sentiment_analysis_modelServicer_to_server(servicer, server):
+def add_PredictServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'classify_review': grpc.unary_unary_rpc_method_handler(
-                    servicer.classify_review,
-                    request_deserializer=model__pb2.Text.FromString,
-                    response_serializer=model__pb2.Review_Classify.SerializeToString,
+            'predict_sentiment_analysis': grpc.unary_unary_rpc_method_handler(
+                    servicer.predict_sentiment_analysis,
+                    request_deserializer=model__pb2.Features.FromString,
+                    response_serializer=model__pb2.Prediction.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'fraunhofer.sentimentanalysis.sentiment_analysis_model', rpc_method_handlers)
+            'Predict', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class sentiment_analysis_model(object):
+class Predict(object):
     """Define the service
     """
 
     @staticmethod
-    def classify_review(request,
+    def predict_sentiment_analysis(request,
             target,
             options=(),
             channel_credentials=None,
@@ -62,8 +62,8 @@ class sentiment_analysis_model(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/fraunhofer.sentimentanalysis.sentiment_analysis_model/classify_review',
-            model__pb2.Text.SerializeToString,
-            model__pb2.Review_Classify.FromString,
+        return grpc.experimental.unary_unary(request, target, '/Predict/predict_sentiment_analysis',
+            model__pb2.Features.SerializeToString,
+            model__pb2.Prediction.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

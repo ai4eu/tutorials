@@ -1,19 +1,20 @@
 //Define the used version of proto
 syntax = "proto3";
 
-package fraunhofer.sentimentanalysis;
 
 //Define a message to hold the features input by the client
-message Text {
-  string query = 1;
-}
+message Features {
+    float row_Number     = 1 ;
+    string user_review   = 2 ;
+    float polarity       = 3 ;
 
-//Define a message to hold the classification result
-message Review_Classify {
-  float review = 1 ;
+}
+//Define a message to hold the predicted price
+message Prediction {
+    float review      = 1 ;
 }
 
 //Define the service
-service sentiment_analysis_model {
-  rpc classify_review(Text) returns (Review_Classify);
+service Predict {
+    rpc predict_sentiment_analysis(Features) returns (Prediction);
 }
