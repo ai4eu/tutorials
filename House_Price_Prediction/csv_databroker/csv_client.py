@@ -3,8 +3,8 @@ from random import randint
 from timeit import default_timer as timer
 
 # import the generated classes
-import model_pb2
-import model_pb2_grpc
+import databroker_pb2
+import databroker_pb2_grpc
 from google.protobuf import empty_pb2
 
 start_ch = timer()
@@ -12,7 +12,7 @@ port_addr = 'localhost:8061'
 # open a gRPC channel
 channel = grpc.insecure_channel(port_addr)
 # create a stub (client)
-stub = model_pb2_grpc.get_next_rowStub(channel)
+stub = databroker_pb2_grpc.get_next_rowStub(channel)
 end_ch = timer()
 
 request = empty_pb2.Empty()
