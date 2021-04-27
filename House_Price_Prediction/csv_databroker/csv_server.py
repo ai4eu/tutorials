@@ -3,8 +3,8 @@ from concurrent import futures
 import time
 
 # import the generated classes :
-import model_pb2
-import model_pb2_grpc
+import databroker_pb2
+import databroker_pb2_grpc
 
 import get_next_row as gnr
 
@@ -12,10 +12,10 @@ port = 8061
 row_obj = gnr.FetchRowCSV()
 current_row = 0
 
-class get_next_rowServicer(model_pb2_grpc.get_next_rowServicer):
+class get_next_rowServicer(databroker_pb2_grpc.get_next_rowServicer):
     #row_obj = gnr.FetchRowCSV()
     def get_next_row(self, request, context):
-        response = model_pb2.Features()
+        response = databroker_pb2.Features()
         total_rows = row_obj.init_count()
         current_row = row_obj.current_row
         print("total number of rows of csv: ", total_rows)
@@ -43,7 +43,7 @@ class get_next_rowServicer(model_pb2_grpc.get_next_rowServicer):
 # creat a grpc server :
 server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
 
-model_pb2_grpc.add_get_next_rowServicer_to_server(get_next_rowServicer(), server)
+databroker_pb2_grpc.add_get_next_rowServicer_to_server(get_next_rowServicer(), server)
 print("Starting Server. Listening to port :" + str(port))
 server.add_insecure_port("[::]:{}".format(port))
 server.start()
