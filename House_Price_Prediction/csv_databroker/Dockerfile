@@ -13,7 +13,7 @@ RUN pip3 install -r requirements.txt
 RUN useradd app
 USER app
 
-COPY license-1.0.0.json databroker.proto model_pb2.py model_pb2_grpc.py csv_server.py get_next_row.py trail.csv ./
+COPY license-1.0.0.json databroker.proto databroker_pb2.py databroker_pb2_grpc.py csv_server.py get_next_row.py trail.csv ./
 
 WORKDIR /
 COPY . /
