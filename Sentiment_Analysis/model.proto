@@ -1,20 +1,20 @@
-//Define the used version of proto
+//Define the version of protobuf
 syntax = "proto3";
 
 
-//Define a message to hold the features input by the client
+//Define the input data structure
 message Features {
     float row_Number     = 1 ;
     string user_review   = 2 ;
     float polarity       = 3 ;
 
 }
-//Define a message to hold the predicted price
+//Define the output data structure
 message Prediction {
     float review      = 1 ;
 }
 
-//Define the service
+//Define the exposed service
 service Predict {
     rpc predict_sentiment_analysis(Features) returns (Prediction);
 }
