@@ -7,6 +7,5 @@ Tutorials and examples for the AI4EU Experiments docker/grpc format for models:
 * The container Specification describes how the docker container for AI4EU Experiments should be configured
 * The first simple example is a predictor for house prices
 * The second slightly more complex example is a classifier for sentiments in movie reviews
-* Please have a look at the AI4EU Webcafé introducing AI4EU Experiments https://youtu.be/hw1s225rhwQ
-* There is also one video tutorial on pipelines on the AI4EU Youtube Channel: https://www.youtube.com/watch?v=vZXoEUTO2bQ 
+* Please have a look at the AI4EU Experiments playlist: https://www.youtube.com/playlist?list=PLL80pOdPsmF6s6P6i2vZNoJ2G0cccwTPa
 
