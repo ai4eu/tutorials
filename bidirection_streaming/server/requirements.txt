@@ -1,4 +1,5 @@
 grpcio
+grpc-interceptor
 multithreading
 protobuf
 pandas
