@@ -341,17 +341,17 @@ docker run -p 8061:8061 --rm -ti sentiment_analysis:v1 /bin/bash
 The -p option maps the port on the container to the host.
 The Docker run internally executes sentiment_analysis_server.py
 
-Open one more terminal and run the clients which now can access the docker server:
+Open one more terminal and run the client which now can access the docker server:
 
 ```commandline
 python3 sentiment_analysis_client.py
 ```
 
-With respect to the csv server, first you need to stop the sentiment analysis server container,
+With respect to the csv databroker server, first you need to stop the sentiment analysis server container,
 because in this example we will be using the same host port (8061). Press control-C
 in the terminal session where you run the container previously, in order to stop it.
 
-Then build the docker image inside csv_databroker folder
+Then build the docker image inside the csv_databroker folder
 
 ```commandline
 docker build -t csv_databroker_sentiment_analysis:v1 .
@@ -363,7 +363,7 @@ Run the docker image
 docker run -p 8061:8061 --rm -ti csv_databroker_sentiment_analysis:v1 /bin/bash
 ```
 
-Open one more terminal and run the csv client which now can access the csv_databroker docker server
+Open one more terminal and run the csv client which now can access the running csv_databroker server
 
 ```commandline
 python3 csv_client.py
