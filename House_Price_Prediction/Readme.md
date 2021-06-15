@@ -183,6 +183,8 @@ try:
 
 ## Step 5: Creating the Client:
 
+Please note that the below client is just to execute and test a single model. 
+To execute a pipeline, kindly follow https://github.com/ai4eu/generic-serial-orchestrator
 In the client file we will do the following:
 * Open a gRPC channel
 * Create a stub
