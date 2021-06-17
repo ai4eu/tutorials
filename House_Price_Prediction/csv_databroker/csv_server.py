@@ -25,6 +25,9 @@ class get_next_rowServicer(databroker_pb2_grpc.get_next_rowServicer):
             response.YearBuilt = float(0)
             response.BedroomAbvGr = float(0)
             response.TotRmsAbvGrd = float(0)
+            context.set_code(grpc.StatusCode.NOT_FOUND)
+            context.set_details('All available data has been processed')
+            print("exception raised")
         else:
             print("entered else:")
             row = row_obj.get_next_row(current_row)
