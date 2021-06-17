@@ -312,7 +312,8 @@ Open one more terminal and run the client which now can access the docker server
 python3 house_price_prediction_client.py
 ```
 
-## Databroker for Houseprice prediction model above
+# Databroker for Houseprice prediction model above
+All the above 7 steps described for the prediction model remains the same for the Databroker Model.
 The source code for a custom Databroker is included for a simple AI pipeline
 example. The databroker reads the csv file and passes the record to house price model 
 sequentially. It also sets the status codes according to ai4eu container 
