@@ -20,11 +20,14 @@ class get_next_rowServicer(databroker_pb2_grpc.get_next_rowServicer):
         current_row = row_obj.current_row
         print("total number of rows of csv: ", total_rows)
         if current_row % total_rows == 0 and current_row != 0:
+            '''
+            This condition is no longer required as the generic orchestrator waits for the status code to terminate an edge
             response.MSSubClass = float(0)
             response.LotArea = float(0)
             response.YearBuilt = float(0)
             response.BedroomAbvGr = float(0)
             response.TotRmsAbvGrd = float(0)
+            '''
             context.set_code(grpc.StatusCode.NOT_FOUND)
             context.set_details('All available data has been processed')
             print("exception raised")
