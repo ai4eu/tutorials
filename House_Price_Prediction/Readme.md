@@ -357,8 +357,6 @@ class get_next_rowServicer(databroker_pb2_grpc.get_next_rowServicer):
         else:
             print("entered else:")
             row = row_obj.get_next_row(current_row)
-            # row = gnr.get_next_row(request.count)
-            # row = gnr.get_next_row()
             response.MSSubClass = row[0]
             response.LotArea = row[1]
             response.YearBuilt = row[2]
