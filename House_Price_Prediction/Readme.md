@@ -350,7 +350,7 @@ class get_next_rowServicer(databroker_pb2_grpc.get_next_rowServicer):
         total_rows = row_obj.init_count()
         current_row = row_obj.current_row
         print("total number of rows of csv: ", total_rows)
-        if current_row % total_rows == 0 and current_row != 0:
+        if current_row == total_rows:
             context.set_code(grpc.StatusCode.NOT_FOUND)
             context.set_details('All available data has been processed')
             print("exception raised")
