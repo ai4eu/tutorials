@@ -19,7 +19,8 @@ class get_next_rowServicer(databroker_pb2_grpc.get_next_rowServicer):
         total_rows = row_obj.init_count()
         current_row = row_obj.current_row
         print("total number of rows of csv: ", total_rows)
-        if current_row % total_rows == 0 and current_row != 0:
+        #if current_row % total_rows == 0 and current_row != 0:
+        if current_row == total_rows:
             '''
             This condition is no longer required as the generic orchestrator waits for the status code to terminate an edge
             response.MSSubClass = float(0)
