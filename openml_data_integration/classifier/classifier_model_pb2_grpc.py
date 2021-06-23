@@ -15,12 +15,12 @@ class ClassifierStub(object):
             channel: A grpc.Channel.
         """
         self.GetFeatureNames = channel.unary_unary(
-                '/know_center.openml.Classifier.Classifier/GetFeatureNames',
+                '/Classifier/GetFeatureNames',
                 request_serializer=classifier__model__pb2.DataID.SerializeToString,
                 response_deserializer=classifier__model__pb2.FeatureNames.FromString,
                 )
         self.GetPrediction = channel.unary_unary(
-                '/know_center.openml.Classifier.Classifier/GetPrediction',
+                '/Classifier/GetPrediction',
                 request_serializer=classifier__model__pb2.Request.SerializeToString,
                 response_deserializer=classifier__model__pb2.ClassifierResult.FromString,
                 )
@@ -56,7 +56,7 @@ def add_ClassifierServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'know_center.openml.Classifier.Classifier', rpc_method_handlers)
+            'Classifier', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -75,7 +75,7 @@ class Classifier(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/know_center.openml.Classifier.Classifier/GetFeatureNames',
+        return grpc.experimental.unary_unary(request, target, '/Classifier/GetFeatureNames',
             classifier__model__pb2.DataID.SerializeToString,
             classifier__model__pb2.FeatureNames.FromString,
             options, channel_credentials,
@@ -92,7 +92,7 @@ class Classifier(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/know_center.openml.Classifier.Classifier/GetPrediction',
+        return grpc.experimental.unary_unary(request, target, '/Classifier/GetPrediction',
             classifier__model__pb2.Request.SerializeToString,
             classifier__model__pb2.ClassifierResult.FromString,
             options, channel_credentials,

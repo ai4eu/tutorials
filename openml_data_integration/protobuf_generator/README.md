@@ -8,8 +8,6 @@ syntax = "proto3";
 option java_outer_classname = "Data61Proto";
 option objc_class_prefix = "KC";
 
-package know_center.openml.data61;
-
 service Data { 
 	rpc PullData(Empty) returns (Response);
 }
@@ -73,6 +71,6 @@ python main.py
 ```
 # 3. Edit output file content
 In file `utils.py`, line 23 to 35 are the content written in `.proto` file.
-If you want to modify, please do it here. You can also modify the `package` or `objc_class_prefix` in the 4 first lines.
+If you want to modify, please do it here. You can also modify the `objc_class_prefix` in the 4 first lines.
 
 <br/> If you have any issue or trouble, please contact `htran@know-center.at.`

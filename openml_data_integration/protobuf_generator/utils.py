@@ -23,7 +23,7 @@ def write_proto(dataID, file_name=f'model.proto', output_folder=''):
         f.write('syntax = "proto3";\n\n')
         f.write(f'option java_outer_classname = "Data{dataID}Proto";\n')
         f.write('option objc_class_prefix = "KC";\n\n')
-        f.write(f'package know_center.openml.data{dataID};\n\n')
+        #f.write(f'package know_center.openml.data{dataID};\n\n')
         f.write(f'service Data {{ \n')
         f.write('\trpc PullData(Empty) returns (Response);\n')
         f.write('}\n\n')

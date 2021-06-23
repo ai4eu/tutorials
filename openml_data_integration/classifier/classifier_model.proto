@@ -3,16 +3,13 @@ syntax = "proto3";
 option java_outer_classname = "ClassifierProto";
 option objc_class_prefix = "KC";
 
-package know_center.openml.Classifier;
-
-
 service Classifier {
-	rpc GetFeatureNames(DataID) returns (FeatureNames);
-    rpc GetPrediction(Request) returns (ClassifierResult);
+  rpc GetFeatureNames(DataID) returns (FeatureNames);
+  rpc GetPrediction(Request) returns (ClassifierResult);
 }
 
 message DataID {
-	int32 idx 		= 1;
+	int32 idx = 1;
 }
 
 message FeatureNames {
@@ -20,10 +17,10 @@ message FeatureNames {
 }
 
 message Request {
-	DataID idx 		= 1;
-	string request 	= 2;
+	DataID idx = 1;
+	string request = 2;
 }
 
 message ClassifierResult{
-	string label 	= 1;
+	string label = 1;
 }

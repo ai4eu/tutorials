@@ -3,17 +3,14 @@ syntax = "proto3";
 option java_outer_classname = "ExampleProto";
 option objc_class_prefix = "KC";
 
-package know_center.openml.example;
-
-
 service Example {
-    rpc PullData(Empty) returns (stream Response);
+  rpc PullData(Empty) returns (stream Response);
 }
 
 message Empty {
 }
 
 message Response{
-	string record 	= 1;
-	string label 	= 2;
+	string record = 1;
+	string label = 2;
 }

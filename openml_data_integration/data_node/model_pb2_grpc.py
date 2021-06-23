@@ -15,7 +15,7 @@ class ExampleStub(object):
             channel: A grpc.Channel.
         """
         self.PullData = channel.unary_stream(
-                '/know_center.openml.example.Example/PullData',
+                '/Example/PullData',
                 request_serializer=model__pb2.Empty.SerializeToString,
                 response_deserializer=model__pb2.Response.FromString,
                 )
@@ -40,7 +40,7 @@ def add_ExampleServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'know_center.openml.example.Example', rpc_method_handlers)
+            'Example', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -59,7 +59,7 @@ class Example(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/know_center.openml.example.Example/PullData',
+        return grpc.experimental.unary_stream(request, target, '/Example/PullData',
             model__pb2.Empty.SerializeToString,
             model__pb2.Response.FromString,
             options, channel_credentials,

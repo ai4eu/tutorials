@@ -3,8 +3,6 @@ syntax = "proto3";
 option java_outer_classname = "Data61Proto";
 option objc_class_prefix = "KC";
 
-package know_center.openml.data61;
-
 service Data { 
 	rpc PullData(Empty) returns (Response);
 }

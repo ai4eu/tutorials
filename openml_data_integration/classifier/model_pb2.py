@@ -15,11 +15,11 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='model.proto',
-  package='know_center.openml.example',
+  package='',
   syntax='proto3',
   serialized_options=b'B\014ExampleProto\242\002\002KC',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0bmodel.proto\x12\x1aknow_center.openml.example\"\x07\n\x05\x45mpty\")\n\x08Response\x12\x0e\n\x06record\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t2`\n\x07\x45xample\x12U\n\x08PullData\x12!.know_center.openml.example.Empty\x1a$.know_center.openml.example.Response0\x01\x42\x13\x42\x0c\x45xampleProto\xa2\x02\x02KCb\x06proto3'
+  serialized_pb=b'\n\x0bmodel.proto\"\x07\n\x05\x45mpty\")\n\x08Response\x12\x0e\n\x06record\x18\x01 \x01(\t\x12\r\n\x05label\x18\x02 \x01(\t2*\n\x07\x45xample\x12\x1f\n\x08PullData\x12\x06.Empty\x1a\t.Response0\x01\x42\x13\x42\x0c\x45xampleProto\xa2\x02\x02KCb\x06proto3'
 )
 
 
@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _EMPTY = _descriptor.Descriptor(
   name='Empty',
-  full_name='know_center.openml.example.Empty',
+  full_name='Empty',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -45,28 +45,28 @@ _EMPTY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=43,
-  serialized_end=50,
+  serialized_start=15,
+  serialized_end=22,
 )
 
 
 _RESPONSE = _descriptor.Descriptor(
   name='Response',
-  full_name='know_center.openml.example.Response',
+  full_name='Response',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='record', full_name='know_center.openml.example.Response.record', index=0,
+      name='record', full_name='Response.record', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='label', full_name='know_center.openml.example.Response.label', index=1,
+      name='label', full_name='Response.label', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -84,8 +84,8 @@ _RESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=52,
-  serialized_end=93,
+  serialized_start=24,
+  serialized_end=65,
 )
 
 DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
@@ -95,14 +95,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), {
   'DESCRIPTOR' : _EMPTY,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:know_center.openml.example.Empty)
+  # @@protoc_insertion_point(class_scope:Empty)
   })
 _sym_db.RegisterMessage(Empty)
 
 Response = _reflection.GeneratedProtocolMessageType('Response', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSE,
   '__module__' : 'model_pb2'
-  # @@protoc_insertion_point(class_scope:know_center.openml.example.Response)
+  # @@protoc_insertion_point(class_scope:Response)
   })
 _sym_db.RegisterMessage(Response)
 
@@ -111,17 +111,17 @@ DESCRIPTOR._options = None
 
 _EXAMPLE = _descriptor.ServiceDescriptor(
   name='Example',
-  full_name='know_center.openml.example.Example',
+  full_name='Example',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=95,
-  serialized_end=191,
+  serialized_start=67,
+  serialized_end=109,
   methods=[
   _descriptor.MethodDescriptor(
     name='PullData',
-    full_name='know_center.openml.example.Example.PullData',
+    full_name='Example.PullData',
     index=0,
     containing_service=None,
     input_type=_EMPTY,
