@@ -1,0 +1,4 @@
+grpcio
+grpc-interceptor
+multithreading
+protobuf
