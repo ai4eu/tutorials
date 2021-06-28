@@ -2,3 +2,11 @@ syntax = "proto3";
 
 message Empty {
 }
+
+message LoggingStatus {
+  int32 status = 1
+}
+
+service Tensorboard {
+  rpc loggging(Empty) returns(LoggingStatus);
+}
