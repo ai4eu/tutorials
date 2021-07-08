@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message Empty {
+}
+
+message NewsText {
+  string text = 1;
+}
+
+service NewsDatabroker {
+  rpc get_next(Empty) returns(NewsText);
+}

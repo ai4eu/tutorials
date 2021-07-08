@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+message TrainingConfig {
+  string training_data_filename = 1; // .npz file
+  string training_labels_filename = 2; // .npz file
+  int32 epochs = 3;
+  int32 batch_size = 4;
+  double validation_ratio = 5;
+  string model_filename = 6;
+}
+
+message TrainingStatus {
+  double accuracy = 1;
+  double validation_loss = 2;
+  string status_text = 3;
+}
+
+message NewsText {
+  string text = 1;
+}
+
+message NewsCategory {
+  int32 category_code = 1;
+  string category_text = 2;
+}
+
+service NewsClassifier {
+  rpc startTraining(TrainingConfig) returns(TrainingStatus);
+  rpc classify(NewsText) returns(NewsCategory);
+}
