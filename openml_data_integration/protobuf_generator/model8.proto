@@ -1,0 +1,44 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 8
+// Dataset Name  : liver-disorders;
+// Dataset URL   : https://www.openml.org/data/v1/download/8/liver-disorders.arff
+// Num. Columns  : 6
+// Target Feature: drinks
+
+// Beginning of Description of Dataset:
+// **Author**: BUPA Medical Research Ltd. Donor: Richard S. Forsyth   
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/Liver+Disorders) - 5/15/1990  
+// **Please cite**: 
+// **BUPA liver disorders**
+// The first 5 variables are all blood tests which are thought to be sensitive to liver disorders that might arise from excessive alcohol consumption.  Each line in the dataset constitutes the record of a single male individual. 
+// **Important note:** The 7th field (selector) has been widely misinterpreted in the past as a dependent variable representing presence or absence of a liver disorder. This is incorrect [1]. The 7th field was created by BUPA researchers as a train/test selector. It is not suitable as a dependent variable for classification. The dataset does not contain any variable rep
+//
+
+syntax = "proto3";
+
+option java_outer_classname = "ExampleProto";
+option objc_class_prefix = "KC";
+
+service Example { 
+	rpc PullData(Empty) returns (stream Response);
+}
+
+message Empty {
+}
+
+message Response {
+	string record = 1;
+	string label = 2;
+	//Feature feature = 3;
+}
+
+/*
+message Feature {
+	uint32   Mcv                            = 1;
+	uint32   Alkphos                        = 2;
+	uint32   Sgpt                           = 3;
+	uint32   Sgot                           = 4;
+	int64    Gammagt                        = 5;
+	double   Drinks                         = 6;
+}
+*/

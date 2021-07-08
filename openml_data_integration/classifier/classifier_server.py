@@ -25,10 +25,14 @@ idx = myconstants.DATA_ID # fixed ID for data request
 class ClassifierServicer(classifier_model_pb2_grpc.ClassifierServicer):
 
     def _get_data(self, request):
-        # idx = request.idx # fixed when Empty msg sent
-        with grpc.insecure_channel(f'localhost:{port_address}') as channel:
-            stub = model_pb2_grpc.ExampleStub(channel)
-            self.df, self.labels = utils.list_features(stub, idx=idx)
+        try:
+          self.df
+        except:
+          # self.df not yet initialized, do get the data
+          # idx = request.idx # fixed when Empty msg sent
+          with grpc.insecure_channel(f'localhost:{port_address}') as channel:
+              stub = model_pb2_grpc.ExampleStub(channel)
+              self.df, self.labels = utils.list_features(stub, idx=idx)
 
     def _get_prediction(self, value):
         clf = RandomForestClassifier()
@@ -37,16 +41,17 @@ class ClassifierServicer(classifier_model_pb2_grpc.ClassifierServicer):
         return label
 
     def GetFeatureNames(self, request, context):
-        print(f'Request DataID: {request.idx}')
+        print(f'\nGettingFeatureNames -- Request DataID: {request.idx}')
         self._get_data(request)
         return classifier_model_pb2.FeatureNames(feature_names=','.join(self.df.columns))
 
 
+
     def GetPrediction(self, request, context):
         idx = request.idx
+        print(f'Request.idx is {idx}')
         value = request.request.split(',')
-        print(f'Request DataID: {idx}')
-        print(f'Request Values: {value}')
+        print(f'GettingPrediction -- Request Values: {value}')
 
         self._get_data(request.idx)
         if len(value) != len(self.df.columns):
@@ -55,6 +60,7 @@ class ClassifierServicer(classifier_model_pb2_grpc.ClassifierServicer):
             return classifier_model_pb2.ClassifierResult(label=return_text)
 
         label = self._get_prediction(value)
+        print(f'Classifier result is: {str(label)}')
         return classifier_model_pb2.ClassifierResult(label=str(label))
 
 
@@ -68,5 +74,6 @@ def serve():
 
 
 if __name__ == '__main__':
+    print("Starting classifier server")
     logging.basicConfig()
     serve()

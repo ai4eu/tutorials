@@ -1,0 +1,117 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 42563
+// Dataset Name  : house_prices_nominal;
+// Dataset URL   : https://www.openml.org/data/v1/download/21854633/house_prices_nominal.arff
+// Num. Columns  : 80
+// Target Feature: SalePrice
+
+// Beginning of Description of Dataset:
+// **Author**: Kaggle  
+// **Source**: [original](https://www.kaggle.com/c/house-prices-advanced-regression-techniques) - 2011  
+// **Please cite**: Dean De Cock (2011) Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project, Journal of Statistics Education, 19:3, DOI: 10.1080/10691898.2011.11889627  
+// Ask a home buyer to describe their dream house, and they probably won't begin with the height of the basement ceiling or the proximity to an east-west railroad. But this playground competition's dataset proves that much more influences price negotiations than the number of bedrooms or a white-picket fence.
+// With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of
+//
+
+syntax = "proto3";
+
+option java_outer_classname = "ExampleProto";
+option objc_class_prefix = "KC";
+
+service Example { 
+	rpc PullData(Empty) returns (stream Response);
+}
+
+message Empty {
+}
+
+message Response {
+	string record = 1;
+	string label = 2;
+	//Feature feature = 3;
+}
+
+/*
+message Feature {
+	uint32   Mssubclass                     = 1;
+	string   Mszoning                       = 2;
+	double   Lotfrontage                    = 3;
+	int64    Lotarea                        = 4;
+	string   Street                         = 5;
+	string   Alley                          = 6;
+	string   Lotshape                       = 7;
+	string   Landcontour                    = 8;
+	string   Utilities                      = 9;
+	string   Lotconfig                      = 10;
+	string   Landslope                      = 11;
+	string   Neighborhood                   = 12;
+	string   Condition1                     = 13;
+	string   Condition2                     = 14;
+	string   Bldgtype                       = 15;
+	string   Housestyle                     = 16;
+	uint32   Overallqual                    = 17;
+	uint32   Overallcond                    = 18;
+	int64    Yearbuilt                      = 19;
+	int64    Yearremodadd                   = 20;
+	string   Roofstyle                      = 21;
+	string   Roofmatl                       = 22;
+	string   Exterior1st                    = 23;
+	string   Exterior2nd                    = 24;
+	string   Masvnrtype                     = 25;
+	double   Masvnrarea                     = 26;
+	string   Exterqual                      = 27;
+	string   Extercond                      = 28;
+	string   Foundation                     = 29;
+	string   Bsmtqual                       = 30;
+	string   Bsmtcond                       = 31;
+	string   Bsmtexposure                   = 32;
+	string   Bsmtfintype1                   = 33;
+	int64    Bsmtfinsf1                     = 34;
+	string   Bsmtfintype2                   = 35;
+	int64    Bsmtfinsf2                     = 36;
+	int64    Bsmtunfsf                      = 37;
+	int64    Totalbsmtsf                    = 38;
+	string   Heating                        = 39;
+	string   Heatingqc                      = 40;
+	string   Centralair                     = 41;
+	string   Electrical                     = 42;
+	int64    1stflrsf                       = 43;
+	int64    2ndflrsf                       = 44;
+	int64    Lowqualfinsf                   = 45;
+	int64    Grlivarea                      = 46;
+	uint32   Bsmtfullbath                   = 47;
+	uint32   Bsmthalfbath                   = 48;
+	uint32   Fullbath                       = 49;
+	uint32   Halfbath                       = 50;
+	uint32   Bedroomabvgr                   = 51;
+	uint32   Kitchenabvgr                   = 52;
+	string   Kitchenqual                    = 53;
+	uint32   Totrmsabvgrd                   = 54;
+	string   Functional                     = 55;
+	uint32   Fireplaces                     = 56;
+	string   Fireplacequ                    = 57;
+	string   Garagetype                     = 58;
+	double   Garageyrblt                    = 59;
+	string   Garagefinish                   = 60;
+	uint32   Garagecars                     = 61;
+	int64    Garagearea                     = 62;
+	string   Garagequal                     = 63;
+	string   Garagecond                     = 64;
+	string   Paveddrive                     = 65;
+	int64    Wooddecksf                     = 66;
+	int64    Openporchsf                    = 67;
+	int64    Enclosedporch                  = 68;
+	int64    3ssnporch                      = 69;
+	int64    Screenporch                    = 70;
+	int64    Poolarea                       = 71;
+	string   Poolqc                         = 72;
+	string   Fence                          = 73;
+	string   Miscfeature                    = 74;
+	int64    Miscval                        = 75;
+	uint32   Mosold                         = 76;
+	int64    Yrsold                         = 77;
+	string   Saletype                       = 78;
+	string   Salecondition                  = 79;
+	int64    Saleprice                      = 80;
+}
+*/

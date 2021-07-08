@@ -20,7 +20,7 @@ def list_features(stub, idx):
         for i, row in enumerate(features):
             data.append(row.record.split(','))
             label.append(row.label)
-        columns = data[1]        
+        columns = data[1]
         types = data[0]
         df = pd.DataFrame(data[2:], columns=columns)
         if label[1] != '':
