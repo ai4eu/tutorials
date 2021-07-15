@@ -1,6 +1,6 @@
 # A Tool To Generate a Protobuf File from an arbitrary OpenML Dataset
 
-This tool will create a `.proto` file whose structure looks like `model.proto` in the same folder. Below is an example for DataID 61. If the dataset does not have a feature named `class` or the name `class` is not unique in the data attribute list, this tool will consider this dataset does not have a label column. Therefore, all feature names are listed out in `message Feature`.
+This tool will create a `.proto` file whose structure looks like `model.proto` in the same folder. Below is an example for DataID 61.
 
 ```
 // This file was generated with the Protobuf generator tool.
