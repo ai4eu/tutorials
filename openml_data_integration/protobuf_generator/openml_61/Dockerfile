@@ -13,6 +13,6 @@ RUN pip3 install -r requirements.txt
 
 WORKDIR /
 
-COPY license-1.0.0.json model.proto model_pb2.py model_pb2_grpc.py server.py myconstants.py /
+COPY license-1.0.0.json model.proto model_pb2.py model_pb2_grpc.py server.py openml_data_fetcher.py myconstants.py /
 
 ENTRYPOINT [ "python3","-u","server.py" ]
