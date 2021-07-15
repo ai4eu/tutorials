@@ -1,0 +1,317 @@
+# of files of interest is: 20
+[8, 9, 10, 13, 15, 24, 29, 31, 36, 37, 41, 43, 50, 54, 59, 61, 62, 187, 307, 329]
+
+
+Getting data with ID: 8
+Dataset ID    : 8
+Dataset Name  : liver-disorders
+Dataset URL   : https://www.openml.org/data/v1/download/8/liver-disorders.arff
+Num. Columns  : 6
+Num. Rows     : 345
+Target Feature: drinks
+Data Column names:
+mcv,alkphos,sgpt,sgot,gammagt,drinks
+Mapped Data types:
+uint32,uint32,uint32,uint32,int64,double
+Example, First Data Row:
+0: [85. 92. 45. 27. 31.  0.]
+
+
+Getting data with ID: 9
+Dataset ID    : 9
+Dataset Name  : autos
+Dataset URL   : https://www.openml.org/data/v1/download/9/autos.arff
+Num. Columns  : 26
+Num. Rows     : 205
+Target Feature: symboling
+Data Column names:
+normalized-losses,make,fuel-type,aspiration,num-of-doors,body-style,drive-wheels,engine-location,wheel-base,length,width,height,curb-weight,engine-type,num-of-cylinders,engine-size,fuel-system,bore,stroke,compression-ratio,horsepower,peak-rpm,city-mpg,highway-mpg,price,symboling
+Mapped Data types:
+double,string,string,string,string,string,string,string,double,double,double,double,double,string,string,double,string,double,double,double,double,double,uint32,uint32,double,string
+Example, First Data Row:
+0: [nan 'alfa-romero' 'gas' 'std' 'two' 'convertible' 'rwd' 'front' 88.6
+ 168.8 64.1 48.8 2548.0 'dohc' 'four' 130.0 'mpfi' 3.47 2.68 9.0 111.0
+ 5000.0 21 27 13495.0 '3']
+
+
+Getting data with ID: 10
+Dataset ID    : 10
+Dataset Name  : lymph
+Dataset URL   : https://www.openml.org/data/v1/download/10/lymph.arff
+Num. Columns  : 19
+Num. Rows     : 148
+Target Feature: class
+Data Column names:
+lymphatics,block_of_affere,bl_of_lymph_c,bl_of_lymph_s,by_pass,extravasates,regeneration_of,early_uptake_in,lym_nodes_dimin,lym_nodes_enlar,changes_in_lym,defect_in_node,changes_in_node,changes_in_stru,special_forms,dislocation_of,exclusion_of_no,no_of_nodes_in,class
+Mapped Data types:
+string,string,string,string,string,string,string,string,uint32,uint32,string,string,string,string,string,string,string,uint32,string
+Example, First Data Row:
+0: ['arched' 'yes' 'no' 'no' 'no' 'no' 'no' 'yes' 1 4 'round' 'lac_central'
+ 'lacunar' 'stripped' 'vesicles' 'yes' 'yes' 5 'malign_lymph']
+
+
+Getting data with ID: 13
+Dataset ID    : 13
+Dataset Name  : breast-cancer
+Dataset URL   : https://www.openml.org/data/v1/download/13/breast-cancer.arff
+Num. Columns  : 10
+Num. Rows     : 286
+Target Feature: Class
+Data Column names:
+age,menopause,tumor-size,inv-nodes,node-caps,deg-malig,breast,breast-quad,irradiat,Class
+Mapped Data types:
+string,string,string,string,string,string,string,string,string,string
+Example, First Data Row:
+0: ['40-49' 'premeno' '15-19' '0-2' 'yes' '3' 'right' 'left_up' 'no'
+ 'recurrence-events']
+
+
+Getting data with ID: 15
+Dataset ID    : 15
+Dataset Name  : breast-w
+Dataset URL   : https://www.openml.org/data/v1/download/52350/breast-w.arff
+Num. Columns  : 10
+Num. Rows     : 699
+Target Feature: Class
+Data Column names:
+Clump_Thickness,Cell_Size_Uniformity,Cell_Shape_Uniformity,Marginal_Adhesion,Single_Epi_Cell_Size,Bare_Nuclei,Bland_Chromatin,Normal_Nucleoli,Mitoses,Class
+Mapped Data types:
+uint32,uint32,uint32,uint32,uint32,double,uint32,uint32,uint32,string
+Example, First Data Row:
+0: [5 1 1 1 2 1.0 3 1 1 'benign']
+
+
+Getting data with ID: 24
+Dataset ID    : 24
+Dataset Name  : mushroom
+Dataset URL   : https://www.openml.org/data/v1/download/24/mushroom.arff
+Num. Columns  : 23
+Num. Rows     : 8124
+Target Feature: class
+Data Column names:
+cap-shape,cap-surface,cap-color,bruises%3F,odor,gill-attachment,gill-spacing,gill-size,gill-color,stalk-shape,stalk-root,stalk-surface-above-ring,stalk-surface-below-ring,stalk-color-above-ring,stalk-color-below-ring,veil-type,veil-color,ring-number,ring-type,spore-print-color,population,habitat,class
+Mapped Data types:
+string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string,string
+Example, First Data Row:
+0: ['x' 's' 'n' 't' 'p' 'f' 'c' 'n' 'k' 'e' 'e' 's' 's' 'w' 'w' 'p' 'w' 'o'
+ 'p' 'k' 's' 'u' 'p']
+
+
+Getting data with ID: 29
+Dataset ID    : 29
+Dataset Name  : credit-approval
+Dataset URL   : https://www.openml.org/data/v1/download/29/credit-approval.arff
+Num. Columns  : 16
+Num. Rows     : 690
+Target Feature: class
+Data Column names:
+A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,class
+Mapped Data types:
+string,double,double,string,string,string,string,double,string,string,uint32,string,string,double,double,string
+Example, First Data Row:
+0: ['b' 30.83 0.0 'u' 'g' 'w' 'v' 1.25 't' 't' 1 'f' 'g' 202.0 0.0 '+']
+
+
+Getting data with ID: 31
+Dataset ID    : 31
+Dataset Name  : credit-g
+Dataset URL   : https://www.openml.org/data/v1/download/31/credit-g.arff
+Num. Columns  : 21
+Num. Rows     : 1000
+Target Feature: class
+Data Column names:
+checking_status,duration,credit_history,purpose,credit_amount,savings_status,employment,installment_commitment,personal_status,other_parties,residence_since,property_magnitude,age,other_payment_plans,housing,existing_credits,job,num_dependents,own_telephone,foreign_worker,class
+Mapped Data types:
+string,uint32,string,string,double,string,string,uint32,string,string,uint32,string,uint32,string,string,uint32,string,uint32,string,string,string
+Example, First Data Row:
+0: ['<0' 6 'critical/other existing credit' 'radio/tv' 1169.0
+ 'no known savings' '>=7' 4 'male single' 'none' 4 'real estate' 67 'none'
+ 'own' 2 'skilled' 1 'yes' 'yes' 'good']
+
+
+Getting data with ID: 36
+Dataset ID    : 36
+Dataset Name  : segment
+Dataset URL   : https://www.openml.org/data/v1/download/36/segment.arff
+Num. Columns  : 20
+Num. Rows     : 2310
+Target Feature: class
+Data Column names:
+region-centroid-col,region-centroid-row,region-pixel-count,short-line-density-5,short-line-density-2,vedge-mean,vegde-sd,hedge-mean,hedge-sd,intensity-mean,rawred-mean,rawblue-mean,rawgreen-mean,exred-mean,exblue-mean,exgreen-mean,value-mean,saturation-mean,hue-mean,class
+Mapped Data types:
+uint32,uint32,uint32,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,string
+Example, First Data Row:
+0: [218 178 9 0.111111 0.0 0.833333 0.547722 1.11111 0.544331 59.6296 52.4444
+ 75.2222 51.2222 -21.5556 46.7778 -25.2222 75.2222 0.318996 -2.04055
+ 'path']
+
+
+Getting data with ID: 37
+Dataset ID    : 37
+Dataset Name  : diabetes
+Dataset URL   : https://www.openml.org/data/v1/download/37/diabetes.arff
+Num. Columns  : 9
+Num. Rows     : 768
+Target Feature: class
+Data Column names:
+preg,plas,pres,skin,insu,mass,pedi,age,class
+Mapped Data types:
+uint32,uint32,uint32,uint32,double,double,double,uint32,string
+Example, First Data Row:
+0: [6 148 72 35 0.0 33.6 0.627 50 'tested_positive']
+
+
+Getting data with ID: 41
+Dataset ID    : 41
+Dataset Name  : glass
+Dataset URL   : https://www.openml.org/data/v1/download/41/glass.arff
+Num. Columns  : 10
+Num. Rows     : 214
+Target Feature: Type
+Data Column names:
+RI,Na,Mg,Al,Si,K,Ca,Ba,Fe,Type
+Mapped Data types:
+double,double,double,double,double,double,double,double,double,string
+Example, First Data Row:
+0: [1.51793 12.79 3.5 1.12 73.03 0.64 8.77 0.0 0.0 'build wind float']
+
+
+Getting data with ID: 43
+Dataset ID    : 43
+Dataset Name  : haberman
+Dataset URL   : https://www.openml.org/data/v1/download/43/haberman.arff
+Num. Columns  : 4
+Num. Rows     : 306
+Target Feature: Survival_status
+Data Column names:
+Age_of_patient_at_time_of_operation,Patients_year_of_operation,Number_of_positive_axillary_nodes_detected,Survival_status
+Mapped Data types:
+uint32,string,uint32,string
+Example, First Data Row:
+0: [30 '64' 1 '1']
+
+
+Getting data with ID: 50
+Dataset ID    : 50
+Dataset Name  : tic-tac-toe
+Dataset URL   : https://www.openml.org/data/v1/download/50/tic-tac-toe.arff
+Num. Columns  : 10
+Num. Rows     : 958
+Target Feature: Class
+Data Column names:
+top-left-square,top-middle-square,top-right-square,middle-left-square,middle-middle-square,middle-right-square,bottom-left-square,bottom-middle-square,bottom-right-square,Class
+Mapped Data types:
+string,string,string,string,string,string,string,string,string,string
+Example, First Data Row:
+0: ['x' 'x' 'x' 'x' 'o' 'o' 'x' 'o' 'o' 'positive']
+
+
+Getting data with ID: 54
+Dataset ID    : 54
+Dataset Name  : vehicle
+Dataset URL   : https://www.openml.org/data/v1/download/54/vehicle.arff
+Num. Columns  : 19
+Num. Rows     : 846
+Target Feature: Class
+Data Column names:
+COMPACTNESS,CIRCULARITY,DISTANCE_CIRCULARITY,RADIUS_RATIO,PR.AXIS_ASPECT_RATIO,MAX.LENGTH_ASPECT_RATIO,SCATTER_RATIO,ELONGATEDNESS,PR.AXIS_RECTANGULARITY,MAX.LENGTH_RECTANGULARITY,SCALED_VARIANCE_MAJOR,SCALED_VARIANCE_MINOR,SCALED_RADIUS_OF_GYRATION,SKEWNESS_ABOUT_MAJOR,SKEWNESS_ABOUT_MINOR,KURTOSIS_ABOUT_MAJOR,KURTOSIS_ABOUT_MINOR,HOLLOWS_RATIO,Class
+Mapped Data types:
+uint32,uint32,uint32,double,uint32,uint32,double,uint32,uint32,uint32,double,double,double,uint32,uint32,uint32,uint32,uint32,string
+Example, First Data Row:
+0: [95 48 83 178.0 72 10 162.0 42 20 159 176.0 379.0 184.0 70 6 16 187 197
+ 'van']
+
+
+Getting data with ID: 59
+Dataset ID    : 59
+Dataset Name  : ionosphere
+Dataset URL   : https://www.openml.org/data/v1/download/59/ionosphere.arff
+Num. Columns  : 35
+Num. Rows     : 351
+Target Feature: class
+Data Column names:
+a01,a02,a03,a04,a05,a06,a07,a08,a09,a10,a11,a12,a13,a14,a15,a16,a17,a18,a19,a20,a21,a22,a23,a24,a25,a26,a27,a28,a29,a30,a31,a32,a33,a34,class
+Mapped Data types:
+uint32,uint32,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,double,string
+Example, First Data Row:
+0: [1 0 0.99539 -0.05889 0.85243 0.02306 0.83398 -0.37708 1.0 0.0376 0.85243
+ -0.17755 0.59755 -0.44945 0.60536 -0.38223 0.84356 -0.38542 0.58212
+ -0.32192 0.56971 -0.29674 0.36946 -0.47357 0.56811 -0.51171 0.41078
+ -0.46168 0.21266 -0.3409 0.42267 -0.54487 0.18641 -0.453 'g']
+
+
+Getting data with ID: 61
+Dataset ID    : 61
+Dataset Name  : iris
+Dataset URL   : https://www.openml.org/data/v1/download/61/iris.arff
+Num. Columns  : 5
+Num. Rows     : 150
+Target Feature: class
+Data Column names:
+sepallength,sepalwidth,petallength,petalwidth,class
+Mapped Data types:
+double,double,double,double,string
+Example, First Data Row:
+0: [5.1 3.5 1.4 0.2 'Iris-setosa']
+
+
+Getting data with ID: 62
+Dataset ID    : 62
+Dataset Name  : zoo
+Dataset URL   : https://www.openml.org/data/v1/download/52352/zoo.arff
+Num. Columns  : 17
+Num. Rows     : 101
+Target Feature: type
+Data Column names:
+hair,feathers,eggs,milk,airborne,aquatic,predator,toothed,backbone,breathes,venomous,fins,legs,tail,domestic,catsize,type
+Mapped Data types:
+string,string,string,string,string,string,string,string,string,string,string,string,uint32,string,string,string,string
+Example, First Data Row:
+0: [True False False True False False True True True True False False 4 False
+ False True 'mammal']
+
+
+Getting data with ID: 187
+Dataset ID    : 187
+Dataset Name  : wine
+Dataset URL   : https://www.openml.org/data/v1/download/3624/wine.arff
+Num. Columns  : 14
+Num. Rows     : 178
+Target Feature: class
+Data Column names:
+class,Alcohol,Malic_acid,Ash,Alcalinity_of_ash,Magnesium,Total_phenols,Flavanoids,Nonflavanoid_phenols,Proanthocyanins,Color_intensity,Hue,OD280%2FOD315_of_diluted_wines,Proline
+Mapped Data types:
+string,double,double,double,double,uint32,double,double,double,double,double,double,double,int64
+Example, First Data Row:
+0: ['1' 14.23 1.71 2.43 15.6 127 2.8 3.06 0.28 2.29 5.64 1.04 3.92 1065]
+
+
+Getting data with ID: 307
+Dataset ID    : 307
+Dataset Name  : vowel
+Dataset URL   : https://www.openml.org/data/v1/download/52210/vowel.arff
+Num. Columns  : 13
+Num. Rows     : 990
+Target Feature: Class
+Data Column names:
+Speaker_Number,Sex,Feature_0,Feature_1,Feature_2,Feature_3,Feature_4,Feature_5,Feature_6,Feature_7,Feature_8,Feature_9,Class
+Mapped Data types:
+string,string,double,double,double,double,double,double,double,double,double,double,string
+Example, First Data Row:
+0: ['Andrew' 'Male' -3.639 0.418 -0.67 1.779 -0.168 1.627 -0.388 0.529 -0.874
+ -0.814 'hid']
+
+
+Getting data with ID: 329
+Dataset ID    : 329
+Dataset Name  : hayes-roth
+Dataset URL   : https://www.openml.org/data/v1/download/52233/hayes-roth.arff
+Num. Columns  : 5
+Num. Rows     : 160
+Target Feature: class
+Data Column names:
+hobby,age,educational_level,marital_status,class
+Mapped Data types:
+uint32,uint32,uint32,uint32,string
+Example, First Data Row:
+0: [2 1 1 2 '1']

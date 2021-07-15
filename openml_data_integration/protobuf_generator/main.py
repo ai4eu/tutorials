@@ -9,14 +9,16 @@ def main(argv):
     try:
         idx = int(argv[0])
     except:
-        idx = 42563 # if not provided from Terminal
-        #idx = 61
+        # If not provided from Terminal, use some default
+        #idx = 42563
+        idx = 61
 
     # get file_name for output
     try:
         file_name = argv[1]
     except:
-        file_name = 'model'+str(idx)+'.proto' # if not provided from Terminal
+        #file_name = 'model'+str(idx)+'.proto' # if not provided from Terminal
+        file_name = 'model.proto' # if not provided from Terminal
 
     # get file_name for output
     try:

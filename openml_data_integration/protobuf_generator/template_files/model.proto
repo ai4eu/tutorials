@@ -1,0 +1,51 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 61
+// Dataset Name  : iris;
+// Dataset URL   : https://www.openml.org/data/v1/download/61/iris.arff
+// Num. Columns  : 5
+// Num. Rows     : 150
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: R.A. Fisher  
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/Iris) - 1936 - Donated by Michael Marshall  
+// **Please cite**:   
+// **Iris Plants Database**  
+// This is perhaps the best known database to be found in the pattern recognition literature.  Fisher's paper is a classic in the field and is referenced frequently to this day.  (See Duda & Hart, for example.)  The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant.  One class is     linearly separable from the other 2; the latter are NOT linearly separable from each other.
+// Predicted attribute: class of iris plant.  
+// This is an exceedingly simple domain.  
+// ### Attribute Information:
+//     1. sepal length in cm
+//     2. sepal width in cm
+//     3. petal length in cm
+//     4. pet
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   Sepallength                    = 1;
+	double   Sepalwidth                     = 2;
+	double   Petallength                    = 3;
+	double   Petalwidth                     = 4;
+	string   Class                          = 5;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 61
+				response.Sepallength                    = row[0]
+				response.Sepalwidth                     = row[1]
+				response.Petallength                    = row[2]
+				response.Petalwidth                     = row[3]
+				response.Class                          = row[4]
+*/
+
