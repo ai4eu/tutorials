@@ -97,7 +97,7 @@ Then, in the terminal, run
 ```
 python main.py
 ```
-# 3. Generating subfolder openml_xx for a given dataOD, with all needed files:
+# 3. Generating subfolder openml_xx for a given dataID, with all needed files:
 
 First generate the .proto file for the data ID of interest, in this case using 61 as example:
 ```
