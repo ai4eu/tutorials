@@ -97,13 +97,12 @@ Then, in the terminal, run
 ```
 python main.py
 ```
-# 3. Create subfolder openml_xx, with all files needed for an AI4EU-onboardable databroker for OpenmL dataset with ID = xx:
+# 3. Create subfolder openml_n, with all files needed for an AI4EU-onboardable databroker for OpenmL dataset with ID = n:
 
 To just show information about an OpenML file, using here OpenML ID 61 as example:
 ```
 python checkOpenMLFile.py 61
 ```
-
 Using the --s flag, the program will also create a separate subfolder with all the files needed for an AI4EU-onboardable databroker for that OpenML file:
 ```
 python checkOpenMLFiles.py 61 --s
@@ -114,14 +113,14 @@ Inside the subfolder you can simply run the standalone server:
 ```
 python server.py
 ```
-
 And in a different terminal, within the same subfolder run the client:
 ```
 python client.py
 ```
 Each run of this client will fetch an additional row of data from that server.
 
-To build and run the dockerized version of the server, the Dockerfile is already provided. Shut down the standalone server program first (to release the usage of port 8061 on your computer). Then run the following commands, in this case tagging the docker image as "openml61:v1" :
+
+To build and run the dockerized version of the server, the Dockerfile is already provided. Shut down the standalone server program first (to release the usage of port 8061 on your computer). Then within the subfolder run the following commands, in this case tagging the docker image as "openml61:v1" :
 ```
 $ docker build -t openml61:v1 .
 $ docker run -p 8061:8061 -ti openml61:v1 /bin/bash
@@ -136,6 +135,7 @@ And to generate the subfolders for all those files of interest, use the --s flag
 ```
 python checkOpenMLFilesOfInterest.py --s
 ```
+
 
 The subfolder creation process can also be manually done, using the following steps:
 
@@ -159,7 +159,7 @@ $ bash ../python_files_from_proto.sh
 Modify the file server.py, by copying the variable assignments from the commented section at the end of the model.proto file, and inserting them at the end of get_next_row.
 In this example the code in question (for OpenML ID 61) is:
 ```
-	      response.Sepallength                    = row[0]
+        response.Sepallength                    = row[0]
         response.Sepalwidth                     = row[1]
         response.Petallength                    = row[2]
         response.Petalwidth                     = row[3]
