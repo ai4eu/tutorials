@@ -1,0 +1,49 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 334
+// Dataset Name  : monks-problems-2;
+// Dataset URL   : https://www.openml.org/data/v1/download/52237/monks-problems-2.arff
+// Num. Columns  : 7
+// Num. Rows     : 601
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: Sebastian Thrun (Carnegie Mellon University)  
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/MONK's+Problems) - October 1992  
+// **Please cite**: [UCI](https://archive.ics.uci.edu/ml/citation_policy.html)   
+// **The Monk's Problems: Problem 2**  
+// Once upon a time, in July 1991, the monks of Corsendonk Priory were faced with a school held in their priory, namely the 2nd European Summer School on Machine Learning. After listening more than one week to a wide variety of learning algorithms, they felt rather confused: Which algorithm would be optimal? And which one to avoid? As a consequence of this dilemma, they created a simple task on which all learning algorithms ought to be compared: the three MONK's problems.
+// The target concept associated with the 2nd Monk's problem
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Class                          = 1;
+	string   Attr1                          = 2;
+	string   Attr2                          = 3;
+	string   Attr3                          = 4;
+	string   Attr4                          = 5;
+	string   Attr5                          = 6;
+	string   Attr6                          = 7;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 334
+        response.Class                          = row[0]
+        response.Attr1                          = row[1]
+        response.Attr2                          = row[2]
+        response.Attr3                          = row[3]
+        response.Attr4                          = row[4]
+        response.Attr5                          = row[5]
+        response.Attr6                          = row[6]
+*/
+

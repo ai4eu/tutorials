@@ -38,7 +38,6 @@ class get_next_rowServicer(model_pb2_grpc.get_next_rowServicer):
 
         ###############################################################
         # Here goes the OpenML dataset specific Feature assignments
-        # This is for OpenML dataset # 8
         ###############################################################
 
         response.Mcv                            = numpy.uint32(row[0])

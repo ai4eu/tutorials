@@ -1,0 +1,44 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40669
+// Dataset Name  : corral;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965244/corral.arff
+// Num. Columns  : 7
+// Num. Rows     : 160
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// corral-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   A0                             = 1;
+	string   A1                             = 2;
+	string   B0                             = 3;
+	string   B1                             = 4;
+	string   Irrelevant                     = 5;
+	string   Correlated                     = 6;
+	string   Class                          = 7;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40669
+        response.A0                             = row[0]
+        response.A1                             = row[1]
+        response.B0                             = row[2]
+        response.B1                             = row[3]
+        response.Irrelevant                     = row[4]
+        response.Correlated                     = row[5]
+        response.Class                          = row[6]
+*/
+

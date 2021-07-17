@@ -1,0 +1,42 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40682
+// Dataset Name  : thyroid-new;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965259/thyroid-new.arff
+// Num. Columns  : 6
+// Num. Rows     : 215
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// new-thyroid-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   V_2                            = 1;
+	double   V_3                            = 2;
+	double   V_4                            = 3;
+	double   V_5                            = 4;
+	double   V_6                            = 5;
+	string   Class                          = 6;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40682
+        response.V_2                            = numpy.uint32(row[0])
+        response.V_3                            = row[1]
+        response.V_4                            = row[2]
+        response.V_5                            = row[3]
+        response.V_6                            = row[4]
+        response.Class                          = row[5]
+*/
+

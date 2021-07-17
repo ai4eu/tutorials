@@ -1,0 +1,58 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1500
+// Dataset Name  : seismic-bumps;
+// Dataset URL   : https://www.openml.org/data/v1/download/1592292/seismic-bumps.arff
+// Num. Columns  : 8
+// Num. Rows     : 210
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: Sikora M., Wrobel L.     
+// **Source**: UCI   
+// **Please cite**:  Sikora M., Wrobel L.: Application of rule induction algorithms for analysis of data collected by seismic hazard monitoring systems in coal mines. Archives of Mining Sciences, 55(1), 2010, 91-114.  
+// * Title: 
+// seismic-bumps Data Set 
+// * Abstract: 
+// The data describe the problem of high energy (higher than 10^4 J) seismic bumps forecasting in a coal mine. Data come from two of longwalls located in a Polish coal mine.
+// * Source:
+// Marek Sikora^{1,2} (marek.sikora '@' polsl.pl), Lukasz Wrobel^{1} (lukasz.wrobel '@' polsl.pl) 
+// (1) Institute of Computer Science, Silesian University of Technology, 44-100 Gliwice, Poland 
+// (2) Institute of Innovative Technologies EMAG, 40-189 Katowice, Poland
+// * Data Set Information:
+// Minin
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   V1                             = 1;
+	double   V2                             = 2;
+	double   V3                             = 3;
+	double   V4                             = 4;
+	double   V5                             = 5;
+	double   V6                             = 6;
+	double   V7                             = 7;
+	string   Class                          = 8;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1500
+        response.V1                             = row[0]
+        response.V2                             = row[1]
+        response.V3                             = row[2]
+        response.V4                             = row[3]
+        response.V5                             = row[4]
+        response.V6                             = row[5]
+        response.V7                             = row[6]
+        response.Class                          = row[7]
+*/
+

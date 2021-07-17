@@ -1,0 +1,81 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1068
+// Dataset Name  : pc1;
+// Dataset URL   : https://www.openml.org/data/v1/download/53951/pc1.arff
+// Num. Columns  : 22
+// Num. Rows     : 1109
+// Target Feature: defects
+
+// Beginning of Description of Dataset:
+// **Author**: Mike Chapman, NASA  
+// **Source**: [tera-PROMISE](http://openscience.us/repo/defect/mccabehalsted/pc1.html) - 2004  
+// **Please cite**: Sayyad Shirabad, J. and Menzies, T.J. (2005) The PROMISE Repository of Software Engineering Databases. School of Information Technology and Engineering, University of Ottawa, Canada.  
+// **PC1 Software defect prediction**  
+// One of the NASA Metrics Data Program defect data sets. Data from flight software for earth orbiting satellite. Data comes from McCabe and Halstead features extractors of source code.  These features were defined in the 70s in an attempt to objectively characterize code features that are associated with software quality.
+// ### Attribute Information  
+// 1. loc             : numeric % McCabe's line count of code
+// 2. v(g)            
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   Loc                            = 1;
+	double   V_g_                           = 2;
+	double   Ev_g_                          = 3;
+	double   Iv_g_                          = 4;
+	double   N                              = 5;
+	double   V                              = 6;
+	double   L                              = 7;
+	double   D                              = 8;
+	double   I                              = 9;
+	double   E                              = 10;
+	double   B                              = 11;
+	double   T                              = 12;
+	double   Locode                         = 13;
+	uint32   Locomment                      = 14;
+	uint32   Loccodeandcomment              = 15;
+	uint32   Loblank                        = 16;
+	double   Uniq_op                        = 17;
+	double   Uniq_opnd                      = 18;
+	double   Total_op                       = 19;
+	double   Total_opnd                     = 20;
+	double   Branchcount                    = 21;
+	string   Defects                        = 22;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1068
+        response.Loc                            = row[0]
+        response.V_g_                           = row[1]
+        response.Ev_g_                          = row[2]
+        response.Iv_g_                          = row[3]
+        response.N                              = row[4]
+        response.V                              = row[5]
+        response.L                              = row[6]
+        response.D                              = row[7]
+        response.I                              = row[8]
+        response.E                              = row[9]
+        response.B                              = row[10]
+        response.T                              = row[11]
+        response.Locode                         = row[12]
+        response.Locomment                      = numpy.uint32(row[13])
+        response.Loccodeandcomment              = numpy.uint32(row[14])
+        response.Loblank                        = numpy.uint32(row[15])
+        response.Uniq_op                        = row[16]
+        response.Uniq_opnd                      = row[17]
+        response.Total_op                       = row[18]
+        response.Total_opnd                     = row[19]
+        response.Branchcount                    = row[20]
+        response.Defects                        = row[21]
+*/
+

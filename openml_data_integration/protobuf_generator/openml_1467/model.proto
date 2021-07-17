@@ -1,0 +1,77 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1467
+// Dataset Name  : climate-model-simulation-crashes;
+// Dataset URL   : https://www.openml.org/data/v1/download/1586232/climate-model-simulation-crashes.arff
+// Num. Columns  : 21
+// Num. Rows     : 540
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: D. Lucas, R. Klein, J. Tannahill, D. Ivanova, S. Brandon, D. Domyancic, Y. Zhang.
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/climate+model+simulation+crashes)
+// **Please Cite**:
+// Lucas, D. D., Klein, R., Tannahill, J., Ivanova, D., Brandon, S., Domyancic, D., and Zhang, Y.: Failure analysis of parameter-induced simulation crashes in climate models, Geosci. Model Dev. Discuss., 6, 585-623, [Web Link](http://www.geosci-model-dev-discuss.net/6/585/2013/gmdd-6-585-2013.html), 2013.
+// Source:
+// D. Lucas (ddlucas .at. alum.mit.edu), Lawrence Livermore National Laboratory; R. Klein (rklein .at. astron.berkeley.edu), Lawrence Livermore National Laboratory & U.C. Berkeley; J. Tannahill (tannahill1 .at. llnl.gov), Lawrence Livermore National Laboratory; D. Ivanova (ivanova2 
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   V1                             = 1;
+	uint32   V2                             = 2;
+	double   V3                             = 3;
+	double   V4                             = 4;
+	double   V5                             = 5;
+	double   V6                             = 6;
+	double   V7                             = 7;
+	double   V8                             = 8;
+	double   V9                             = 9;
+	double   V10                            = 10;
+	double   V11                            = 11;
+	double   V12                            = 12;
+	double   V13                            = 13;
+	double   V14                            = 14;
+	double   V15                            = 15;
+	double   V16                            = 16;
+	double   V17                            = 17;
+	double   V18                            = 18;
+	double   V19                            = 19;
+	double   V20                            = 20;
+	string   Class                          = 21;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1467
+        response.V1                             = numpy.uint32(row[0])
+        response.V2                             = numpy.uint32(row[1])
+        response.V3                             = row[2]
+        response.V4                             = row[3]
+        response.V5                             = row[4]
+        response.V6                             = row[5]
+        response.V7                             = row[6]
+        response.V8                             = row[7]
+        response.V9                             = row[8]
+        response.V10                            = row[9]
+        response.V11                            = row[10]
+        response.V12                            = row[11]
+        response.V13                            = row[12]
+        response.V14                            = row[13]
+        response.V15                            = row[14]
+        response.V16                            = row[15]
+        response.V17                            = row[16]
+        response.V18                            = row[17]
+        response.V19                            = row[18]
+        response.V20                            = row[19]
+        response.Class                          = row[20]
+*/
+

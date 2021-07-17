@@ -1,0 +1,68 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 13
+// Dataset Name  : breast-cancer;
+// Dataset URL   : https://www.openml.org/data/v1/download/13/breast-cancer.arff
+// Num. Columns  : 10
+// Num. Rows     : 286
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**:   
+// **Source**: Unknown -   
+// **Please cite**:   
+// Citation Request:
+//     This breast cancer domain was obtained from the University Medical Centre,
+//     Institute of Oncology, Ljubljana, Yugoslavia.  Thanks go to M. Zwitter and 
+//     M. Soklic for providing the data.  Please include this citation if you plan
+//     to use this database.
+//  1. Title: Breast cancer data (Michalski has used this)
+//  2. Sources: 
+//     -- Matjaz Zwitter & Milan Soklic (physicians)
+//        Institute of Oncology 
+//        University Medical Center
+//        Ljubljana, Yugoslavia
+//     -- Donors: Ming Tan and Jeff Schlimmer (Jeffrey.Schlimmer@a.gp.cs.cmu.edu)
+//     -- Date: 11 July 1988
+//  3. Past Usage: (Several: here are some)
+//       -- Michalski,R.S., Mozetic,I., Hong,J., & Lavrac,N. (1986). The 
+//          Multi-Purpos
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Age                            = 1;
+	string   Menopause                      = 2;
+	string   Tumor_size                     = 3;
+	string   Inv_nodes                      = 4;
+	string   Node_caps                      = 5;
+	string   Deg_malig                      = 6;
+	string   Breast                         = 7;
+	string   Breast_quad                    = 8;
+	string   Irradiat                       = 9;
+	string   Class                          = 10;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 13
+        response.Age                            = row[0]
+        response.Menopause                      = row[1]
+        response.Tumor_size                     = row[2]
+        response.Inv_nodes                      = row[3]
+        response.Node_caps                      = row[4]
+        response.Deg_malig                      = row[5]
+        response.Breast                         = row[6]
+        response.Breast_quad                    = row[7]
+        response.Irradiat                       = row[8]
+        response.Class                          = row[9]
+*/
+

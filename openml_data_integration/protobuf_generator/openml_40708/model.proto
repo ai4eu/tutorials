@@ -1,0 +1,90 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40708
+// Dataset Name  : allrep;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965309/allrep.arff
+// Num. Columns  : 30
+// Num. Rows     : 3772
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// allrep-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Age                            = 1;
+	string   Sex                            = 2;
+	string   On_thyroxine                   = 3;
+	string   Query_on_thyroxine             = 4;
+	string   On_antithyroid_medication      = 5;
+	string   Sick                           = 6;
+	string   Pregnant                       = 7;
+	string   Thyroid_surgery                = 8;
+	string   I131_treatment                 = 9;
+	string   Query_hypothyroid              = 10;
+	string   Query_hyperthyroid             = 11;
+	string   Lithium                        = 12;
+	string   Goitre                         = 13;
+	string   Tumor                          = 14;
+	string   Hypopituitary                  = 15;
+	string   Psych                          = 16;
+	string   Tsh_measured                   = 17;
+	double   Tsh                            = 18;
+	string   T3_measured                    = 19;
+	uint32   T3                             = 20;
+	string   Tt4_measured                   = 21;
+	uint32   Tt4                            = 22;
+	string   T4u_measured                   = 23;
+	uint32   T4u                            = 24;
+	string   Fti_measured                   = 25;
+	uint32   Fti                            = 26;
+	string   Tbg_measured                   = 27;
+	string   Tbg                            = 28;
+	string   Referral_source                = 29;
+	string   Class                          = 30;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40708
+        response.Age                            = numpy.uint32(row[0])
+        response.Sex                            = row[1]
+        response.On_thyroxine                   = row[2]
+        response.Query_on_thyroxine             = row[3]
+        response.On_antithyroid_medication      = row[4]
+        response.Sick                           = row[5]
+        response.Pregnant                       = row[6]
+        response.Thyroid_surgery                = row[7]
+        response.I131_treatment                 = row[8]
+        response.Query_hypothyroid              = row[9]
+        response.Query_hyperthyroid             = row[10]
+        response.Lithium                        = row[11]
+        response.Goitre                         = row[12]
+        response.Tumor                          = row[13]
+        response.Hypopituitary                  = row[14]
+        response.Psych                          = row[15]
+        response.Tsh_measured                   = row[16]
+        response.Tsh                            = row[17]
+        response.T3_measured                    = row[18]
+        response.T3                             = numpy.uint32(row[19])
+        response.Tt4_measured                   = row[20]
+        response.Tt4                            = numpy.uint32(row[21])
+        response.T4u_measured                   = row[22]
+        response.T4u                            = numpy.uint32(row[23])
+        response.Fti_measured                   = row[24]
+        response.Fti                            = numpy.uint32(row[25])
+        response.Tbg_measured                   = row[26]
+        response.Tbg                            = row[27]
+        response.Referral_source                = row[28]
+        response.Class                          = row[29]
+*/
+

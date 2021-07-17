@@ -1,0 +1,54 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 329
+// Dataset Name  : hayes-roth;
+// Dataset URL   : https://www.openml.org/data/v1/download/52233/hayes-roth.arff
+// Num. Columns  : 5
+// Num. Rows     : 160
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: Barbara and Frederick Hayes-Roth  
+// **Source**: [original](https://archive.ics.uci.edu/ml/datasets/Hayes-Roth) -   
+// **Please cite**:   
+// Hayes-Roth Database
+// This is a merged version of the separate train and test set which are usually distributed. On OpenML this train-test split can be found as one of the possible tasks.
+// Source Information: 
+// (a) Creators: Barbara and Frederick Hayes-Roth 
+// (b) Donor: David W. Aha (aha@ics.uci.edu) (714) 856-8779  
+// (c) Date: March, 1989  
+// Attribute Information: 
+// -- 1. name: distinct for each instance and represented numerically 
+// -- 2. hobby: nominal values ranging between 1 and 3 
+// -- 3. age: nominal values ranging between 1 and 4 
+// -- 4. educational level: nominal values ranging between 1 and 4 
+// -- 5. marital status: nominal values ranging be
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Hobby                          = 1;
+	uint32   Age                            = 2;
+	uint32   Educational_level              = 3;
+	uint32   Marital_status                 = 4;
+	string   Class                          = 5;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 329
+        response.Hobby                          = numpy.uint32(row[0])
+        response.Age                            = numpy.uint32(row[1])
+        response.Educational_level              = numpy.uint32(row[2])
+        response.Marital_status                 = numpy.uint32(row[3])
+        response.Class                          = row[4]
+*/
+

@@ -42,10 +42,10 @@ service get_next_row {
 //This code section can be directly used
 //at the end of gen_next_row in the server.py file
 //for OpenML dataset nr. 61
-				response.Sepallength                    = row[0]
-				response.Sepalwidth                     = row[1]
-				response.Petallength                    = row[2]
-				response.Petalwidth                     = row[3]
-				response.Class                          = row[4]
+        response.Sepallength                    = row[0]
+        response.Sepalwidth                     = row[1]
+        response.Petallength                    = row[2]
+        response.Petalwidth                     = row[3]
+        response.Class                          = row[4]
 */
 

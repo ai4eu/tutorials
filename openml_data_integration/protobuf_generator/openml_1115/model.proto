@@ -1,0 +1,47 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1115
+// Dataset Name  : teachingAssistant;
+// Dataset URL   : https://www.openml.org/data/v1/download/53998/teachingAssistant.arff
+// Num. Columns  : 7
+// Num. Rows     : 151
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**:   
+// **Source**: Unknown - Date unknown  
+// **Please cite**:   
+// Dataset from the MLRR repository: http://axon.cs.byu.edu:5000/
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Id                             = 1;
+	string   Englishsepaker                 = 2;
+	string   Courseinstructor               = 3;
+	string   Course                         = 4;
+	string   Summer                         = 5;
+	uint32   Classsize                      = 6;
+	string   Class                          = 7;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1115
+        response.Id                             = numpy.uint32(row[0])
+        response.Englishsepaker                 = row[1]
+        response.Courseinstructor               = row[2]
+        response.Course                         = row[3]
+        response.Summer                         = row[4]
+        response.Classsize                      = numpy.uint32(row[5])
+        response.Class                          = row[6]
+*/
+

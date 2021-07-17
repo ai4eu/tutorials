@@ -1,0 +1,58 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40710
+// Dataset Name  : cleve;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965311/cleve.arff
+// Num. Columns  : 14
+// Num. Rows     : 303
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// cleve-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Age                            = 1;
+	string   Sex                            = 2;
+	string   Chest_pain_type                = 3;
+	uint32   Trestbps                       = 4;
+	double   Cholesterol                    = 5;
+	string   Fasting_blood_sugar__lt__120   = 6;
+	string   Resting_ecg                    = 7;
+	uint32   Max_heart_rate                 = 8;
+	string   Exercise_induced_angina        = 9;
+	double   Oldpeak                        = 10;
+	string   Slope                          = 11;
+	string   Number_of_vessels_colored      = 12;
+	string   Thal                           = 13;
+	string   Class                          = 14;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40710
+        response.Age                            = numpy.uint32(row[0])
+        response.Sex                            = row[1]
+        response.Chest_pain_type                = row[2]
+        response.Trestbps                       = numpy.uint32(row[3])
+        response.Cholesterol                    = row[4]
+        response.Fasting_blood_sugar__lt__120   = row[5]
+        response.Resting_ecg                    = row[6]
+        response.Max_heart_rate                 = numpy.uint32(row[7])
+        response.Exercise_induced_angina        = row[8]
+        response.Oldpeak                        = row[9]
+        response.Slope                          = row[10]
+        response.Number_of_vessels_colored      = row[11]
+        response.Thal                           = row[12]
+        response.Class                          = row[13]
+*/
+

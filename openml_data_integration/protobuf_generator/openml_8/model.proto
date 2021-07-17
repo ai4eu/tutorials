@@ -37,11 +37,11 @@ service get_next_row {
 //This code section can be directly used
 //at the end of gen_next_row in the server.py file
 //for OpenML dataset nr. 8
-				response.Mcv                            = numpy.uint32(row[0])
-				response.Alkphos                        = numpy.uint32(row[1])
-				response.Sgpt                           = numpy.uint32(row[2])
-				response.Sgot                           = numpy.uint32(row[3])
-				response.Gammagt                        = numpy.int64(row[4])
-				response.Drinks                         = row[5]
+        response.Mcv                            = numpy.uint32(row[0])
+        response.Alkphos                        = numpy.uint32(row[1])
+        response.Sgpt                           = numpy.uint32(row[2])
+        response.Sgot                           = numpy.uint32(row[3])
+        response.Gammagt                        = numpy.int64(row[4])
+        response.Drinks                         = row[5]
 */
 

@@ -1,0 +1,47 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1489
+// Dataset Name  : phoneme;
+// Dataset URL   : https://www.openml.org/data/v1/download/1592281/phoneme.arff
+// Num. Columns  : 6
+// Num. Rows     : 5404
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: Dominique Van Cappel, THOMSON-SINTRA  
+// **Source**: [KEEL](http://sci2s.ugr.es/keel/dataset.php?cod=105#sub2), [ELENA](https://www.elen.ucl.ac.be/neural-nets/Research/Projects/ELENA/databases/REAL/phoneme/) - 1993  
+// **Please cite**: None  
+// The aim of this dataset is to distinguish between nasal (class 0) and oral sounds (class 1). Five different attributes were chosen to characterize each vowel: they are the amplitudes of the five first harmonics AHi, normalised by the total energy Ene (integrated on all the frequencies): AHi/Ene. The phonemes are transcribed as follows: sh as in she, dcl as in dark, iy as the vowel in she, aa as the vowel in dark, and ao as the first vowel in water.  
+// ### Source
+// The current dataset was formatted by the KEEL repository, but originally hosted 
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   V1                             = 1;
+	double   V2                             = 2;
+	double   V3                             = 3;
+	double   V4                             = 4;
+	double   V5                             = 5;
+	string   Class                          = 6;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1489
+        response.V1                             = row[0]
+        response.V2                             = row[1]
+        response.V3                             = row[2]
+        response.V4                             = row[3]
+        response.V5                             = row[4]
+        response.Class                          = row[5]
+*/
+

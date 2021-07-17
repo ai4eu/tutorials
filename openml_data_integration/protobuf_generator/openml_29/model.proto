@@ -1,0 +1,67 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 29
+// Dataset Name  : credit-approval;
+// Dataset URL   : https://www.openml.org/data/v1/download/29/credit-approval.arff
+// Num. Columns  : 16
+// Num. Rows     : 690
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: Confidential - Donated by Ross Quinlan   
+// **Source**: [UCI](http://archive.ics.uci.edu/ml/datasets/credit+approval) - 1987  
+// **Please cite**: [UCI](http://archive.ics.uci.edu/ml/citation_policy.html)  
+// **Credit Approval**
+// This file concerns credit card applications. All attribute names and values have been changed to meaningless symbols to protect the confidentiality of the data.  
+// This dataset is interesting because there is a good mix of attributes -- continuous, nominal with small numbers of values, and nominal with larger numbers of values.  There are also a few missing values.
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   A1                             = 1;
+	double   A2                             = 2;
+	double   A3                             = 3;
+	string   A4                             = 4;
+	string   A5                             = 5;
+	string   A6                             = 6;
+	string   A7                             = 7;
+	double   A8                             = 8;
+	string   A9                             = 9;
+	string   A10                            = 10;
+	uint32   A11                            = 11;
+	string   A12                            = 12;
+	string   A13                            = 13;
+	double   A14                            = 14;
+	double   A15                            = 15;
+	string   Class                          = 16;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 29
+        response.A1                             = row[0]
+        response.A2                             = row[1]
+        response.A3                             = row[2]
+        response.A4                             = row[3]
+        response.A5                             = row[4]
+        response.A6                             = row[5]
+        response.A7                             = row[6]
+        response.A8                             = row[7]
+        response.A9                             = row[8]
+        response.A10                            = row[9]
+        response.A11                            = numpy.uint32(row[10])
+        response.A12                            = row[11]
+        response.A13                            = row[12]
+        response.A14                            = row[13]
+        response.A15                            = row[14]
+        response.Class                          = row[15]
+*/
+

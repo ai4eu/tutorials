@@ -1,0 +1,52 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40706
+// Dataset Name  : parity5_plus_5;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965307/parity5_plus_5.arff
+// Num. Columns  : 11
+// Num. Rows     : 1124
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// parity5_plus_5-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Bit_1                          = 1;
+	string   Bit_2                          = 2;
+	string   Bit_3                          = 3;
+	string   Bit_4                          = 4;
+	string   Bit_5                          = 5;
+	string   Bit_6                          = 6;
+	string   Bit_7                          = 7;
+	string   Bit_8                          = 8;
+	string   Bit_9                          = 9;
+	string   Bit_10                         = 10;
+	string   Class                          = 11;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40706
+        response.Bit_1                          = row[0]
+        response.Bit_2                          = row[1]
+        response.Bit_3                          = row[2]
+        response.Bit_4                          = row[3]
+        response.Bit_5                          = row[4]
+        response.Bit_6                          = row[5]
+        response.Bit_7                          = row[6]
+        response.Bit_8                          = row[7]
+        response.Bit_9                          = row[8]
+        response.Bit_10                         = row[9]
+        response.Class                          = row[10]
+*/
+

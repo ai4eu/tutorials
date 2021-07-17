@@ -1,0 +1,43 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1413
+// Dataset Name  : MyIris;
+// Dataset URL   : https://www.openml.org/data/v1/download/976045/MyIris.arff
+// Num. Columns  : 5
+// Num. Rows     : 150
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**:   
+// **Source**: Unknown - Date unknown  
+// **Please cite**:   
+// MyExampleIris
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   Sepallength                    = 1;
+	double   Sepalwidth                     = 2;
+	double   Petallength                    = 3;
+	double   Petalwidth                     = 4;
+	string   Class                          = 5;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1413
+        response.Sepallength                    = row[0]
+        response.Sepalwidth                     = row[1]
+        response.Petallength                    = row[2]
+        response.Petalwidth                     = row[3]
+        response.Class                          = row[4]
+*/
+

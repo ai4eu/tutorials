@@ -1,0 +1,54 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 15
+// Dataset Name  : breast-w;
+// Dataset URL   : https://www.openml.org/data/v1/download/52350/breast-w.arff
+// Num. Columns  : 10
+// Num. Rows     : 699
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: Dr. William H. Wolberg, University of Wisconsin  
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)), [University of Wisconsin](http://pages.cs.wisc.edu/~olvi/uwmp/cancer.html) - 1995  
+// **Please cite**: See below, plus [UCI](https://archive.ics.uci.edu/ml/citation_policy.html)  
+// **Breast Cancer Wisconsin (Original) Data Set.** Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass. They describe characteristics of the cell nuclei present in the image. The target feature records the prognosis (malignant or benign). [Original data available here](ftp://ftp.cs.wisc.edu/math-prog/cpo-dataset/machine-learn/cancer/)  
+// Current dataset was adapted to ARFF format from the UCI version. Sample code ID's we
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Clump_thickness                = 1;
+	uint32   Cell_size_uniformity           = 2;
+	uint32   Cell_shape_uniformity          = 3;
+	uint32   Marginal_adhesion              = 4;
+	uint32   Single_epi_cell_size           = 5;
+	double   Bare_nuclei                    = 6;
+	uint32   Bland_chromatin                = 7;
+	uint32   Normal_nucleoli                = 8;
+	uint32   Mitoses                        = 9;
+	string   Class                          = 10;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 15
+        response.Clump_thickness                = numpy.uint32(row[0])
+        response.Cell_size_uniformity           = numpy.uint32(row[1])
+        response.Cell_shape_uniformity          = numpy.uint32(row[2])
+        response.Marginal_adhesion              = numpy.uint32(row[3])
+        response.Single_epi_cell_size           = numpy.uint32(row[4])
+        response.Bare_nuclei                    = row[5]
+        response.Bland_chromatin                = numpy.uint32(row[6])
+        response.Normal_nucleoli                = numpy.uint32(row[7])
+        response.Mitoses                        = numpy.uint32(row[8])
+        response.Class                          = row[9]
+*/
+

@@ -1,0 +1,72 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40650
+// Dataset Name  : GAMETES_Heterogeneity_20atts_1600_Het_0.4_0.2_75_EDM-2_001;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965219/GAMETES_Heterogeneity_20atts_1600_Het_0.4_0.2_75_EDM-2_001.arff
+// Num. Columns  : 21
+// Num. Rows     : 1600
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// GAMETES_Heterogeneity_20atts_1600_Het_0.4_0.2_75_EDM-2_001-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   N0                             = 1;
+	string   N1                             = 2;
+	string   N2                             = 3;
+	string   N3                             = 4;
+	string   N4                             = 5;
+	string   N5                             = 6;
+	string   N6                             = 7;
+	string   N7                             = 8;
+	string   N8                             = 9;
+	string   N9                             = 10;
+	string   N10                            = 11;
+	string   N11                            = 12;
+	string   N12                            = 13;
+	string   N13                            = 14;
+	string   N14                            = 15;
+	string   N15                            = 16;
+	string   M0p0                           = 17;
+	string   M0p1                           = 18;
+	string   M1p0                           = 19;
+	string   M1p1                           = 20;
+	string   Class                          = 21;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40650
+        response.N0                             = row[0]
+        response.N1                             = row[1]
+        response.N2                             = row[2]
+        response.N3                             = row[3]
+        response.N4                             = row[4]
+        response.N5                             = row[5]
+        response.N6                             = row[6]
+        response.N7                             = row[7]
+        response.N8                             = row[8]
+        response.N9                             = row[9]
+        response.N10                            = row[10]
+        response.N11                            = row[11]
+        response.N12                            = row[12]
+        response.N13                            = row[13]
+        response.N14                            = row[14]
+        response.N15                            = row[15]
+        response.M0p0                           = row[16]
+        response.M0p1                           = row[17]
+        response.M1p0                           = row[18]
+        response.M1p1                           = row[19]
+        response.Class                          = row[20]
+*/
+

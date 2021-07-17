@@ -1,0 +1,89 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 24
+// Dataset Name  : mushroom;
+// Dataset URL   : https://www.openml.org/data/v1/download/24/mushroom.arff
+// Num. Columns  : 23
+// Num. Rows     : 8124
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: [Jeff Schlimmer](Jeffrey.Schlimmer@a.gp.cs.cmu.edu)  
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/mushroom) - 1981     
+// **Please cite**:  The Audubon Society Field Guide to North American Mushrooms (1981). G. H. Lincoff (Pres.), New York: Alfred A. Knopf 
+// ### Description
+// This dataset describes mushrooms in terms of their physical characteristics. They are classified into: poisonous or edible.
+// ### Source
+// ```
+// (a) Origin: 
+// Mushroom records are drawn from The Audubon Society Field Guide to North American Mushrooms (1981). G. H. Lincoff (Pres.), New York: Alfred A. Knopf 
+// (b) Donor: 
+// Jeff Schlimmer (Jeffrey.Schlimmer '@' a.gp.cs.cmu.edu)
+// ```
+// ### Dataset description
+// This dataset includes descriptions of hypothetical samples corresponding to 23 species of gilled m
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Cap_shape                      = 1;
+	string   Cap_surface                    = 2;
+	string   Cap_color                      = 3;
+	string   Bruises_3f                     = 4;
+	string   Odor                           = 5;
+	string   Gill_attachment                = 6;
+	string   Gill_spacing                   = 7;
+	string   Gill_size                      = 8;
+	string   Gill_color                     = 9;
+	string   Stalk_shape                    = 10;
+	string   Stalk_root                     = 11;
+	string   Stalk_surface_above_ring       = 12;
+	string   Stalk_surface_below_ring       = 13;
+	string   Stalk_color_above_ring         = 14;
+	string   Stalk_color_below_ring         = 15;
+	string   Veil_type                      = 16;
+	string   Veil_color                     = 17;
+	string   Ring_number                    = 18;
+	string   Ring_type                      = 19;
+	string   Spore_print_color              = 20;
+	string   Population                     = 21;
+	string   Habitat                        = 22;
+	string   Class                          = 23;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 24
+        response.Cap_shape                      = row[0]
+        response.Cap_surface                    = row[1]
+        response.Cap_color                      = row[2]
+        response.Bruises_3f                     = row[3]
+        response.Odor                           = row[4]
+        response.Gill_attachment                = row[5]
+        response.Gill_spacing                   = row[6]
+        response.Gill_size                      = row[7]
+        response.Gill_color                     = row[8]
+        response.Stalk_shape                    = row[9]
+        response.Stalk_root                     = row[10]
+        response.Stalk_surface_above_ring       = row[11]
+        response.Stalk_surface_below_ring       = row[12]
+        response.Stalk_color_above_ring         = row[13]
+        response.Stalk_color_below_ring         = row[14]
+        response.Veil_type                      = row[15]
+        response.Veil_color                     = row[16]
+        response.Ring_number                    = row[17]
+        response.Ring_type                      = row[18]
+        response.Spore_print_color              = row[19]
+        response.Population                     = row[20]
+        response.Habitat                        = row[21]
+        response.Class                          = row[22]
+*/
+

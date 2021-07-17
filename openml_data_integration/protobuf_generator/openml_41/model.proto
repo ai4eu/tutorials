@@ -1,0 +1,70 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 41
+// Dataset Name  : glass;
+// Dataset URL   : https://www.openml.org/data/v1/download/41/glass.arff
+// Num. Columns  : 10
+// Num. Rows     : 214
+// Target Feature: Type
+
+// Beginning of Description of Dataset:
+// **Author**:   
+// **Source**: Unknown -   
+// **Please cite**:   
+// 1. Title: Glass Identification Database
+//  2. Sources:
+//      (a) Creator: B. German
+//          -- Central Research Establishment
+//             Home Office Forensic Science Service
+//             Aldermaston, Reading, Berkshire RG7 4PN
+//      (b) Donor: Vina Spiehler, Ph.D., DABFT
+//                 Diagnostic Products Corporation
+//                 (213) 776-0180 (ext 3014)
+//      (c) Date: September, 1987
+//  3. Past Usage:
+//      -- Rule Induction in Forensic Science
+//         -- Ian W. Evett and Ernest J. Spiehler
+//         -- Central Research Establishment
+//            Home Office Forensic Science Service
+//            Aldermaston, Reading, Berkshire RG7 4PN
+//         -- Unknown technical note number (sorry, not listed here)
+//         -- General Results: near
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   Ri                             = 1;
+	double   Na                             = 2;
+	double   Mg                             = 3;
+	double   Al                             = 4;
+	double   Si                             = 5;
+	double   K                              = 6;
+	double   Ca                             = 7;
+	double   Ba                             = 8;
+	double   Fe                             = 9;
+	string   Type                           = 10;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 41
+        response.Ri                             = row[0]
+        response.Na                             = row[1]
+        response.Mg                             = row[2]
+        response.Al                             = row[3]
+        response.Si                             = row[4]
+        response.K                              = row[5]
+        response.Ca                             = row[6]
+        response.Ba                             = row[7]
+        response.Fe                             = row[8]
+        response.Type                           = row[9]
+*/
+

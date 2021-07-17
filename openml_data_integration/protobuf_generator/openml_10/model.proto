@@ -65,24 +65,24 @@ service get_next_row {
 //This code section can be directly used
 //at the end of gen_next_row in the server.py file
 //for OpenML dataset nr. 10
-				response.Lymphatics                     = row[0]
-				response.Block_of_affere                = row[1]
-				response.Bl_of_lymph_c                  = row[2]
-				response.Bl_of_lymph_s                  = row[3]
-				response.By_pass                        = row[4]
-				response.Extravasates                   = row[5]
-				response.Regeneration_of                = row[6]
-				response.Early_uptake_in                = row[7]
-				response.Lym_nodes_dimin                = numpy.uint32(row[8])
-				response.Lym_nodes_enlar                = numpy.uint32(row[9])
-				response.Changes_in_lym                 = row[10]
-				response.Defect_in_node                 = row[11]
-				response.Changes_in_node                = row[12]
-				response.Changes_in_stru                = row[13]
-				response.Special_forms                  = row[14]
-				response.Dislocation_of                 = row[15]
-				response.Exclusion_of_no                = row[16]
-				response.No_of_nodes_in                 = numpy.uint32(row[17])
-				response.Class                          = row[18]
+        response.Lymphatics                     = row[0]
+        response.Block_of_affere                = row[1]
+        response.Bl_of_lymph_c                  = row[2]
+        response.Bl_of_lymph_s                  = row[3]
+        response.By_pass                        = row[4]
+        response.Extravasates                   = row[5]
+        response.Regeneration_of                = row[6]
+        response.Early_uptake_in                = row[7]
+        response.Lym_nodes_dimin                = numpy.uint32(row[8])
+        response.Lym_nodes_enlar                = numpy.uint32(row[9])
+        response.Changes_in_lym                 = row[10]
+        response.Defect_in_node                 = row[11]
+        response.Changes_in_node                = row[12]
+        response.Changes_in_stru                = row[13]
+        response.Special_forms                  = row[14]
+        response.Dislocation_of                 = row[15]
+        response.Exclusion_of_no                = row[16]
+        response.No_of_nodes_in                 = numpy.uint32(row[17])
+        response.Class                          = row[18]
 */
 

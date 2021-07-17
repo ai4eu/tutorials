@@ -1,0 +1,95 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 566
+// Dataset Name  : meta;
+// Dataset URL   : https://www.openml.org/data/v1/download/52744/meta.arff
+// Num. Columns  : 22
+// Num. Rows     : 528
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**:   
+// **Source**: Unknown - Date unknown  
+// **Please cite**:   
+// 1. Title: meta-data
+// 2. Sources:
+// (a) Creator:
+// LIACC - University of Porto
+// R.Campo Alegre 823
+// 4150 PORTO
+// (b) Donor: P.B.Brazdil or J.Gama            Tel.:  +351 600 1672
+// LIACC, University of Porto               Fax.:  +351 600 3654
+// Rua Campo Alegre 823                     Email:  statlog-adm@ncc.up.pt
+// 4150 Porto, Portugal
+// (c) Date: March, 1996
+// (d) Acknowlegements:
+// LIACC wishes to thank Commission of European Communities
+// for their support. Also, we wish to thank the following partners
+// for providing the individual test results:
+// - Dept. of Statistics, University of Strathclyde, Glasgow, UK
+// - Dept. of Statistics, University of Leeds, UK
+// - Aston University, Birmingham, UK
+// - Forschungszentrum Ulm, Daimler-Benz AG, Germany
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Ds_name                        = 1;
+	double   T                              = 2;
+	double   N                              = 3;
+	uint32   P                              = 4;
+	uint32   K                              = 5;
+	uint32   Bin                            = 6;
+	uint32   Cost                           = 7;
+	double   Sdratio                        = 8;
+	double   Correl                         = 9;
+	double   Cancor1                        = 10;
+	double   Cancor2                        = 11;
+	double   Fract1                         = 12;
+	double   Fract2                         = 13;
+	double   Skewness                       = 14;
+	double   Kurtosis                       = 15;
+	double   Hc                             = 16;
+	double   Hx                             = 17;
+	double   Mcx                            = 18;
+	double   Enatr                          = 19;
+	double   Nsratio                        = 20;
+	string   Alg_name                       = 21;
+	double   Class                          = 22;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 566
+        response.Ds_name                        = row[0]
+        response.T                              = row[1]
+        response.N                              = row[2]
+        response.P                              = numpy.uint32(row[3])
+        response.K                              = numpy.uint32(row[4])
+        response.Bin                            = numpy.uint32(row[5])
+        response.Cost                           = numpy.uint32(row[6])
+        response.Sdratio                        = row[7]
+        response.Correl                         = row[8]
+        response.Cancor1                        = row[9]
+        response.Cancor2                        = row[10]
+        response.Fract1                         = row[11]
+        response.Fract2                         = row[12]
+        response.Skewness                       = row[13]
+        response.Kurtosis                       = row[14]
+        response.Hc                             = row[15]
+        response.Hx                             = row[16]
+        response.Mcx                            = row[17]
+        response.Enatr                          = row[18]
+        response.Nsratio                        = row[19]
+        response.Alg_name                       = row[20]
+        response.Class                          = row[21]
+*/
+

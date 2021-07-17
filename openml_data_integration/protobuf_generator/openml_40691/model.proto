@@ -1,0 +1,54 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40691
+// Dataset Name  : wine-quality-red;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965268/wine-quality-red.arff
+// Num. Columns  : 12
+// Num. Rows     : 1599
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// wine-quality-red-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   Fixed_acidity                  = 1;
+	double   Volatile_acidity               = 2;
+	double   Citric_acid                    = 3;
+	double   Residual_sugar                 = 4;
+	double   Chlorides                      = 5;
+	double   Free_sulfur_dioxide            = 6;
+	double   Total_sulfur_dioxide           = 7;
+	double   Density                        = 8;
+	double   Ph                             = 9;
+	double   Sulphates                      = 10;
+	double   Alcohol                        = 11;
+	string   Class                          = 12;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40691
+        response.Fixed_acidity                  = row[0]
+        response.Volatile_acidity               = row[1]
+        response.Citric_acid                    = row[2]
+        response.Residual_sugar                 = row[3]
+        response.Chlorides                      = row[4]
+        response.Free_sulfur_dioxide            = row[5]
+        response.Total_sulfur_dioxide           = row[6]
+        response.Density                        = row[7]
+        response.Ph                             = row[8]
+        response.Sulphates                      = row[9]
+        response.Alcohol                        = row[10]
+        response.Class                          = row[11]
+*/
+

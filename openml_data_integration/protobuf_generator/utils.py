@@ -26,12 +26,12 @@ def write_proto(dataID, file_name=f'model.proto', output_folder=''):
         type_ser = df.dtypes
         ncols = len(type_ser)
         nrows = len(df.values)
-        print(f'Dataset ID    : {dataID}')
-        print(f'Dataset Name  : {dataset.name};')
-        print(f'Dataset URL   : {dataset.url}')
-        print(f'Num. Columns  : {ncols}')
-        print(f'Num. Rows     : {nrows}')
-        print(f'Target Feature: {dataset.default_target_attribute}')
+        #print(f'Dataset ID    : {dataID}')
+        #print(f'Dataset Name  : {dataset.name};')
+        #print(f'Dataset URL   : {dataset.url}')
+        #print(f'Num. Columns  : {ncols}')
+        #print(f'Num. Rows     : {nrows}')
+        #print(f'Target Feature: {dataset.default_target_attribute}')
         #print(f'Beginning of Description of Dataset:')
 
         # Info about the OpenML file in a commented header section
@@ -64,8 +64,8 @@ def write_proto(dataID, file_name=f'model.proto', output_folder=''):
         types = [str(m) for m in type_ser]
         for k, c in enumerate(types):
             text = map_type(c)
-            varname = type_ser.index[k].replace("-", "_")
-            f.write(f'\t{text:8} {varname.capitalize():30} = {k+1};\n')
+            varname = map_varname(type_ser.index[k])
+            f.write(f'\t{text:8} {varname:30} = {k+1};\n')
         f.write('}\n\n')
 
         # The get_next_row service
@@ -80,15 +80,21 @@ def write_proto(dataID, file_name=f'model.proto', output_folder=''):
         f.write(f'//for OpenML dataset nr. {dataID}\n')
         for k, c in enumerate(types):
             text = map_type(c)
-            varname = type_ser.index[k].replace("-", "_")
+            varname = map_varname(type_ser.index[k])
             if (text == 'string') or (text == 'double') or (text == 'float'):
-                f.write(f'\t\t\t\tresponse.{varname.capitalize():30} = row[{k}]\n')
+                # Eight leading spaces are important, do not change
+                # (they are needed for the proper automatic creation of the
+                # server.py file from template_files/server_part1.py and _part2.py)
+                f.write(f'        response.{varname:30} = row[{k}]\n')
             else:
-                f.write(f'\t\t\t\tresponse.{varname.capitalize():30} = numpy.{text}(row[{k}])\n')
+                # Eight leading spaces important, do not change
+                # (they are needed for the proper automatic creation of the
+                # server.py file from template_files/server_part1.py and _part2.py)
+                f.write(f'        response.{varname:30} = numpy.{text}(row[{k}])\n')
         f.write(f'*/\n\n')
 
 
-    print(f'\nDone writing .proto file for OpenML dataset nr. {dataID} into {output_file}\n')
+    print(f'Done writing {output_file} file for OpenML dataset nr. {dataID}')
 
 
 #####################################################################
@@ -111,6 +117,38 @@ def map_type (vtype):
     else:
          text   = vtype
     return text
+
+
+#####################################################################
+'''
+*** Function: replaces protobuf-problematic characters for
+*** variable names with underscores. 
+*** These changes were required after running on all 83 files
+*** of interesting and finding some problematic files like:
+*** 470, 1063, 1067, 1068, 40677, 40678, 40710
+*** Output: variable name with underscores instead of problem chars
+'''
+#####################################################################
+def map_varname (origvarname):
+    varname = origvarname
+    try:
+        # When a varname is just a number x, use varname V_x
+        # This happens in OpenML dataset 40682
+        x = int(varname)
+        varname = "V_" + str(x)
+    except:
+        # Replace chars problematic for protobuf with "_"
+        varname = origvarname.replace("-", "_")
+        varname = varname.replace("%", "_")
+        varname = varname.replace("(", "_")
+        varname = varname.replace(")", "_")
+        varname = varname.replace("&", "_")
+        varname = varname.replace(";", "_")
+        varname = varname.replace("#", "_")
+        varname = varname.replace("/", "_")
+        varname = varname.replace("\\", "_")
+        varname = varname.replace(".", "_").capitalize()
+    return varname
 
 
 #####################################################################
@@ -143,7 +181,10 @@ def get_file_Nums_of_interest ():
         23512, 40536, 40646, 40647, 40648, 40649, 40650, 40663, 40664, 40665,
         40666, 40668, 40669, 40670, 40671, 40672, 40677, 40678, 40680, 40681,
         40682, 40685, 40686, 40687, 40690, 40691, 40693, 40700, 40701, 40702,
-        40704, 40705, 40706, 40707, 40708, 40710, 40711, 40713, 40900, 40945,
+
+        #40704, # <-- File seems problematic, has 2 class columns
+
+               40705, 40706, 40707, 40708, 40710, 40711, 40713, 40900, 40945,
         40966, 40975, 40983, 40984, 41496
     ]
     '''
@@ -182,10 +223,10 @@ def get_file_Nums_of_interest ():
         38, 374, 40945, 41496
     '''
 
-    # The following 83 files from the 150 files of interest are
+    # The following 82 files from the 150 files of interest are
     # neither very large (<= 10K rows),
     # nor very wide (<=35 cols),
-    # nor are they problematic to download (e.g. like 1110 is),
+    # nor are they problematic to download,
     # and also they have no column of type object
     OpenMLFileNums = [
         8, 9, 10, 13, 15, 24, 29, 31, 36, 37,
@@ -195,8 +236,8 @@ def get_file_Nums_of_interest ():
         1489, 1497, 1500, 1504, 1510, 1547, 1552, 1553, 1554, 4538,
         23380, 40646, 40647, 40648, 40649, 40650, 40663, 40664, 40669, 40671,
         40677, 40678, 40680, 40681, 40682, 40686, 40687, 40690, 40691, 40693,
-        40700, 40701, 40702, 40704, 40706, 40707, 40708, 40710, 40711, 40713,
-        40975, 40983, 40984
+        40700, 40701, 40702, 40706, 40707, 40708, 40710, 40711, 40713, 40975,
+        40983, 40984
        ]
 
     return OpenMLFileNums

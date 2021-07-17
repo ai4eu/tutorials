@@ -1,0 +1,65 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 375
+// Dataset Name  : JapaneseVowels;
+// Dataset URL   : https://www.openml.org/data/v1/download/52415/JapaneseVowels.arff
+// Num. Columns  : 15
+// Num. Rows     : 9961
+// Target Feature: speaker
+
+// Beginning of Description of Dataset:
+// **Author**: Mineichi Kudo, Jun Toyama, Masaru Shimbo    
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/Japanese+Vowels)    
+// **Please cite**:   
+// **Japanese vowels**  
+// This dataset records 640 time series of 12 LPC cepstrum coefficients taken from nine male speakers.
+// The data was collected for examining our newly developed classifier for multidimensional curves (multidimensional time series). Nine male speakers uttered two Japanese vowels /ae/ successively. For each utterance, with the analysis parameters described below, we applied 12-degree linear prediction analysis to it to obtain a discrete-time series with 12 LPC cepstrum coefficients. This means that one utterance by a speaker forms a time series whose length is in the range 7-29 and each point of a time series is of 12 
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Speaker                        = 1;
+	uint32   Utterance                      = 2;
+	uint32   Frame                          = 3;
+	double   Coefficient1                   = 4;
+	double   Coefficient2                   = 5;
+	double   Coefficient3                   = 6;
+	double   Coefficient4                   = 7;
+	double   Coefficient5                   = 8;
+	double   Coefficient6                   = 9;
+	double   Coefficient7                   = 10;
+	double   Coefficient8                   = 11;
+	double   Coefficient9                   = 12;
+	double   Coefficient10                  = 13;
+	double   Coefficient11                  = 14;
+	double   Coefficient12                  = 15;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 375
+        response.Speaker                        = row[0]
+        response.Utterance                      = numpy.uint32(row[1])
+        response.Frame                          = numpy.uint32(row[2])
+        response.Coefficient1                   = row[3]
+        response.Coefficient2                   = row[4]
+        response.Coefficient3                   = row[5]
+        response.Coefficient4                   = row[6]
+        response.Coefficient5                   = row[7]
+        response.Coefficient6                   = row[8]
+        response.Coefficient7                   = row[9]
+        response.Coefficient8                   = row[10]
+        response.Coefficient9                   = row[11]
+        response.Coefficient10                  = row[12]
+        response.Coefficient11                  = row[13]
+        response.Coefficient12                  = row[14]
+*/
+

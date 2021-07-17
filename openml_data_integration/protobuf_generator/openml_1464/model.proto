@@ -1,0 +1,45 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1464
+// Dataset Name  : blood-transfusion-service-center;
+// Dataset URL   : https://www.openml.org/data/v1/download/1586225/blood-transfusion-service-center.arff
+// Num. Columns  : 5
+// Num. Rows     : 748
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: Prof. I-Cheng Yeh  
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/Blood+Transfusion+Service+Center)  
+// **Please cite**: Yeh, I-Cheng, Yang, King-Jang, and Ting, Tao-Ming, "Knowledge discovery on RFM model using Bernoulli sequence", Expert Systems with Applications, 2008.   
+// **Blood Transfusion Service Center Data Set**  
+// Data taken from the Blood Transfusion Service Center in Hsin-Chu City in Taiwan -- this is a classification problem.
+// To demonstrate the RFMTC marketing model (a modified version of RFM), this study adopted the donor database of Blood Transfusion Service Center in Hsin-Chu City in Taiwan. The center passes their blood transfusion service bus to one university in Hsin-Chu City to gather blood donated about every three months. To build an FRMTC model,
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   V1                             = 1;
+	uint32   V2                             = 2;
+	double   V3                             = 3;
+	uint32   V4                             = 4;
+	string   Class                          = 5;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1464
+        response.V1                             = numpy.uint32(row[0])
+        response.V2                             = numpy.uint32(row[1])
+        response.V3                             = row[2]
+        response.V4                             = numpy.uint32(row[3])
+        response.Class                          = row[4]
+*/
+

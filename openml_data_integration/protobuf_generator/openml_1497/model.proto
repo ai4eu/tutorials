@@ -1,0 +1,91 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1497
+// Dataset Name  : wall-robot-navigation;
+// Dataset URL   : https://www.openml.org/data/v1/download/1592289/wall-robot-navigation.arff
+// Num. Columns  : 25
+// Num. Rows     : 5456
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: Ananda Freire, Marcus Veloso and Guilherme Barreto     
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/Wall-Following+Robot+Navigation+Data) - 2010  
+// **Please cite**: [UCI](https://archive.ics.uci.edu/ml/citation_policy.html)
+// **Wall-Following Robot Navigation Data Data Set**  
+// The data were collected as the SCITOS G5 robot navigates through the room following the wall in a clockwise direction, for 4 rounds, using 24 ultrasound sensors arranged circularly around its 'waist'.
+// The data consists of raw values of the measurements of all 24 ultrasound sensors and the corresponding class label. Sensor readings are sampled at a rate of 9 samples per second.
+// The class labels are:  
+// 1. Move-Forward,  
+// 2. Slight-Right-Turn,  
+// 3. Sharp-Right-Turn,  
+// 4. Slight-Left-Turn  
+// It 
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   V1                             = 1;
+	double   V2                             = 2;
+	double   V3                             = 3;
+	double   V4                             = 4;
+	double   V5                             = 5;
+	double   V6                             = 6;
+	double   V7                             = 7;
+	double   V8                             = 8;
+	double   V9                             = 9;
+	double   V10                            = 10;
+	double   V11                            = 11;
+	double   V12                            = 12;
+	double   V13                            = 13;
+	double   V14                            = 14;
+	double   V15                            = 15;
+	double   V16                            = 16;
+	double   V17                            = 17;
+	double   V18                            = 18;
+	double   V19                            = 19;
+	double   V20                            = 20;
+	double   V21                            = 21;
+	double   V22                            = 22;
+	double   V23                            = 23;
+	double   V24                            = 24;
+	string   Class                          = 25;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1497
+        response.V1                             = row[0]
+        response.V2                             = row[1]
+        response.V3                             = row[2]
+        response.V4                             = row[3]
+        response.V5                             = row[4]
+        response.V6                             = row[5]
+        response.V7                             = row[6]
+        response.V8                             = row[7]
+        response.V9                             = row[8]
+        response.V10                            = row[9]
+        response.V11                            = row[10]
+        response.V12                            = row[11]
+        response.V13                            = row[12]
+        response.V14                            = row[13]
+        response.V15                            = row[14]
+        response.V16                            = row[15]
+        response.V17                            = row[16]
+        response.V18                            = row[17]
+        response.V19                            = row[18]
+        response.V20                            = row[19]
+        response.V21                            = row[20]
+        response.V22                            = row[21]
+        response.V23                            = row[22]
+        response.V24                            = row[23]
+        response.Class                          = row[24]
+*/
+

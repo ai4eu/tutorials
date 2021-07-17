@@ -1,0 +1,62 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 307
+// Dataset Name  : vowel;
+// Dataset URL   : https://www.openml.org/data/v1/download/52210/vowel.arff
+// Num. Columns  : 13
+// Num. Rows     : 990
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: Peter Turney (peter@ai.iit.nrc.ca)   
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/connectionist-bench/vowel/) - date unknown  
+// **Please cite**: [UCI citation policy](https://archive.ics.uci.edu/ml/citation_policy.html)
+// **Vowel Recognition (Deterding data)**
+// Speaker independent recognition of the eleven steady state vowels of British English using a specified training set of lpc derived log area ratios.
+// Collected by David Deterding (data and non-connectionist analysis), Mahesan Niranjan (first connectionist analysis), Tony Robinson (description, program, data, and results)
+// A very comprehensive description including comments by the authors can be found [here](https://archive.ics.uci.edu/ml/machine-learning-databases/undocumented/conn
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Speaker_number                 = 1;
+	string   Sex                            = 2;
+	double   Feature_0                      = 3;
+	double   Feature_1                      = 4;
+	double   Feature_2                      = 5;
+	double   Feature_3                      = 6;
+	double   Feature_4                      = 7;
+	double   Feature_5                      = 8;
+	double   Feature_6                      = 9;
+	double   Feature_7                      = 10;
+	double   Feature_8                      = 11;
+	double   Feature_9                      = 12;
+	string   Class                          = 13;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 307
+        response.Speaker_number                 = row[0]
+        response.Sex                            = row[1]
+        response.Feature_0                      = row[2]
+        response.Feature_1                      = row[3]
+        response.Feature_2                      = row[4]
+        response.Feature_3                      = row[5]
+        response.Feature_4                      = row[6]
+        response.Feature_5                      = row[7]
+        response.Feature_6                      = row[8]
+        response.Feature_7                      = row[9]
+        response.Feature_8                      = row[10]
+        response.Feature_9                      = row[11]
+        response.Class                          = row[12]
+*/
+

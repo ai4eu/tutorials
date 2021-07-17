@@ -1,0 +1,62 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 470
+// Dataset Name  : profb;
+// Dataset URL   : https://www.openml.org/data/v1/download/52582/profb.arff
+// Num. Columns  : 10
+// Num. Rows     : 672
+// Target Feature: Home/Away
+
+// Beginning of Description of Dataset:
+// **Author**: Hal Stern, Robin Lock  
+// **Source**: [StatLib](http://lib.stat.cmu.edu/datasets/profb)   
+// **Please cite**:   
+// PRO FOOTBALL SCORES  (raw data appears after the description below)
+// How well do the oddsmakers of Las Vegas predict the outcome of
+// professional football games?  Is there really a home field advantage - if
+// so how large is it?  Are teams that play the Monday Night game at a
+// disadvantage when they play again the following Sunday?  Do teams benefit
+// from having a "bye" week off in the current schedule?  These questions and
+// a host of others can be investigated using this data set.
+// Hal Stern from the Statistics Department at Harvard University has
+// made available his compilation of scores for all National Football League
+// games from the 1989, 1990, and 1991 seasons.  Dr. Stern
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Home_away                      = 1;
+	uint32   Favorite_points                = 2;
+	uint32   Underdog_points                = 3;
+	double   Pointspread                    = 4;
+	string   Favorite_name                  = 5;
+	string   Underdog_name                  = 6;
+	uint32   Year                           = 7;
+	uint32   Week                           = 8;
+	string   Weekday                        = 9;
+	string   Overtime                       = 10;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 470
+        response.Home_away                      = row[0]
+        response.Favorite_points                = numpy.uint32(row[1])
+        response.Underdog_points                = numpy.uint32(row[2])
+        response.Pointspread                    = row[3]
+        response.Favorite_name                  = row[4]
+        response.Underdog_name                  = row[5]
+        response.Year                           = numpy.uint32(row[6])
+        response.Week                           = numpy.uint32(row[7])
+        response.Weekday                        = row[8]
+        response.Overtime                       = row[9]
+*/
+

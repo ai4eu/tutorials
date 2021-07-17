@@ -1,0 +1,87 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 54
+// Dataset Name  : vehicle;
+// Dataset URL   : https://www.openml.org/data/v1/download/54/vehicle.arff
+// Num. Columns  : 19
+// Num. Rows     : 846
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: Dr. Pete Mowforth and Dr. Barry Shepherd  
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/Statlog+(Vehicle+Silhouettes))
+// **Please cite**: Siebert,JP. Turing Institute Research Memorandum TIRM-87-018 "Vehicle Recognition Using Rule Based Methods" (March 1987)  
+//  NAME
+//          vehicle silhouettes
+//  PURPOSE
+//          to classify a given silhouette as one of four types of vehicle,
+//          using  a set of features extracted from the silhouette. The
+//          vehicle may be viewed from one of many different angles.  
+//  PROBLEM TYPE
+//          classification
+//  SOURCE
+//          Drs.Pete Mowforth and Barry Shepherd
+//          Turing Institute
+//          George House
+//          36 North Hanover St.
+//          Glasgow
+//          G1 2AD
+//  CONTACT
+//          Alistair Sutherland
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Compactness                    = 1;
+	uint32   Circularity                    = 2;
+	uint32   Distance_circularity           = 3;
+	double   Radius_ratio                   = 4;
+	uint32   Pr_axis_aspect_ratio           = 5;
+	uint32   Max_length_aspect_ratio        = 6;
+	double   Scatter_ratio                  = 7;
+	uint32   Elongatedness                  = 8;
+	uint32   Pr_axis_rectangularity         = 9;
+	uint32   Max_length_rectangularity      = 10;
+	double   Scaled_variance_major          = 11;
+	double   Scaled_variance_minor          = 12;
+	double   Scaled_radius_of_gyration      = 13;
+	uint32   Skewness_about_major           = 14;
+	uint32   Skewness_about_minor           = 15;
+	uint32   Kurtosis_about_major           = 16;
+	uint32   Kurtosis_about_minor           = 17;
+	uint32   Hollows_ratio                  = 18;
+	string   Class                          = 19;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 54
+        response.Compactness                    = numpy.uint32(row[0])
+        response.Circularity                    = numpy.uint32(row[1])
+        response.Distance_circularity           = numpy.uint32(row[2])
+        response.Radius_ratio                   = row[3]
+        response.Pr_axis_aspect_ratio           = numpy.uint32(row[4])
+        response.Max_length_aspect_ratio        = numpy.uint32(row[5])
+        response.Scatter_ratio                  = row[6]
+        response.Elongatedness                  = numpy.uint32(row[7])
+        response.Pr_axis_rectangularity         = numpy.uint32(row[8])
+        response.Max_length_rectangularity      = numpy.uint32(row[9])
+        response.Scaled_variance_major          = row[10]
+        response.Scaled_variance_minor          = row[11]
+        response.Scaled_radius_of_gyration      = row[12]
+        response.Skewness_about_major           = numpy.uint32(row[13])
+        response.Skewness_about_minor           = numpy.uint32(row[14])
+        response.Kurtosis_about_major           = numpy.uint32(row[15])
+        response.Kurtosis_about_minor           = numpy.uint32(row[16])
+        response.Hollows_ratio                  = numpy.uint32(row[17])
+        response.Class                          = row[18]
+*/
+

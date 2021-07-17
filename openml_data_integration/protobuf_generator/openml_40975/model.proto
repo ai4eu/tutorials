@@ -1,0 +1,55 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40975
+// Dataset Name  : car;
+// Dataset URL   : https://www.openml.org/data/v1/download/18116966/car.arff
+// Num. Columns  : 7
+// Num. Rows     : 1728
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: Marko Bohanec, Blaz Zupan  
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/car+evaluation) - 1997   
+// **Please cite**: [UCI](http://archive.ics.uci.edu/ml/citation_policy.html)  
+// **Car Evaluation Database**  
+// This database was derived from a simple hierarchical decision model originally developed for the demonstration of DEX (M. Bohanec, V. Rajkovic: Expert system for decision making. Sistemica 1(1), pp. 145-157, 1990.).
+// The model evaluates cars according to the following concept structure:
+//     CAR                      car acceptability
+//     . PRICE                  overall price
+//     . . buying               buying price
+//     . . maint                price of the maintenance
+//     . TECH                   technical characteristics
+//     . . COMFORT              comfort
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Buying                         = 1;
+	string   Maint                          = 2;
+	string   Doors                          = 3;
+	string   Persons                        = 4;
+	string   Lug_boot                       = 5;
+	string   Safety                         = 6;
+	string   Class                          = 7;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40975
+        response.Buying                         = row[0]
+        response.Maint                          = row[1]
+        response.Doors                          = row[2]
+        response.Persons                        = row[3]
+        response.Lug_boot                       = row[4]
+        response.Safety                         = row[5]
+        response.Class                          = row[6]
+*/
+

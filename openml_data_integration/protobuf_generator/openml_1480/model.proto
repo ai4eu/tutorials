@@ -1,0 +1,61 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1480
+// Dataset Name  : ilpd;
+// Dataset URL   : https://www.openml.org/data/v1/download/1590565/ilpd.arff
+// Num. Columns  : 11
+// Num. Rows     : 583
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: Bendi Venkata Ramana, M. Surendra Prasad Babu, N. B. Venkateswarlu  
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/ILPD+(Indian+Liver+Patient+Dataset)) - 2012  
+// **Please cite**: [UCI](https://archive.ics.uci.edu/ml/citation_policy.html)  
+// **Indian Liver Patient Dataset**  
+// This data set contains 416 liver patient records and 167 non liver patient records.The data set was collected from north east of Andhra Pradesh, India. The class label divides the patients into 2 groups (liver patient or not). This data set contains 441 male patient records and 142 female patient records. 
+// ### Attribute Information  
+// V1. Age of the patient. Any patient whose age exceeded 89 is listed as being of age "90".  
+// V2. Gender of the patient  
+// V3. Total Bilirubin  
+// V4. Direct Bilirubin  
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   V1                             = 1;
+	string   V2                             = 2;
+	double   V3                             = 3;
+	double   V4                             = 4;
+	double   V5                             = 5;
+	double   V6                             = 6;
+	double   V7                             = 7;
+	double   V8                             = 8;
+	double   V9                             = 9;
+	double   V10                            = 10;
+	string   Class                          = 11;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1480
+        response.V1                             = numpy.uint32(row[0])
+        response.V2                             = row[1]
+        response.V3                             = row[2]
+        response.V4                             = row[3]
+        response.V5                             = row[4]
+        response.V6                             = row[5]
+        response.V7                             = row[6]
+        response.V8                             = row[7]
+        response.V9                             = row[8]
+        response.V10                            = row[9]
+        response.Class                          = row[10]
+*/
+

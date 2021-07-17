@@ -1,0 +1,44 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40681
+// Dataset Name  : mux6;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965258/mux6.arff
+// Num. Columns  : 7
+// Num. Rows     : 128
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// mux6-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Address_bit_1                  = 1;
+	string   Address_bit_2                  = 2;
+	string   Bit_0                          = 3;
+	string   Bit_1                          = 4;
+	string   Bit_2                          = 5;
+	string   Bit_3                          = 6;
+	string   Class                          = 7;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40681
+        response.Address_bit_1                  = row[0]
+        response.Address_bit_2                  = row[1]
+        response.Bit_0                          = row[2]
+        response.Bit_1                          = row[3]
+        response.Bit_2                          = row[4]
+        response.Bit_3                          = row[5]
+        response.Class                          = row[6]
+*/
+

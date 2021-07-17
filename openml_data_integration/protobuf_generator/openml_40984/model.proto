@@ -1,0 +1,72 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40984
+// Dataset Name  : segment;
+// Dataset URL   : https://www.openml.org/data/v1/download/18151937/segment.arff
+// Num. Columns  : 17
+// Num. Rows     : 2310
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: University of Massachusetts Vision Group, Carla Brodley  
+// **Source**: [UCI](http://archive.ics.uci.edu/ml/datasets/image+segmentation) - 1990  
+// **Please cite**: [UCI](http://archive.ics.uci.edu/ml/citation_policy.html)  
+// **Image Segmentation Data Set**
+// The instances were drawn randomly from a database of 7 outdoor images. The images were hand-segmented to create a classification for every pixel. Each instance is a 3x3 region.
+// __Major changes w.r.t. version 2: ignored first two variables as they do not fit the classification task (they reflect the location of the sample in the original image). The 3rd is constant, so should also be ignored.__
+// ### Attribute Information  
+// 4.  short-line-density-5:  the results of a line extractoin algorithm that 
+//           counts how many li
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   Short_line_density_5           = 1;
+	double   Short_line_density_2           = 2;
+	double   Vedge_mean                     = 3;
+	double   Vegde_sd                       = 4;
+	double   Hedge_mean                     = 5;
+	double   Hedge_sd                       = 6;
+	double   Intensity_mean                 = 7;
+	double   Rawred_mean                    = 8;
+	double   Rawblue_mean                   = 9;
+	double   Rawgreen_mean                  = 10;
+	double   Exred_mean                     = 11;
+	double   Exblue_mean                    = 12;
+	double   Exgreen_mean                   = 13;
+	double   Value_mean                     = 14;
+	double   Saturation_mean                = 15;
+	double   Hue_mean                       = 16;
+	string   Class                          = 17;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40984
+        response.Short_line_density_5           = row[0]
+        response.Short_line_density_2           = row[1]
+        response.Vedge_mean                     = row[2]
+        response.Vegde_sd                       = row[3]
+        response.Hedge_mean                     = row[4]
+        response.Hedge_sd                       = row[5]
+        response.Intensity_mean                 = row[6]
+        response.Rawred_mean                    = row[7]
+        response.Rawblue_mean                   = row[8]
+        response.Rawgreen_mean                  = row[9]
+        response.Exred_mean                     = row[10]
+        response.Exblue_mean                    = row[11]
+        response.Exgreen_mean                   = row[12]
+        response.Value_mean                     = row[13]
+        response.Saturation_mean                = row[14]
+        response.Hue_mean                       = row[15]
+        response.Class                          = row[16]
+*/
+

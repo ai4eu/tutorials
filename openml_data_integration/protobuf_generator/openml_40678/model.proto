@@ -1,0 +1,46 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40678
+// Dataset Name  : led7;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965253/led7.arff
+// Num. Columns  : 8
+// Num. Rows     : 3200
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// led7-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Attribute_1                    = 1;
+	string   Attribute_2                    = 2;
+	string   Attribute_3                    = 3;
+	string   Attribute_4                    = 4;
+	string   Attribute_5                    = 5;
+	string   Attribute_6                    = 6;
+	string   Attribute_7                    = 7;
+	string   Class                          = 8;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40678
+        response.Attribute_1                    = row[0]
+        response.Attribute_2                    = row[1]
+        response.Attribute_3                    = row[2]
+        response.Attribute_4                    = row[3]
+        response.Attribute_5                    = row[4]
+        response.Attribute_6                    = row[5]
+        response.Attribute_7                    = row[6]
+        response.Class                          = row[7]
+*/
+

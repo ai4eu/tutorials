@@ -1,0 +1,46 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40711
+// Dataset Name  : cleveland-nominal;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965312/cleveland-nominal.arff
+// Num. Columns  : 8
+// Num. Rows     : 303
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// cleveland-nominal-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Sex                            = 1;
+	string   Cp                             = 2;
+	string   Fbs                            = 3;
+	string   Restecg                        = 4;
+	string   Exang                          = 5;
+	string   Slope                          = 6;
+	string   Thal                           = 7;
+	string   Class                          = 8;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40711
+        response.Sex                            = row[0]
+        response.Cp                             = row[1]
+        response.Fbs                            = row[2]
+        response.Restecg                        = row[3]
+        response.Exang                          = row[4]
+        response.Slope                          = row[5]
+        response.Thal                           = row[6]
+        response.Class                          = row[7]
+*/
+

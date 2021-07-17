@@ -1,0 +1,62 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 37
+// Dataset Name  : diabetes;
+// Dataset URL   : https://www.openml.org/data/v1/download/37/diabetes.arff
+// Num. Columns  : 9
+// Num. Rows     : 768
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: [Vincent Sigillito](vgs@aplcen.apl.jhu.edu)  
+// **Source**: [Obtained from UCI](https://archive.ics.uci.edu/ml/datasets/pima+indians+diabetes) 
+// **Please cite**: [UCI citation policy](https://archive.ics.uci.edu/ml/citation_policy.html)  
+// 1. Title: Pima Indians Diabetes Database
+//  2. Sources:
+//     (a) Original owners: National Institute of Diabetes and Digestive and
+//                          Kidney Diseases
+//     (b) Donor of database: Vincent Sigillito (vgs@aplcen.apl.jhu.edu)
+//                            Research Center, RMI Group Leader
+//                            Applied Physics Laboratory
+//                            The Johns Hopkins University
+//                            Johns Hopkins Road
+//                            Laurel, MD 20707
+//                            (301) 953-6231
+//     (
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Preg                           = 1;
+	uint32   Plas                           = 2;
+	uint32   Pres                           = 3;
+	uint32   Skin                           = 4;
+	double   Insu                           = 5;
+	double   Mass                           = 6;
+	double   Pedi                           = 7;
+	uint32   Age                            = 8;
+	string   Class                          = 9;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 37
+        response.Preg                           = numpy.uint32(row[0])
+        response.Plas                           = numpy.uint32(row[1])
+        response.Pres                           = numpy.uint32(row[2])
+        response.Skin                           = numpy.uint32(row[3])
+        response.Insu                           = row[4]
+        response.Mass                           = row[5]
+        response.Pedi                           = row[6]
+        response.Age                            = numpy.uint32(row[7])
+        response.Class                          = row[8]
+*/
+

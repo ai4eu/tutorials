@@ -1,0 +1,96 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40663
+// Dataset Name  : calendarDOW;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965238/calendarDOW.arff
+// Num. Columns  : 33
+// Num. Rows     : 399
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// calendarDOW-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Feature00                      = 1;
+	uint32   Feature01                      = 2;
+	string   Feature02                      = 3;
+	string   Feature03                      = 4;
+	uint32   Feature04                      = 5;
+	string   Feature05                      = 6;
+	uint32   Feature06                      = 7;
+	uint32   Feature07                      = 8;
+	string   Feature08                      = 9;
+	string   Feature09                      = 10;
+	string   Feature10                      = 11;
+	string   Feature11                      = 12;
+	uint32   Feature12                      = 13;
+	uint32   Feature13                      = 14;
+	string   Feature14                      = 15;
+	string   Feature15                      = 16;
+	string   Feature16                      = 17;
+	string   Feature17                      = 18;
+	uint32   Feature18                      = 19;
+	uint32   Feature19                      = 20;
+	string   Feature20                      = 21;
+	uint32   Feature21                      = 22;
+	string   Feature22                      = 23;
+	uint32   Feature23                      = 24;
+	string   Feature24                      = 25;
+	string   Feature25                      = 26;
+	string   Feature26                      = 27;
+	string   Feature27                      = 28;
+	string   Feature28                      = 29;
+	string   Feature29                      = 30;
+	uint32   Feature30                      = 31;
+	string   Feature31                      = 32;
+	string   Class                          = 33;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40663
+        response.Feature00                      = numpy.uint32(row[0])
+        response.Feature01                      = numpy.uint32(row[1])
+        response.Feature02                      = row[2]
+        response.Feature03                      = row[3]
+        response.Feature04                      = numpy.uint32(row[4])
+        response.Feature05                      = row[5]
+        response.Feature06                      = numpy.uint32(row[6])
+        response.Feature07                      = numpy.uint32(row[7])
+        response.Feature08                      = row[8]
+        response.Feature09                      = row[9]
+        response.Feature10                      = row[10]
+        response.Feature11                      = row[11]
+        response.Feature12                      = numpy.uint32(row[12])
+        response.Feature13                      = numpy.uint32(row[13])
+        response.Feature14                      = row[14]
+        response.Feature15                      = row[15]
+        response.Feature16                      = row[16]
+        response.Feature17                      = row[17]
+        response.Feature18                      = numpy.uint32(row[18])
+        response.Feature19                      = numpy.uint32(row[19])
+        response.Feature20                      = row[20]
+        response.Feature21                      = numpy.uint32(row[21])
+        response.Feature22                      = row[22]
+        response.Feature23                      = numpy.uint32(row[23])
+        response.Feature24                      = row[24]
+        response.Feature25                      = row[25]
+        response.Feature26                      = row[26]
+        response.Feature27                      = row[27]
+        response.Feature28                      = row[28]
+        response.Feature29                      = row[29]
+        response.Feature30                      = numpy.uint32(row[30])
+        response.Feature31                      = row[31]
+        response.Class                          = row[32]
+*/
+

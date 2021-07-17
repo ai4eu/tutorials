@@ -1,0 +1,62 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 481
+// Dataset Name  : biomed;
+// Dataset URL   : https://www.openml.org/data/v1/download/52593/biomed.arff
+// Num. Columns  : 9
+// Num. Rows     : 209
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**:   
+// **Source**: Unknown - Date unknown  
+// **Please cite**:   
+// February 23, 1982
+// The 1982 annual meetings of the American Statistical Association (ASA)
+// will be held August 16-19, 1982 in Cincinnati.  At that meeting, the ASA
+// Committee on Statistical Graphics plans to sponsor an "Exposition of
+// Statistical Graphics Technology."  The purpose of this activity is to
+// more fully inform the ASA membership about the capabilities and uses of
+// computer graphcis in statistical work.   This letter is to invite you to
+// participate in the Exposition.
+// Attached is a set of biomedical data containing 209 observations (134
+// for "normals" and 75 for "carriers").  Each vendor of provider of
+// statistical graphics software participating in the Exposition is to
+// analyze these data using their software and 
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Observation_number             = 1;
+	int64    Hospital_identification_number_for_blood_sample = 2;
+	uint32   Age_of_patient                 = 3;
+	int64    Date_that_blood_sample_was_taken = 4;
+	double   Ml                             = 5;
+	double   M2                             = 6;
+	double   M3                             = 7;
+	double   M4                             = 8;
+	string   Class                          = 9;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 481
+        response.Observation_number             = row[0]
+        response.Hospital_identification_number_for_blood_sample = numpy.int64(row[1])
+        response.Age_of_patient                 = numpy.uint32(row[2])
+        response.Date_that_blood_sample_was_taken = numpy.int64(row[3])
+        response.Ml                             = row[4]
+        response.M2                             = row[5]
+        response.M3                             = row[6]
+        response.M4                             = row[7]
+        response.Class                          = row[8]
+*/
+

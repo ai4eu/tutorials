@@ -1,0 +1,56 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 43
+// Dataset Name  : haberman;
+// Dataset URL   : https://www.openml.org/data/v1/download/43/haberman.arff
+// Num. Columns  : 4
+// Num. Rows     : 306
+// Target Feature: Survival_status
+
+// Beginning of Description of Dataset:
+// **Author**:   
+// **Source**: Unknown -   
+// **Please cite**:   
+// 1. Title: Haberman's Survival Data
+//  2. Sources:
+//     (a) Donor:   Tjen-Sien Lim (limt@stat.wisc.edu)
+//     (b) Date:    March 4, 1999
+//  3. Past Usage:
+//     1. Haberman, S. J. (1976). Generalized Residuals for Log-Linear
+//        Models, Proceedings of the 9th International Biometrics
+//        Conference, Boston, pp. 104-122.
+//     2. Landwehr, J. M., Pregibon, D., and Shoemaker, A. C. (1984),
+//        Graphical Models for Assessing Logistic Regression Models (with
+//        discussion), Journal of the American Statistical Association 79:
+//        61-83.
+//     3. Lo, W.-D. (1993). Logistic Regression Trees, PhD thesis,
+//        Department of Statistics, University of Wisconsin, Madison, WI.
+//  4. Relevant Information:
+//     The dataset contains cases
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Age_of_patient_at_time_of_operation = 1;
+	string   Patients_year_of_operation     = 2;
+	uint32   Number_of_positive_axillary_nodes_detected = 3;
+	string   Survival_status                = 4;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 43
+        response.Age_of_patient_at_time_of_operation = numpy.uint32(row[0])
+        response.Patients_year_of_operation     = row[1]
+        response.Number_of_positive_axillary_nodes_detected = numpy.uint32(row[2])
+        response.Survival_status                = row[3]
+*/
+

@@ -1,0 +1,71 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40687
+// Dataset Name  : solar-flare;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965264/solar-flare.arff
+// Num. Columns  : 13
+// Num. Rows     : 1066
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: Gary Bradshaw    
+// **Source**: [UCI](http://archive.ics.uci.edu/ml/datasets/solar+flare)   
+// **Please cite**:   
+// **Solar Flare database**
+// Relevant Information:
+//     -- The database contains 3 potential classes, one for the number of times a
+//        certain type of solar flare occured in a 24 hour period.
+//     -- Each instance represents captured features for 1 active region on the 
+//        sun.
+//     -- The data are divided into two sections. The second section (flare.data2)
+//        has had much more error correction applied to the it, and has 
+//        consequently been treated as more reliable.
+// Number of Instances:  flare.data1: 323, flare.data2: 1066
+// Number of attributes:  13 (includes 3 class attributes)
+// ### Attribute Information
+//     1. Code for class (modified Zurich class)  (
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Largest_spot_size              = 1;
+	string   Spot_distribution              = 2;
+	string   Activity                       = 3;
+	string   Evolution                      = 4;
+	string   Previous_24_hour_flare_activity_code = 5;
+	string   Historically_complex           = 6;
+	string   Did_region_become_historically_complex = 7;
+	string   Area                           = 8;
+	string   Area_of_the_largest_spot       = 9;
+	string   C_class_flares_production_by_this_region = 10;
+	string   M_class_flares_production_by_this_region = 11;
+	string   X_class_flares_production_by_this_region = 12;
+	string   Class                          = 13;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40687
+        response.Largest_spot_size              = row[0]
+        response.Spot_distribution              = row[1]
+        response.Activity                       = row[2]
+        response.Evolution                      = row[3]
+        response.Previous_24_hour_flare_activity_code = row[4]
+        response.Historically_complex           = row[5]
+        response.Did_region_become_historically_complex = row[6]
+        response.Area                           = row[7]
+        response.Area_of_the_largest_spot       = row[8]
+        response.C_class_flares_production_by_this_region = row[9]
+        response.M_class_flares_production_by_this_region = row[10]
+        response.X_class_flares_production_by_this_region = row[11]
+        response.Class                          = row[12]
+*/
+

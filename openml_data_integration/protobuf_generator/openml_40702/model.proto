@@ -1,0 +1,52 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40702
+// Dataset Name  : solar-flare;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965303/solar-flare.arff
+// Num. Columns  : 11
+// Num. Rows     : 1066
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// flare-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Class_code                     = 1;
+	string   Largest_spot_code              = 2;
+	string   Spot_dist_code                 = 3;
+	string   Activity                       = 4;
+	string   Evolution                      = 5;
+	string   Previous_24_hour_code          = 6;
+	string   Historically_complex           = 7;
+	string   Become_complex                 = 8;
+	string   Area                           = 9;
+	string   Area_of_the_largest_spot       = 10;
+	string   Class                          = 11;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40702
+        response.Class_code                     = row[0]
+        response.Largest_spot_code              = row[1]
+        response.Spot_dist_code                 = row[2]
+        response.Activity                       = row[3]
+        response.Evolution                      = row[4]
+        response.Previous_24_hour_code          = row[5]
+        response.Historically_complex           = row[6]
+        response.Become_complex                 = row[7]
+        response.Area                           = row[8]
+        response.Area_of_the_largest_spot       = row[9]
+        response.Class                          = row[10]
+*/
+

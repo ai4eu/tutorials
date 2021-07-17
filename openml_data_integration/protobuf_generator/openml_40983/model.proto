@@ -1,0 +1,53 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40983
+// Dataset Name  : wilt;
+// Dataset URL   : https://www.openml.org/data/v1/download/18151926/wilt.arff
+// Num. Columns  : 6
+// Num. Rows     : 4839
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: Brian Johnson     
+// **Source**: [UCI] (https://archive.ics.uci.edu/ml/datasets/Wilt)  
+// **Please cite**: Johnson, B., Tateishi, R., Hoan, N., 2013. A hybrid pansharpening approach and multiscale object-based image analysis for mapping diseased pine and oak trees. International Journal of Remote Sensing, 34 (20), 6969-6982.   
+// __Changes w.r.t. version 1: renamed variables such that they match description.__
+// ### Dataset:  
+// Wilt Data Set 
+// ### Abstract:    
+// High-resolution Remote Sensing data set (Quickbird). Small number of training samples of diseased trees, large number for other land cover. Testing data set from stratified random sample of image.
+// ### Source:
+// Brian Johnson; 
+// Institute for Global Environmental Strategies; 
+// 2108-11 Kamiyamaguchi, Hayama, Kanagawa,240-0115 Ja
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   Glcm_pan                       = 1;
+	double   Mean_g                         = 2;
+	double   Mean_r                         = 3;
+	double   Mean_nir                       = 4;
+	double   Sd_plan                        = 5;
+	string   Class                          = 6;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40983
+        response.Glcm_pan                       = row[0]
+        response.Mean_g                         = row[1]
+        response.Mean_r                         = row[2]
+        response.Mean_nir                       = row[3]
+        response.Sd_plan                        = row[4]
+        response.Class                          = row[5]
+*/
+

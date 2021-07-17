@@ -1,0 +1,67 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 466
+// Dataset Name  : schizo;
+// Dataset URL   : https://www.openml.org/data/v1/download/52578/schizo.arff
+// Num. Columns  : 15
+// Num. Rows     : 340
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**:   
+// **Source**: Unknown - Date unknown  
+// **Please cite**:   
+// Schizophrenic Eye-Tracking Data in Rubin and Wu (1997)
+// Biometrics. Yingnian Wu (wu@hustat.harvard.edu) [14/Oct/97]
+// Information about the dataset
+// CLASSTYPE: nominal
+// CLASSINDEX: last
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	int64    Id                             = 1;
+	string   Target                         = 2;
+	double   Gain_ratio_1                   = 3;
+	double   Gain_ratio_2                   = 4;
+	double   Gain_ratio_3                   = 5;
+	double   Gain_ratio_4                   = 6;
+	double   Gain_ratio_5                   = 7;
+	double   Gain_ratio_6                   = 8;
+	double   Gain_ratio_7                   = 9;
+	double   Gain_ratio_8                   = 10;
+	double   Gain_ratio_9                   = 11;
+	double   Gain_ratio_10                  = 12;
+	double   Gain_ratio_11                  = 13;
+	string   Sex                            = 14;
+	string   Class                          = 15;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 466
+        response.Id                             = numpy.int64(row[0])
+        response.Target                         = row[1]
+        response.Gain_ratio_1                   = row[2]
+        response.Gain_ratio_2                   = row[3]
+        response.Gain_ratio_3                   = row[4]
+        response.Gain_ratio_4                   = row[5]
+        response.Gain_ratio_5                   = row[6]
+        response.Gain_ratio_6                   = row[7]
+        response.Gain_ratio_7                   = row[8]
+        response.Gain_ratio_8                   = row[9]
+        response.Gain_ratio_9                   = row[10]
+        response.Gain_ratio_10                  = row[11]
+        response.Gain_ratio_11                  = row[12]
+        response.Sex                            = row[13]
+        response.Class                          = row[14]
+*/
+

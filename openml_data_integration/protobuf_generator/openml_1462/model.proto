@@ -1,0 +1,45 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1462
+// Dataset Name  : banknote-authentication;
+// Dataset URL   : https://www.openml.org/data/v1/download/1586223/banknote-authentication.arff
+// Num. Columns  : 5
+// Num. Rows     : 1372
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// Author: Volker Lohweg (University of Applied Sciences, Ostwestfalen-Lippe)  
+// Source: [UCI](https://archive.ics.uci.edu/ml/datasets/banknote+authentication) - 2012  
+// Please cite: [UCI](https://archive.ics.uci.edu/ml/citation_policy.html) 
+// Dataset about distinguishing genuine and forged banknotes. Data were extracted from images that were taken from genuine and forged banknote-like specimens. For digitization, an industrial camera usually used for print inspection was used. The final images have 400x 400 pixels. Due to the object lens and distance to the investigated object gray-scale pictures with a resolution of about 660 dpi were gained. A Wavelet Transform tool was used to extract features from these images.
+// ### Attribute Information  
+// V1. variance of Wavelet Transformed image (contin
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   V1                             = 1;
+	double   V2                             = 2;
+	double   V3                             = 3;
+	double   V4                             = 4;
+	string   Class                          = 5;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1462
+        response.V1                             = row[0]
+        response.V2                             = row[1]
+        response.V3                             = row[2]
+        response.V4                             = row[3]
+        response.Class                          = row[4]
+*/
+

@@ -1,0 +1,80 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 36
+// Dataset Name  : segment;
+// Dataset URL   : https://www.openml.org/data/v1/download/36/segment.arff
+// Num. Columns  : 20
+// Num. Rows     : 2310
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: University of Massachusetts Vision Group, Carla Brodley  
+// **Source**: [UCI](http://archive.ics.uci.edu/ml/datasets/image+segmentation) - 1990  
+// **Please cite**: [UCI](http://archive.ics.uci.edu/ml/citation_policy.html)  
+// **Image Segmentation Data Set**
+// The instances were drawn randomly from a database of 7 outdoor images. The images were hand-segmented to create a classification for every pixel. Each instance is a 3x3 region.
+// ### Attribute Information  
+// 1.  region-centroid-col:  the column of the center pixel of the region.
+// 2.  region-centroid-row:  the row of the center pixel of the region.
+// 3.  region-pixel-count:  the number of pixels in a region = 9.
+// 4.  short-line-density-5:  the results of a line extractoin algorithm that 
+//           counts how many lines of length 5 (a
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Region_centroid_col            = 1;
+	uint32   Region_centroid_row            = 2;
+	uint32   Region_pixel_count             = 3;
+	double   Short_line_density_5           = 4;
+	double   Short_line_density_2           = 5;
+	double   Vedge_mean                     = 6;
+	double   Vegde_sd                       = 7;
+	double   Hedge_mean                     = 8;
+	double   Hedge_sd                       = 9;
+	double   Intensity_mean                 = 10;
+	double   Rawred_mean                    = 11;
+	double   Rawblue_mean                   = 12;
+	double   Rawgreen_mean                  = 13;
+	double   Exred_mean                     = 14;
+	double   Exblue_mean                    = 15;
+	double   Exgreen_mean                   = 16;
+	double   Value_mean                     = 17;
+	double   Saturation_mean                = 18;
+	double   Hue_mean                       = 19;
+	string   Class                          = 20;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 36
+        response.Region_centroid_col            = numpy.uint32(row[0])
+        response.Region_centroid_row            = numpy.uint32(row[1])
+        response.Region_pixel_count             = numpy.uint32(row[2])
+        response.Short_line_density_5           = row[3]
+        response.Short_line_density_2           = row[4]
+        response.Vedge_mean                     = row[5]
+        response.Vegde_sd                       = row[6]
+        response.Hedge_mean                     = row[7]
+        response.Hedge_sd                       = row[8]
+        response.Intensity_mean                 = row[9]
+        response.Rawred_mean                    = row[10]
+        response.Rawblue_mean                   = row[11]
+        response.Rawgreen_mean                  = row[12]
+        response.Exred_mean                     = row[13]
+        response.Exblue_mean                    = row[14]
+        response.Exgreen_mean                   = row[15]
+        response.Value_mean                     = row[16]
+        response.Saturation_mean                = row[17]
+        response.Hue_mean                       = row[18]
+        response.Class                          = row[19]
+*/
+

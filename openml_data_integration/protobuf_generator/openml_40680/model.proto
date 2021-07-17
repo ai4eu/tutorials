@@ -1,0 +1,55 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40680
+// Dataset Name  : mofn-3-7-10;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965257/mofn-3-7-10.arff
+// Num. Columns  : 11
+// Num. Rows     : 1324
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**: Unknown  
+// **Source**: [PMLB](https://github.com/EpistasisLab/penn-ml-benchmarks/tree/master/datasets/classification) Supposedly from UCI originally, but can't find it there.  
+// **Please cite**  
+// The origin is not clear, but presumably this is an artificial problem representing M-of-N rules. The target is 1 if a certain M 'bits' are '1'? (Joaquin Vanschoren)
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Bit_0                          = 1;
+	string   Bit_1                          = 2;
+	string   Bit_2                          = 3;
+	string   Bit_3                          = 4;
+	string   Bit_4                          = 5;
+	string   Bit_5                          = 6;
+	string   Bit_6                          = 7;
+	string   Bit_7                          = 8;
+	string   Bit_8                          = 9;
+	string   Bit_9                          = 10;
+	string   Class                          = 11;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40680
+        response.Bit_0                          = row[0]
+        response.Bit_1                          = row[1]
+        response.Bit_2                          = row[2]
+        response.Bit_3                          = row[3]
+        response.Bit_4                          = row[4]
+        response.Bit_5                          = row[5]
+        response.Bit_6                          = row[6]
+        response.Bit_7                          = row[7]
+        response.Bit_8                          = row[8]
+        response.Bit_9                          = row[9]
+        response.Class                          = row[10]
+*/
+

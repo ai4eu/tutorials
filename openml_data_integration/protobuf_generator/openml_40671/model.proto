@@ -1,0 +1,46 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 40671
+// Dataset Name  : ecoli;
+// Dataset URL   : https://www.openml.org/data/v1/download/4965246/ecoli.arff
+// Num. Columns  : 8
+// Num. Rows     : 327
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// ecoli-pmlb
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	double   Mcg                            = 1;
+	double   Gvh                            = 2;
+	double   Lip                            = 3;
+	double   Chg                            = 4;
+	double   Aac                            = 5;
+	double   Alm1                           = 6;
+	double   Alm2                           = 7;
+	string   Class                          = 8;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 40671
+        response.Mcg                            = row[0]
+        response.Gvh                            = row[1]
+        response.Lip                            = row[2]
+        response.Chg                            = row[3]
+        response.Aac                            = row[4]
+        response.Alm1                           = row[5]
+        response.Alm2                           = row[6]
+        response.Class                          = row[7]
+*/
+

@@ -1,0 +1,62 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 50
+// Dataset Name  : tic-tac-toe;
+// Dataset URL   : https://www.openml.org/data/v1/download/50/tic-tac-toe.arff
+// Num. Columns  : 10
+// Num. Rows     : 958
+// Target Feature: Class
+
+// Beginning of Description of Dataset:
+// **Author**: David W. Aha    
+// **Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/Tic-Tac-Toe+Endgame) - 1991   
+// **Please cite**: [UCI](http://archive.ics.uci.edu/ml/citation_policy.html)
+// **Tic-Tac-Toe Endgame database**  
+// This database encodes the complete set of possible board configurations at the end of tic-tac-toe games, where "x" is assumed to have played first.  The target concept is "win for x" (i.e., true when "x" has one of 8 possible ways to create a "three-in-a-row").  
+// ### Attribute Information  
+//      (x=player x has taken, o=player o has taken, b=blank)
+//      1. top-left-square: {x,o,b}
+//      2. top-middle-square: {x,o,b}
+//      3. top-right-square: {x,o,b}
+//      4. middle-left-square: {x,o,b}
+//      5. middle-middle-square: {x,o,b}
+//      6. middle-right-square: {x,o,b}
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	string   Top_left_square                = 1;
+	string   Top_middle_square              = 2;
+	string   Top_right_square               = 3;
+	string   Middle_left_square             = 4;
+	string   Middle_middle_square           = 5;
+	string   Middle_right_square            = 6;
+	string   Bottom_left_square             = 7;
+	string   Bottom_middle_square           = 8;
+	string   Bottom_right_square            = 9;
+	string   Class                          = 10;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 50
+        response.Top_left_square                = row[0]
+        response.Top_middle_square              = row[1]
+        response.Top_right_square               = row[2]
+        response.Middle_left_square             = row[3]
+        response.Middle_middle_square           = row[4]
+        response.Middle_right_square            = row[5]
+        response.Bottom_left_square             = row[6]
+        response.Bottom_middle_square           = row[7]
+        response.Bottom_right_square            = row[8]
+        response.Class                          = row[9]
+*/
+

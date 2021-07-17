@@ -1,0 +1,55 @@
+// This file was generated with the Protobuf generator tool.
+// Dataset ID    : 1121
+// Dataset Name  : badges2;
+// Dataset URL   : https://www.openml.org/data/v1/download/54004/badges2.arff
+// Num. Columns  : 11
+// Num. Rows     : 294
+// Target Feature: class
+
+// Beginning of Description of Dataset:
+// **Author**:   
+// **Source**: Unknown - Date unknown  
+// **Please cite**:   
+// Dataset from the MLRR repository: http://axon.cs.byu.edu:5000/
+//
+
+syntax = "proto3";
+
+message Empty {
+}
+
+message Features {
+	uint32   Length                         = 1;
+	string   Even_odd                       = 2;
+	string   First_char_vowel               = 3;
+	string   Second_char_vowel              = 4;
+	uint32   Vowels                         = 5;
+	uint32   Consonants                     = 6;
+	double   Vowel_consonant_ratio          = 7;
+	uint32   Spaces                         = 8;
+	uint32   Dots                           = 9;
+	uint32   Words                          = 10;
+	string   Class                          = 11;
+}
+
+service get_next_row {
+	 rpc get_next_row(Empty) returns(Features);
+}
+
+/*
+//This code section can be directly used
+//at the end of gen_next_row in the server.py file
+//for OpenML dataset nr. 1121
+        response.Length                         = numpy.uint32(row[0])
+        response.Even_odd                       = row[1]
+        response.First_char_vowel               = row[2]
+        response.Second_char_vowel              = row[3]
+        response.Vowels                         = numpy.uint32(row[4])
+        response.Consonants                     = numpy.uint32(row[5])
+        response.Vowel_consonant_ratio          = row[6]
+        response.Spaces                         = numpy.uint32(row[7])
+        response.Dots                           = numpy.uint32(row[8])
+        response.Words                          = numpy.uint32(row[9])
+        response.Class                          = row[10]
+*/
+
