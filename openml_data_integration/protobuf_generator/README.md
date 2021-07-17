@@ -97,7 +97,7 @@ Then, in the terminal, run
 ```
 python main.py
 ```
-# 3. Create subfolder openml_n, with all files needed for an AI4EU-onboardable databroker for OpenmL dataset with ID = n:
+# 3. Create subfolder ./openml_n, with all files needed for an AI4EU-onboardable databroker for OpenmL dataset with ID = n:
 
 To just show information about an OpenML file, using here OpenML ID 61 as example:
 ```
@@ -105,7 +105,7 @@ python checkOpenMLFile.py 61
 ```
 Using the --s flag, the program will also create a separate subfolder with all the files needed for an AI4EU-onboardable databroker for that OpenML file:
 ```
-python checkOpenMLFiles.py 61 --s
+python checkOpenMLFile.py 61 --s
 ```
 After that you can check the existence of subfolder ./openml_61 , with all the needed files inside.
 
@@ -120,18 +120,18 @@ python client.py
 Each run of this client will fetch an additional row of data from that server.
 
 
-To build and run the dockerized version of the server, the Dockerfile is already provided. Shut down the standalone server program first (to release the usage of port 8061 on your computer). Then within the subfolder run the following commands, in this case tagging the docker image as "openml61:v1" :
+To build and run the dockerized version of the server, the Dockerfile is already provided. Shut down the standalone server program first (to release the usage of port 8061 on your computer). Then within the subfolder run the following commands, in this example for subfolder openml_61, tagging the docker image as "openml61:v1" :
 ```
 $ docker build -t openml61:v1 .
 $ docker run -p 8061:8061 -ti openml61:v1 /bin/bash
 ```
 
-To inspect all 82 OpenML files of interest (as specified at the end of the utils.py program):
+To inspect all 82 OpenML files of interest (which are specified at the end of the utils.py program):
 ```
 python checkOpenMLFilesOfInterest.py
 ```
 
-And to generate the subfolders for all those files of interest, use the --s flag:
+And to generate the subfolders for all those files of interest at once, use the --s flag:
 ```
 python checkOpenMLFilesOfInterest.py --s
 ```
