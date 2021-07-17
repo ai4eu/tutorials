@@ -133,7 +133,9 @@ To inspect all 82 OpenML files of interest (which are specified at the end of th
 ```
 python checkOpenMLFilesOfInterest.py
 ```
-And to generate the subfolders for all those OpenML files at once, use the --s flag:
+The output can be seen in the file openml_files_of_interest.txt
+
+To generate the subfolders for all those OpenML files at once, run the program with the --s flag:
 ```
 python checkOpenMLFilesOfInterest.py --s
 ```
