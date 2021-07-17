@@ -14,8 +14,8 @@ def checkOpenMLFilesOfInterest(argv):
     except:
         pass
     OpenMLFiles = get_file_Nums_of_interest()
-    print(f'# of Datasets of interest: {len(OpenMLFiles)}')
-    print(f'Dataset IDs: {OpenMLFiles}')
+    print(f'# of Datasets of interest: {len(OpenMLFiles)}\n')
+    print(f'Dataset IDs: {OpenMLFiles}\n\n')
     for i in OpenMLFiles:
         rc = checkOpenMLFile.PullData(i, createSubfolders)
 
