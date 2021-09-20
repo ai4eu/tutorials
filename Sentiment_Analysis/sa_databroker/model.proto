@@ -1,0 +1,16 @@
+//Define the used version of proto
+syntax = "proto3";
+
+message Empty {
+
+}
+
+//Define a message to hold the features input by the client
+message Text {
+  string query = 1;
+}
+
+//Define the service
+service Databroker {
+    rpc sadatabroker(Empty) returns (Text);
+}
