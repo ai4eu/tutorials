@@ -1,0 +1,39 @@
+{% include 'admin-layout.html' %}
+{% from 'bootstrap/form.html' import render_form, render_field, render_form_row %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="col-lg-6 mb-4">
+
+              <!-- Approach -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Request status</h6>
+            </div>
+            <div class="card-body">
+                <div style="border:3px double green;padding:2%;">
+                    <strong>Your request has been forwarded to the server. </strong>
+                    <strong>Please check the server for results. </strong>
+                </div>
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+  <!-- Bootstrap core JavaScript-->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="static/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
