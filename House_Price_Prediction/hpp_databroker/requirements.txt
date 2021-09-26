@@ -15,6 +15,6 @@ scikit-learn==0.24.2
 sklearn==0.0
 SQLAlchemy==1.4.7
 threadpoolctl==2.2.0
-urllib3==1.26.4
+urllib3==1.26.5
 Werkzeug==1.0.1
 WTForms==2.3.3
