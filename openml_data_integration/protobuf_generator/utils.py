@@ -3,7 +3,7 @@
 # Modified by Raul Saavedra (raul.saavedra@iais.fraunhofer.de)
 
 import os
-import re
+import json
 import openml as oml
 
 
@@ -15,7 +15,8 @@ import openml as oml
 '''
 #####################################################################
 
-def write_proto(dataID, file_name=f'model.proto', output_folder=''):
+def write_proto(dataID, file_name=f'model.proto', output_folder='',
+                                    license_filename="license-1.0.0.json"):
     output_file = os.path.join(output_folder, file_name)
     try:
         dataset = oml.datasets.get_dataset(dataID)
@@ -92,8 +93,9 @@ def write_proto(dataID, file_name=f'model.proto', output_folder=''):
                 # server.py file from template_files/server_part1.py and _part2.py)
                 f.write(f'        response.{varname:30} = numpy.{text}(row[{k}])\n')
         f.write(f'*/\n\n')
-
-
+    
+    # write licence into file "license-1.0.0.json"
+    _write_license(dataset, filename=license_filename)
     print(f'Done writing {output_file} file for OpenML dataset nr. {dataID}')
 
 
@@ -242,3 +244,31 @@ def get_file_Nums_of_interest ():
 
     return OpenMLFileNums
 
+
+def _write_license(dataset, filename="license-1.0.0.json"):
+    license_txt = {
+        "$schema": "https://raw.githubusercontent.com/acumos/license-manager/master/license-manager-client-library/src/main/resources/schema/1.0.0/license-profile.json",
+        "keyword": "Apache-2.0",
+        "licenseName": "Apache License 2.0",
+        "intro": dataset.citation,
+        "copyright": {
+            "year": int(dataset.upload_date[:4]) if dataset.upload_date else 2021,
+            "company": "OpenML",
+            "suffix": "All Rights Reserved"
+        },
+        "softwareType": "Public",
+        "companyName": "OpenML",
+        "contact": {
+            "name": dataset.creator,
+            "URL": dataset.original_data_url,
+            "email": "https://openml.org/"
+        },
+        "rtuRequired": 'false'       
+    }
+    try:
+        with open(filename, 'w') as f:
+            json.dump(license_txt, f, indent = 4)
+            return True
+    except:
+        print('Could not write the licence file. Please check the path!')
+        return False

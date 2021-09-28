@@ -17,6 +17,7 @@ cp -r template_files $SUBFOLDER_NAME
 # folder, and generate the needed grpc-related python files from it
 cd $SUBFOLDER_NAME
 cp ../model.proto .
+cp ../license-1.0.0.json .
 #echo "Generating python files in current folder using $FILE"
 bash ../python_files_from_proto.sh
 
