@@ -5,18 +5,30 @@
 import os
 import json
 import openml as oml
-
+import cv2
+import numpy as np
+from PIL import ImageFont, ImageDraw, Image
+from markdown import markdown
+from bs4 import BeautifulSoup
 
 #####################################################################
 '''
 *** Function: write a proto file with a given recognized ID in OpenML
 *** Input: dataID from OpenML, name and location for the output file
 *** Output: filename.proto (default: "model.proto")
+***         "license-1.0.0.json"
+***         "description.txt"
+***         "authors.txt"
 '''
 #####################################################################
 
 def write_proto(dataID, file_name=f'model.proto', output_folder='',
-                                    license_filename="license-1.0.0.json"):
+                license_filename='license-1.0.0.json',
+                description_filename='description.txt',
+                author_filename='authors.txt',
+                input_icon='openml-databroker.png',
+                icon_filename='icon.png'
+                ):
     output_file = os.path.join(output_folder, file_name)
     try:
         dataset = oml.datasets.get_dataset(dataID)
@@ -96,6 +108,9 @@ def write_proto(dataID, file_name=f'model.proto', output_folder='',
     
     # write licence into file "license-1.0.0.json"
     _write_license(dataset, filename=license_filename)
+    _create_icon(dataset, input_icon=input_icon, icon_filename=icon_filename)
+    _write_description_authors(dataset, description_file=description_filename,
+                                        author_file=author_filename)
     print(f'Done writing {output_file} file for OpenML dataset nr. {dataID}')
 
 
@@ -268,7 +283,30 @@ def _write_license(dataset, filename="license-1.0.0.json"):
     try:
         with open(filename, 'w') as f:
             json.dump(license_txt, f, indent = 4)
-            return True
     except:
         print('Could not write the licence file. Please check the path!')
-        return False
+
+def _create_icon(dataset, input_icon, icon_filename):
+    text = dataset.name
+    h1 = int((290 - len(text)*12)/2)
+    bottomLeftCornerOfText = (h1, 0)
+    font = ImageFont.truetype("arial.ttf", 25)
+
+    img_pil = Image.fromarray(cv2.imread(input_icon))
+    draw = ImageDraw.Draw(img_pil)
+    draw.text(bottomLeftCornerOfText, text, font=font, fill=(0, 0, 0))
+    img = np.array(img_pil)
+    cv2.imwrite(icon_filename, img)
+
+
+def _write_description_authors(dataset, description_file, author_file):
+    try:
+        description = ''.join(BeautifulSoup(
+                            markdown(dataset.description)).findAll(text=True))
+    except: description = ''
+    description = 'https://openml.org \n' + description
+    with open (description_file, 'w') as f:
+        f.write(description)
+
+    with open(author_file, 'w') as f:
+        f.write(f'{dataset.creator}')

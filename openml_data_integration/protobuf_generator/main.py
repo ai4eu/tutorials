@@ -28,7 +28,12 @@ def main(argv):
         output_folder = ''
 
     write_proto(dataID=idx, file_name=file_name, output_folder=output_folder,
-                                        license_filename="license-1.0.0.json")
+                                        license_filename="license-1.0.0.json",
+                                        description_filename='description.txt',
+                                        author_filename = 'authors.txt',
+                                        input_icon='openml-databroker.png',
+                                        icon_filename='icon.png'
+                                        )
 
 if __name__ == '__main__':
     main(sys.argv[1:])

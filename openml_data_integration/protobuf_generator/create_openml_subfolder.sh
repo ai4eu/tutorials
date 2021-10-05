@@ -18,6 +18,9 @@ cp -r template_files $SUBFOLDER_NAME
 cd $SUBFOLDER_NAME
 cp ../model.proto .
 cp ../license-1.0.0.json .
+cp ../description.txt .
+cp ../authors.txt .
+cp ../icon.png .
 #echo "Generating python files in current folder using $FILE"
 bash ../python_files_from_proto.sh
 
