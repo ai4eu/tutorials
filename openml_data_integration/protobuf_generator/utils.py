@@ -9,7 +9,6 @@ import cv2
 import numpy as np
 from PIL import ImageFont, ImageDraw, Image
 from markdown import markdown
-from bs4 import BeautifulSoup
 
 #####################################################################
 '''
@@ -266,10 +265,10 @@ def _create_icon(dataset, input_icon, icon_filename):
 
 def _write_description_authors(dataset, description_file, author_file):
     try:
-        description = ''.join(BeautifulSoup(
-                            markdown(dataset.description)).findAll(text=True))
+        description = markdown(dataset.description)    
     except: description = ''
-    description = 'https://openml.org \n' + description
+    description = 'https://openml.org <br>' + description
+    description = description.replace('\n', '<br>')
     with open (description_file, 'w') as f:
         f.write(description)
 
