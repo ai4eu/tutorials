@@ -39,13 +39,6 @@ def write_proto(dataID, file_name=f'model.proto', output_folder='',
         type_ser = df.dtypes
         ncols = len(type_ser)
         nrows = len(df.values)
-        #print(f'Dataset ID    : {dataID}')
-        #print(f'Dataset Name  : {dataset.name};')
-        #print(f'Dataset URL   : {dataset.url}')
-        #print(f'Num. Columns  : {ncols}')
-        #print(f'Num. Rows     : {nrows}')
-        #print(f'Target Feature: {dataset.default_target_attribute}')
-        #print(f'Beginning of Description of Dataset:')
 
         # Info about the OpenML file in a commented header section
         f.write(f'// This file was generated with the Protobuf generator tool.\n')
@@ -55,15 +48,6 @@ def write_proto(dataID, file_name=f'model.proto', output_folder='',
         f.write(f'// Num. Columns  : {ncols}\n')
         f.write(f'// Num. Rows     : {nrows}\n')
         f.write(f'// Target Feature: {dataset.default_target_attribute}\n\n')
-        f.write(f'// Beginning of Description of Dataset:\n')
-        textd = dataset.description[:800]
-        descr = textd.split("\n")
-        for line in descr:
-            if line.strip() != "":
-                #print(f'\t{line[:70]}')
-                f.write(f'// {line}\n')
-
-        f.write(f'//\n\n')
 
         # Write actual protobuf file contents
         f.write('syntax = "proto3";\n\n')
@@ -84,28 +68,9 @@ def write_proto(dataID, file_name=f'model.proto', output_folder='',
         # The get_next_row service
         f.write('service get_next_row {\n')
         f.write('\t rpc get_next_row(Empty) returns(Features);\n')
-        f.write('}\n')
+        f.write('}\n\n')
 
-        # Commented code snippet, can be directly used at
-        # the end of get_next_row in the server.py file
-        f.write(f'\n/*\n//This code section can be directly used\n')
-        f.write(f'//at the end of gen_next_row in the server.py file\n')
-        f.write(f'//for OpenML dataset nr. {dataID}\n')
-        for k, c in enumerate(types):
-            text = map_type(c)
-            varname = map_varname(type_ser.index[k])
-            if (text == 'string') or (text == 'double') or (text == 'float'):
-                # Eight leading spaces are important, do not change
-                # (they are needed for the proper automatic creation of the
-                # server.py file from template_files/server_part1.py and _part2.py)
-                f.write(f'        response.{varname:30} = row[{k}]\n')
-            else:
-                # Eight leading spaces important, do not change
-                # (they are needed for the proper automatic creation of the
-                # server.py file from template_files/server_part1.py and _part2.py)
-                f.write(f'        response.{varname:30} = numpy.{text}(row[{k}])\n')
-        f.write(f'*/\n\n')
-    
+
     # write licence into file "license-1.0.0.json"
     _write_license(dataset, filename=license_filename)
     _create_icon(dataset, input_icon=input_icon, icon_filename=icon_filename)
