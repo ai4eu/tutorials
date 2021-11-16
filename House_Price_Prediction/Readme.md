@@ -108,13 +108,12 @@ python3 -m pip install grpcio
 
 * To install gRPC tools, run:
 ```commandline
-python3 -m pip install grpcio-tools googleapis-commonprotos
+python3 -m pip install grpcio-tools googleapis-common-protos
 ```
 
 * Now, run the following command:
 ```commandline
-python3 -m grpc_tools.protoc -I. --python_out=. --
-grpc_python_out=. model.proto
+python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. model.proto
 ```
 This command used model.proto file to generate the needed stubs to create the
 client/server.
