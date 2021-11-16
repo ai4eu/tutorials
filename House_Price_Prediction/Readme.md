@@ -301,7 +301,7 @@ docker build -t house-price-prediction:v1 .
 Run the docker image
 
 ```commandline
-docker run –p 8061:8061 --rm –ti house-priceprediction:v1 /bin/bash
+docker run -p 8061:8061 --rm -ti house-price-prediction:v1 /bin/bash
 ```
 The -p option maps the port on the container to the host.
 The Docker run internally executes house_price_prediction_server.py.
