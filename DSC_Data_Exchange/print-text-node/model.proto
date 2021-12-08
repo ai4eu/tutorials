@@ -1,0 +1,13 @@
+syntax = 'proto3';
+
+message Text {
+  string text = 1;
+}
+
+message Empty {
+
+}
+
+service PrintText {
+  rpc print_text(Text) returns(Empty);
+}

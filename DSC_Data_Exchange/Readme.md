@@ -1,4 +1,4 @@
-# AI4EU Experiments Onboarding Tutorial: House Sales Price Prediction using gRPC
+# AI4EU Experiments Onboarding Tutorial: DSC Data Exchange using gRPC
 This tutorial provides a basic Python programmer’s introduction to working with gRPC.
 By walking through this example you’ll learn how to:
 * Define a service in a .proto file.

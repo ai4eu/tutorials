@@ -1,0 +1,13 @@
+syntax = 'proto3';
+
+message Text {
+  string text = 1;
+}
+
+message Empty {
+
+}
+
+service IDSTextConnector {
+  rpc get_text(Empty) returns(Text);
+}
