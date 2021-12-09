@@ -1,0 +1,46 @@
+{% from 'bootstrap/form.html' import render_form, render_field, render_form_row %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>AI4EU DSC</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Configuration Form</h1>
+    <div class="container-fluid">
+        <div class="col-lg-6 mb-4">
+              <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Input Form</h6>
+                </div>
+                <div class="card-body">
+                  {{ render_form(form) }}
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1>Current Configuration</h1>
+        <div>Recipient: {{ current_configuration.recipient }}</div>
+        <div>Artifact ID: {{ current_configuration.artifact_id }}</div>
+        <div>Resource Id: {{ current_configuration.resource_id }}</div>
+        <div>contract: {{ current_configuration.contract }}</div>
+        <div>Use Custom Consumer: {{ current_configuration.use_custom_dsc }}</div>
+        <div>Custom Consumer: {{ current_configuration.custom_dsc }}</div>
+    </div>
+
+    <div>
+        <h1>Data</h1>
+        {{ render_form(pull_form) }}
+        {{ data if data else "" }}
+    </div>
+</body>
+</html>
