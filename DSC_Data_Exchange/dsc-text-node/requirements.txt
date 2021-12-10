@@ -13,6 +13,6 @@ PyYAML==5.4.1
 requests==2.25.1
 SQLAlchemy==1.4.7
 threadpoolctl==2.2.0
-urllib3==1.26.4
+urllib3==1.26.5
 Werkzeug==1.0.1
 WTForms==2.3.3
