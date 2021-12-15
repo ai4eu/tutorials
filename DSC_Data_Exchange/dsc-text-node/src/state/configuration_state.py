@@ -13,7 +13,6 @@ class Configuration:
     contract = None
     custom_dsc = None
 
-    download = True
     use_custom_dsc = False
 
     data_send = False
@@ -24,7 +23,6 @@ def get_jsonifyed_configuration():
         "recipient": Configuration().recipient,
         "resource_id": Configuration().resource_id,
         "artifact_id": Configuration().artifact_id,
-        "download": Configuration().download,
         "contract": Configuration().contract,
         "use_custom_dsc": Configuration().use_custom_dsc,
         "custom_dsc": Configuration().custom_dsc,

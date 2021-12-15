@@ -35,10 +35,6 @@ class PullForm(FlaskForm):
 
 @app.route('/api/v1/recipient', methods=["POST"])
 def set_recipient():
-    print('------------')
-    print("set recipient to: ")
-    pprint.pprint(request.get_json()['recipient'])
-    print('------------')
     conf.recipient = request.get_json()['recipient']
     pprint.pprint(conf.recipient)
     return get_jsonifyed_configuration()
@@ -46,50 +42,30 @@ def set_recipient():
 
 @app.route('/api/v1/resourceId', methods=["POST"])
 def set_resource_id():
-    print('------------')
-    print("set resourceId to: ")
-    pprint.pprint(request.get_json()['resourceId'])
-    print('------------')
     conf.resource_id = request.get_json()['resourceId']
     return get_jsonifyed_configuration()
 
 
 @app.route('/api/v1/artifactId', methods=["POST"])
 def set_artifact_id():
-    print('------------')
-    print("set artifactId to: ")
-    pprint.pprint(request.get_json()['artifactId'])
-    print('------------')
     conf.artifact_id = request.get_json()['artifactId']
     return get_jsonifyed_configuration()
 
 
 @app.route('/api/v1/download', methods=["POST"])
 def set_download():
-    print('------------')
-    print("set download to: ")
-    pprint.pprint(request.get_json()['download'])
-    print('------------')
     conf.download = request.get_json()['download']
     return get_jsonifyed_configuration()
 
 
 @app.route('/api/v1/contract', methods=["POST"])
 def set_contract():
-    print('------------')
-    print("set contract to: ")
-    pprint.pprint(request.get_json()['contract'])
-    print('------------')
     conf.contract = request.get_json()['contract']
     return get_jsonifyed_configuration()
 
 
 @app.route('/api/v1/useCustomDSC', methods=["POST"])
 def set_use_custom_dsc():
-    print('------------')
-    print("set useCustomDSC to: ")
-    pprint.pprint(request.get_json()['useCustomDSC'])
-    print('------------')
     conf.use_custom_dsc = request.get_json()['useCustomDSC']
     return get_jsonifyed_configuration()
 
@@ -97,19 +73,11 @@ def set_use_custom_dsc():
 @app.route('/api/v1/data', methods=["GET"])
 def get_data():
     data = get_text(conf)
-    print('------------')
-    print("Sending Data: ")
-    print(data)
-    print('------------')
     return data
 
 
 @app.route('/api/v1/customDSC', methods=["POST"])
 def set_custom_dsc():
-    print('------------')
-    print("set customDSC to: ")
-    pprint.pprint(request.get_json()['customDSC'])
-    print('------------')
     conf.custom_dsc = request.get_json()['customDSC']
     return get_jsonifyed_configuration()
 
@@ -141,12 +109,6 @@ def index():
 def run_flask_app(host: str, port: int, p_conf):
     global conf
     conf = p_conf
-    print("--------------------------------------")
-    print("--------------------------------------")
-    print("starting flask server")
-    print("--------------------------------------")
-    print("--------------------------------------")
-    print(conf)
 
     app.secret_key = "dscmodel"
     bootstrap = Bootstrap(app)

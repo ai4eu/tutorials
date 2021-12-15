@@ -22,11 +22,7 @@ class TextServicer(model_pb2_grpc.IDSTextConnectorServicer):
 
 
 def start_server(port: int, conf):
-    print("--------------------------------------")
-    print("--------------------------------------")
     print("starting grpc server")
-    print("--------------------------------------")
-    print("--------------------------------------")
 
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     servicer = TextServicer()
