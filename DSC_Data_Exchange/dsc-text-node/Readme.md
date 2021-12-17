@@ -19,17 +19,18 @@ buffers, including efficient serialization, a simple IDL, and easy interface upd
 This example is a Machine Learning Regression example that lets clients get the house
 sales prediction based on chosen attributes.
 
-# steps
-1. Write the service to be served.
-2. Make a proto file to define the messages and services.
-3. Use the proto file to generate gRPC classes for Python.
-4. Create the server.
-5. Create the client.
-6. Include a license
-7. Prepare the docker file, run the docker and the run the client in a new tab.
+# Steps
+1. Write the service
+2. Make a proto file
+3. Generate gRPC classes for Python
+4. Creating the Server
+5. Write the web-server
+6. Creating the Client
+7. Include a license File
+8. Prepare the Docker file
 
-## Step 1: Write the Service:
-In our case, the service is to load the Data. Below is code snippet. To better use the DSC we use the connectorAPI from https://github.com/International-Data-Spaces-Association/DataspaceConnector that also is provided in this repository
+## Step 1: Write the Service
+In our case, the service is to load the Data. Below is the code snippet. To better use the DSC we use the connectorAPI from https://github.com/International-Data-Spaces-Association/DataspaceConnector which also is provided in this repository
 
 ```python
 from src.connectorAPI.idsapi import IdsApi
@@ -54,7 +55,7 @@ def get_text(conf):
     return data
 ```
 
-We pass the service a conf object which holds the information about what data should get downloaded. For better encapsulation of this information we use the below configuration class as a singleton.
+We pass a conf object to the service which holds the information about which data should be downloaded. For better encapsulation of this information, we use the below configuration class as a singleton.
 
 ```python
 class Configuration:
@@ -74,8 +75,8 @@ class Configuration:
     data_send = False
 ```
 
-## Step 2: Make the Proto File:
-To implement the service as a gprc service we first need to describe its interface in our model.proto file 
+## Step 2: Make the Proto File
+To implement the service as a gRPC service, we need to describe its interface in our model.proto file first
 ```proto
 syntax = 'proto3';
 
@@ -93,11 +94,11 @@ service IDSTextConnector {
 ```
 
 
-## Step 3: Generate gRPC classes for Python:
+## Step 3: Generate gRPC classes for Python
 
-Open the terminal, change the directory to be in the same folder that the proto file is
+Open the terminal, change the directory to be in the same folder where the proto file is
 in.
-To generate the gRPC classes we have to install the needed libraries first:
+To generate the gRPC classes, we have to install the following needed libraries first:
 
 * Install gRPC :
 ```cmd
@@ -127,7 +128,7 @@ model_pb2_grpc.py — contains server and client classes
 * model_pb2_grpc.PredictServicer will be used by the server
 * model_pb2_grpc.PredictStub the client will use it
 
-## Step 4: Creating the Server:
+## Step 4: Creating the Server
 
 The server will import the generated files and the function that will handle the
 predictions. Then we will define a class that will take a request from the client and
@@ -303,7 +304,7 @@ def run_flask_app(host: str, port: int, p_conf):
     app.run(host=host, port=port)
 ```
 
-## Step 6: Creating the Client:
+## Step 6: Creating the Client
 
 For the implementation of a test client pleas have a look at the test-scripts folder.
 
