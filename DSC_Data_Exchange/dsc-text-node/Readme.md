@@ -42,7 +42,7 @@ def get_text(conf):
     consumer = IdsApi(consumer_url)
 
     response = consumer.contractRequest(
-        conf.recipient, conf.resource_id, conf.artifact_id, False, conf.contract
+        conf.provider_url_downloading, conf.resource_id, conf.artifact_id, False, conf.contract
     )
 
     agreement = response["_links"]["self"]["href"]

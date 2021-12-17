@@ -5,12 +5,17 @@ import sys
 from connectorAPI.resourceapi import ResourceApi
 
 provider_url = "https://localhost:8080"
+dataValue = "SOME LONG VALUE"
 
 if __name__ == "__main__":
     argv = sys.argv[1:]
-    if len(argv) == 1:
+    if len(argv) >= 1:
         provider_url = argv[0]
-        print("Setting provider_url as:", provider_url)
+        print("Setting provider_url to:", provider_url)
+    if len(argv) >= 2:
+        dataValue = argv[1]
+        print("Setting dataValue to:", dataValue)
+
 
 print("Starting script")
 
@@ -21,7 +26,6 @@ requests.packages.urllib3.disable_warnings()
 provider = ResourceApi(provider_url)
 
 ## Create resources
-dataValue = "SOME LONG VALUE"
 catalog = provider.create_catalog()
 offers = provider.create_offered_resource()
 representation = provider.create_representation()
