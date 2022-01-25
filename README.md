@@ -1,7 +1,6 @@
 https://www.ai4europe.eu/development
 
 # Limitations of the AI4EU Experiments beta version
-* No Single Sign On with AI4EU main website
 * protobuf import and enum semantics not yet supported, some standard structures need to be copied
 
 # Container Specification and Tutorials
