@@ -33,18 +33,23 @@ class NewsClassifier(news_classifier_pb2_grpc.NewsClassifierServicer):
         self.model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
 
     def startTraining(self, request, context):
-        print("start training")
-        x_train = np.load(request.training_data_filename)
-        y_labels = np.load(request.training_labels_filename)
+        print(f"start training with request {request}")
+        x_train = np.load(request.training_data_filename)['arr_0']
+        y_labels = np.load(request.training_labels_filename)['arr_0']
+        print(f"data loading completed x_train:{len(x_train)} y_labels:{len(y_labels)}")
         split_border = int(len(x_train) * request.validation_ratio)
+        print(f"split border: {split_border}")
         x_val = x_train[:split_border]
         partial_x_train = x_train[split_border:]
         y_val = y_labels[:split_border]
         partial_y_train = y_labels[split_border:]
 
-        history = self.model.fit(partial_x_train, partial_y_train, request.epochs,
+        print("start model.fit()")
+        history = self.model.fit(x=partial_x_train, y=partial_y_train, epochs=request.epochs,
                                  batch_size=request.batch_size, validation_data=(x_val, y_val), callbacks=[tensorboard_callback])
+        print(f"training finished with accuracy={history.history['accuracy'][-1]} and validation_loss={history.history['val_loss'][-1]}")
         self.model.save(request.model_path)
+        print(f"model saved to {request.model_path}")
 
         response = news_classifier_pb2.TrainingStatus()
         response.accuracy = history.history['accuracy'][-1]

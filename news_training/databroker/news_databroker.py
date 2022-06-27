@@ -22,7 +22,7 @@ news = [
 class NewsDatabroker(news_databroker_pb2_grpc.NewsDatabrokerServicer):
 
     def __init__(self):
-        self. current_row = 0
+        self.current_row = 0
 
     def get_next(self, request, context):
         response = news_databroker_pb2.NewsText()
