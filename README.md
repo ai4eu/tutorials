@@ -1,6 +1,6 @@
 https://www.ai4europe.eu/development
 
-This reposirory has been moved to https://gitlab.eclipse.org/eclipse/graphene/turorials
+This reposirory has been moved to https://gitlab.eclipse.org/eclipse/graphene/tutorials
 
 # Limitations of the AI4EU Experiments beta version
 * protobuf import and enum semantics not yet supported, some standard structures need to be copied
